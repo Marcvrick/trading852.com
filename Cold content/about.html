@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Legal notice for Trading852 — a personal website with no commercial purpose.">
-  <title>Legal Notice · Trading852</title>
+  <meta name="description" content="About Trading852 — a personal research site on Hong Kong-listed companies.">
+  <title>About · Trading852</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -15,7 +15,6 @@
       --dp-c-gray-2:       #697188;
       --dp-c-gray-border:  #d6d5db;
       --dp-c-gray-pale:    #eff0f5;
-      --dp-c-periwinkle:   #d6d5dbcc;
 
       --ff-sans:  "Space Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
       --ff-serif: "Lora", "Warnock Pro", "Goudy Old Style", Palatino, Georgia, serif;
@@ -101,33 +100,36 @@
 
     .menu-list--main a:hover { color: var(--dp-c-white); background-size: 0 0.0625rem, 100% 0.0625rem; }
 
+    /* ─── Hero ─── */
     .page-hero {
       background-color: var(--dp-c-black);
-      background-image: radial-gradient(circle at top right, rgba(255,255,255,0.05) 0, transparent 50%);
+      background-image:
+        radial-gradient(circle at top right, rgba(255,255,255,0.06) 0, transparent 50%),
+        linear-gradient(-9deg, rgba(255,255,255,0.03) 39%, transparent 70%);
       padding-top: 7rem;
-      padding-bottom: 3rem;
+      padding-bottom: 4rem;
       border-bottom: 0.0625rem solid rgba(255,255,255,0.12);
     }
 
     .page-hero h1 {
       font-family: var(--ff-serif);
-      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-size: clamp(2.5rem, 6vw, 5rem);
       font-weight: 600;
-      line-height: 1.15;
+      line-height: 1.1;
       color: var(--dp-c-white);
-      max-width: 36rem;
-      margin-bottom: 1rem;
+      max-width: 28rem;
+      margin-bottom: 2rem;
     }
 
-    .page-hero p {
+    .page-hero .about-intro {
       font-family: var(--ff-serif);
-      font-size: var(--fs-18);
-      font-style: italic;
-      color: rgba(255,255,255,0.45);
-      max-width: 36rem;
-      line-height: 1.6;
+      font-size: clamp(1.125rem, 2vw, 1.375rem);
+      line-height: 1.7;
+      color: rgba(255,255,255,0.75);
+      max-width: 38rem;
     }
 
+    /* ─── White section ─── */
     .page-body {
       background: var(--dp-c-white);
       color: var(--dp-c-black);
@@ -166,32 +168,32 @@
       margin-bottom: 1.25rem;
     }
 
-    .page-body .label {
-      font-family: var(--ff-sans);
-      font-size: var(--fs-12);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.0625rem;
-      color: var(--dp-c-gray-2);
-      margin-bottom: 0.25rem;
-    }
-
-    .page-body .value {
-      font-family: var(--ff-serif);
-      font-size: var(--fs-18);
-      color: #111;
+    .page-body p.lead {
+      font-size: var(--fs-20);
+      font-style: italic;
+      border-left: 3px solid #000;
+      padding-left: 1.25rem;
       margin-bottom: 1.5rem;
     }
 
-    .page-body .date-line {
-      font-family: var(--ff-sans);
-      font-size: var(--fs-12);
-      color: var(--dp-c-gray-2);
-      margin-top: 2.5rem;
-      padding-top: 1.5rem;
-      border-top: 0.0625rem solid var(--dp-c-gray-border);
+    .back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      font-size: var(--fs-14);
+      font-weight: 500;
+      color: var(--dp-c-black);
+      text-decoration: none;
+      background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), linear-gradient(currentcolor, currentcolor);
+      background-position: 100% 100%, 0 100%;
+      background-repeat: no-repeat;
+      background-size: 100% 0.0625rem, 0 0.0625rem;
+      transition: background-size 0.5s;
+      padding-bottom: 0.125rem;
     }
 
+    .back-link:hover { background-size: 0 0.0625rem, 100% 0.0625rem; }
+
+    /* ─── Footer ─── */
     .page-footer {
       background-color: var(--dp-c-black);
       color: var(--dp-c-white);
@@ -266,62 +268,50 @@
       <nav aria-label="Main navigation">
         <ul class="menu-list--main">
           <li class="menu-item"><a href="index.html">Analyses</a></li>
-          <li class="menu-item"><a href="#">Hong Kong</a></li>
           <li class="menu-item"><a href="#">Method</a></li>
-          <li class="menu-item"><a href="legal-notice.html">Legal</a></li>
+          <li class="menu-item"><a href="about.html">About</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
+  <!-- ── HERO ── -->
   <div class="page-hero">
     <div class="container">
-      <h1>Legal Notice</h1>
-      <p>Who runs this site and what it is.</p>
+      <h1>About</h1>
+      <p class="about-intro">I read HKEX filings in my spare time, look for companies the market is mispricing, and write about what I find. No fund. No firm. Just the math.</p>
     </div>
   </div>
 
+  <!-- ── BODY ── -->
   <div class="page-body">
     <div class="container">
 
-      <h2>Site owner</h2>
+      <h2>Who I am</h2>
 
-      <p class="label">Name</p>
-      <p class="value">Marc</p>
+      <p>I'm not a professional investor. I don't manage other people's money. I've been reading annual reports for years. At some point I started writing things down, then sharing them. Trading852 is that.</p>
 
-      <p class="label">Nature</p>
-      <p class="value">Private individual — not a company, not a registered entity, not a financial institution.</p>
+      <h2>Why Hong Kong</h2>
 
-      <p class="label">Website</p>
-      <p class="value">trading852.com</p>
+      <p class="lead">Because it's one of the few markets where doing the work still gives you an edge.</p>
 
-      <h2>What this site is</h2>
+      <p>The institutional coverage on mid-cap HK conglomerates is thin. The structures are complex enough that most people don't bother. And because the market has been in the news for the wrong reasons since 2021, a lot of quality businesses are priced as if the discount is permanent.</p>
 
-      <p>Trading852 is a personal website. It exists for one reason: to publish research notes on Hong Kong-listed companies that I find interesting. It has no commercial purpose. It does not sell anything. It does not charge for access. It does not solicit clients.</p>
+      <p>I don't think it always is. I try to find the ones where it isn't.</p>
 
-      <p>There is no business behind it. No fund. No advisory firm. No registered financial services provider of any kind. Just one person reading annual reports and writing about what he finds.</p>
+      <h2>What I actually do</h2>
 
-      <h2>No financial services</h2>
+      <p>I read filings. I build sum-of-parts valuations. I look for a gap between what a company owns and what the market is paying for it — and then I look for a reason that gap might close within a defined window. A buyback, a disposal, a privatisation offer. Something that forces the price to move.</p>
 
-      <p>Trading852 does not provide investment advice, portfolio management, financial planning, or any other regulated financial service. Nothing published here constitutes a personal recommendation to buy or sell any security.</p>
+      <p>When I find something that holds up under scrutiny, I write about it here.</p>
 
-      <p>If you are looking for regulated financial advice, please consult a licensed professional in your jurisdiction.</p>
+      <h2>What this is not</h2>
 
-      <h2>Intellectual property</h2>
+      <p>This is not investment advice. I'm not telling you what to buy. I'm sharing my research because writing forces me to think clearly — and because I'd rather read research that's honest about its assumptions than one that pretends the risks don't exist.</p>
 
-      <p>The writing and analysis on this site is personal work. You are welcome to quote it, link to it, or share it — with attribution. Reproducing entire articles without permission is not.</p>
+      <p>Make your own decisions. Read the <a href="disclaimer.html" style="color:#111;text-decoration:underline;text-underline-offset:3px;">disclaimer</a> before you act on anything here.</p>
 
-      <p>Company names, ticker symbols, and financial data referenced on this site remain the property of their respective owners. Use of these does not imply any affiliation with or endorsement by those companies.</p>
-
-      <h2>External links</h2>
-
-      <p>Where articles link to external sources — company filings, HKEX announcements, third-party data — those links are provided for reference only. I have no control over external sites and cannot guarantee their accuracy or availability.</p>
-
-      <h2>Governing law</h2>
-
-      <p>This site is operated by a private individual. No specific jurisdiction is claimed. The content is intended for a general international audience. Nothing here is directed at any specific country or regulated market.</p>
-
-      <div class="date-line">Last updated: April 11, 2026</div>
+      <a href="index.html" class="back-link">← Back to analyses</a>
 
     </div>
   </div>
@@ -331,15 +321,15 @@
       <div class="block-system-branding-block">
         <a href="index.html" class="footer-logo">Trading852</a>
       </div>
+      <p style="font-family:var(--ff-serif);font-size:var(--fs-16);color:rgba(255,255,255,0.45);line-height:1.7;max-width:32rem;margin-bottom:2.5rem;">I read HKEX filings in my spare time, look for companies the market is mispricing, and write about what I find. No fund. No firm. Just the math.</p>
       <nav aria-label="Footer">
         <ul class="menu-list--footer">
           <li class="menu-item menu-item--expanded">
             <span>Explore</span>
             <ul>
               <li class="menu-item"><a href="index.html">Analyses</a></li>
-              <li class="menu-item"><a href="#">Hong Kong</a></li>
               <li class="menu-item"><a href="#">Method</a></li>
-              <li class="menu-item"><a href="#">About</a></li>
+              <li class="menu-item"><a href="about.html">About</a></li>
             </ul>
           </li>
           <li class="menu-item menu-item--expanded">
