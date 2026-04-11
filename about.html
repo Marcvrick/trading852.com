@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Trading852 — a personal research site on Hong Kong-listed companies.">
+  <title>About · Trading852</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dp-c-black:        #000;
+      --dp-c-white:        #fff;
+      --dp-c-gray-2:       #697188;
+      --dp-c-gray-border:  #d6d5db;
+      --dp-c-gray-pale:    #eff0f5;
+
+      --ff-sans:  "Space Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --ff-serif: "Lora", "Warnock Pro", "Goudy Old Style", Palatino, Georgia, serif;
+
+      --fs-12: 0.75rem;
+      --fs-14: 0.875rem;
+      --fs-16: 1rem;
+      --fs-18: 1.125rem;
+      --fs-20: 1.25rem;
+      --fs-24: 1.5rem;
+
+      --gutter: 1.5rem;
+      --spacing-10: 2.5rem;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      font-family: var(--ff-sans);
+      background: var(--dp-c-black);
+      color: var(--dp-c-white);
+      font-size: var(--fs-16);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 85rem;
+      margin-inline: auto;
+      padding-inline: var(--gutter);
+    }
+
+    .page-header {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      z-index: 30;
+      background: transparent;
+      border-bottom: 1px solid transparent;
+      transition: background 0.25s ease-out, border-color 0.25s ease-out;
+    }
+
+    .page-header.is-scrolled {
+      background: var(--dp-c-black);
+      border-bottom-color: rgba(255,255,255,0.12);
+    }
+
+    .region-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 3rem;
+      gap: 2rem;
+    }
+
+    .site-logo {
+      font-family: var(--ff-sans);
+      font-size: 1.125rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--dp-c-white);
+      text-decoration: none;
+    }
+
+    .menu-list--main {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .menu-list--main a {
+      font-size: var(--fs-14);
+      font-weight: 400;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), linear-gradient(currentcolor, currentcolor);
+      background-position: 100% 100%, 0 100%;
+      background-repeat: no-repeat;
+      background-size: 100% 0.0625rem, 0 0.0625rem;
+      transition: background-size 0.5s, color 0.25s;
+      padding-bottom: 0.125rem;
+    }
+
+    .menu-list--main a:hover { color: var(--dp-c-white); background-size: 0 0.0625rem, 100% 0.0625rem; }
+
+    /* ─── Hero ─── */
+    .page-hero {
+      background-color: var(--dp-c-black);
+      background-image:
+        radial-gradient(circle at top right, rgba(255,255,255,0.06) 0, transparent 50%),
+        linear-gradient(-9deg, rgba(255,255,255,0.03) 39%, transparent 70%);
+      padding-top: 7rem;
+      padding-bottom: 4rem;
+      border-bottom: 0.0625rem solid rgba(255,255,255,0.12);
+    }
+
+    .page-hero h1 {
+      font-family: var(--ff-serif);
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 600;
+      line-height: 1.1;
+      color: var(--dp-c-white);
+      max-width: 28rem;
+      margin-bottom: 2rem;
+    }
+
+    .page-hero .about-intro {
+      font-family: var(--ff-serif);
+      font-size: clamp(1.125rem, 2vw, 1.375rem);
+      line-height: 1.7;
+      color: rgba(255,255,255,0.75);
+      max-width: 38rem;
+    }
+
+    /* ─── White section ─── */
+    .page-body {
+      background: var(--dp-c-white);
+      color: var(--dp-c-black);
+    }
+
+    .page-body .container {
+      display: grid;
+      grid-template-columns: 1fr min(46rem, 100%) 1fr;
+      padding-block: var(--spacing-10);
+    }
+
+    .page-body .container > * { grid-column: 2; }
+
+    .page-body h2 {
+      font-family: var(--ff-serif);
+      font-size: var(--fs-24);
+      font-weight: 600;
+      color: var(--dp-c-black);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      padding-top: 2.5rem;
+      border-top: 0.0625rem solid var(--dp-c-gray-border);
+    }
+
+    .page-body h2:first-of-type {
+      border-top: none;
+      padding-top: 0;
+      margin-top: 0;
+    }
+
+    .page-body p {
+      font-family: var(--ff-serif);
+      font-size: var(--fs-18);
+      line-height: 1.75;
+      color: #111;
+      margin-bottom: 1.25rem;
+    }
+
+    .page-body p.lead {
+      font-size: var(--fs-20);
+      font-style: italic;
+      border-left: 3px solid #000;
+      padding-left: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      font-size: var(--fs-14);
+      font-weight: 500;
+      color: var(--dp-c-black);
+      text-decoration: none;
+      background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), linear-gradient(currentcolor, currentcolor);
+      background-position: 100% 100%, 0 100%;
+      background-repeat: no-repeat;
+      background-size: 100% 0.0625rem, 0 0.0625rem;
+      transition: background-size 0.5s;
+      padding-bottom: 0.125rem;
+    }
+
+    .back-link:hover { background-size: 0 0.0625rem, 100% 0.0625rem; }
+
+    /* ─── Footer ─── */
+    .page-footer {
+      background-color: var(--dp-c-black);
+      color: var(--dp-c-white);
+      padding-top: 2.5rem;
+      border-top: 0.0625rem solid rgba(255,255,255,0.12);
+    }
+
+    .page-footer .block-system-branding-block { margin-bottom: 2.5rem; }
+
+    .footer-logo {
+      font-family: var(--ff-sans);
+      font-size: 1.125rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--dp-c-white);
+      text-decoration: none;
+    }
+
+    ul.menu-list--footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      list-style: none;
+    }
+
+    .menu-list--footer .menu-item--expanded { flex: 0 0 45%; margin-bottom: 2.5rem; }
+    .menu-list--footer .menu-item--expanded:nth-child(2) { margin-left: auto; max-width: 8.25rem; }
+
+    .menu-list--footer > .menu-item--expanded > span {
+      display: block;
+      color: rgba(255,255,255,0.4);
+      font-size: var(--fs-12);
+      font-weight: 700;
+      letter-spacing: 0.0625rem;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .menu-list--footer li li { margin-bottom: 0.5rem; }
+
+    .menu-list--footer a {
+      font-size: var(--fs-14);
+      font-weight: 500;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+
+    .menu-list--footer a:hover { color: var(--dp-c-white); }
+
+    .footer-copyright {
+      border-top: 0.0625rem solid rgba(255,255,255,0.12);
+      padding: 1rem 0 2rem;
+      font-size: var(--fs-12);
+      color: rgba(255,255,255,0.3);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 48rem) {
+      .menu-list--main { display: none; }
+      .page-body .container { grid-template-columns: 1fr; padding-inline: var(--gutter); }
+      .page-body .container > * { grid-column: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="page-header" id="site-header">
+    <div class="container region-header">
+      <a href="index.html" class="site-logo">Trading852</a>
+      <nav aria-label="Main navigation">
+        <ul class="menu-list--main">
+          <li class="menu-item"><a href="index.html">Analyses</a></li>
+          <li class="menu-item"><a href="#">Method</a></li>
+          <li class="menu-item"><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ── HERO ── -->
+  <div class="page-hero">
+    <div class="container">
+      <h1>About</h1>
+      <p class="about-intro">I read HKEX filings in my spare time, look for companies the market is mispricing, and write about what I find. No fund. No firm. Just the math.</p>
+    </div>
+  </div>
+
+  <!-- ── BODY ── -->
+  <div class="page-body">
+    <div class="container">
+
+      <h2>Who I am</h2>
+
+      <p>I'm not a professional investor. I don't manage other people's money. I have a day job — this is what I do on the side, because I find it genuinely interesting.</p>
+
+      <p>I've been reading annual reports for years. At some point I started writing things down, then sharing them. Trading852 is that.</p>
+
+      <h2>Why Hong Kong</h2>
+
+      <p class="lead">Because it's one of the few markets where doing the work still gives you an edge.</p>
+
+      <p>The institutional coverage on mid-cap HK conglomerates is thin. The structures are complex enough that most people don't bother. And because the market has been in the news for the wrong reasons since 2021, a lot of quality businesses are priced as if the discount is permanent.</p>
+
+      <p>I don't think it always is. I try to find the ones where it isn't.</p>
+
+      <h2>What I actually do</h2>
+
+      <p>I read filings. I build sum-of-parts valuations. I look for a gap between what a company owns and what the market is paying for it — and then I look for a reason that gap might close within a defined window. A buyback, a disposal, a privatisation offer. Something that forces the price to move.</p>
+
+      <p>When I find something that holds up under scrutiny, I write about it here.</p>
+
+      <h2>What this is not</h2>
+
+      <p>This is not investment advice. I'm not telling you what to buy. I'm sharing my research because writing forces me to think clearly — and because I'd rather read research that's honest about its assumptions than one that pretends the risks don't exist.</p>
+
+      <p>Make your own decisions. Read the <a href="disclaimer.html" style="color:#111;text-decoration:underline;text-underline-offset:3px;">disclaimer</a> before you act on anything here.</p>
+
+      <a href="index.html" class="back-link">← Back to analyses</a>
+
+    </div>
+  </div>
+
+  <footer class="page-footer">
+    <div class="container region-footer">
+      <div class="block-system-branding-block">
+        <a href="index.html" class="footer-logo">Trading852</a>
+      </div>
+      <p style="font-family:var(--ff-serif);font-size:var(--fs-16);color:rgba(255,255,255,0.45);line-height:1.7;max-width:32rem;margin-bottom:2.5rem;">I read HKEX filings in my spare time, look for companies the market is mispricing, and write about what I find. No fund. No firm. Just the math.</p>
+      <nav aria-label="Footer">
+        <ul class="menu-list--footer">
+          <li class="menu-item menu-item--expanded">
+            <span>Explore</span>
+            <ul>
+              <li class="menu-item"><a href="index.html">Analyses</a></li>
+              <li class="menu-item"><a href="#">Method</a></li>
+              <li class="menu-item"><a href="about.html">About</a></li>
+            </ul>
+          </li>
+          <li class="menu-item menu-item--expanded">
+            <span>Legal</span>
+            <ul>
+              <li class="menu-item"><a href="disclaimer.html">Disclaimer</a></li>
+              <li class="menu-item"><a href="legal-notice.html">Legal Notice</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="footer-copyright">
+        © 2026 Trading852. Personal website. Not investment advice.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('site-header');
+    const toggle = () => header.classList.toggle('is-scrolled', window.scrollY > 20);
+    window.addEventListener('scroll', toggle, { passive: true });
+    toggle();
+  </script>
+
+</body>
+</html>
