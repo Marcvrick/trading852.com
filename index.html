@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Investment opportunity research on the Hong Kong market — special situations, documented discounts, identifiable catalysts.">
+  <title>Trading852 — Hong Kong Capital Markets</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* ─── CSS variables ─── */
+    :root {
+      --dp-c-black:        #000;
+      --dp-c-white:        #fff;
+      --dp-c-gray-2:       #697188;
+      --dp-c-gray-border:  #d6d5db;
+      --dp-c-gray-pale:    #eff0f5;
+      --dp-c-periwinkle:   #d6d5dbcc;
+
+      /* Brand color */
+      --dp-c-primary: #000;
+
+      /* Fonts */
+      --ff-sans:  "Space Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --ff-serif: "Lora", "Warnock Pro", "Goudy Old Style", Palatino, Georgia, serif;
+
+      /* Type scale */
+      --fs-12: 0.75rem;
+      --fs-14: 0.875rem;
+      --fs-16: 1rem;
+      --fs-18: 1.125rem;
+      --fs-20: 1.25rem;
+      --fs-24: 1.5rem;
+
+      /* Spacing */
+      --gutter: 1.5rem;
+      --spacing-4: 1rem;
+      --spacing-8: 2rem;
+      --spacing-10: 2.5rem;
+      --spacing-12: 3rem;
+      --spacing-20: 5rem;
+      --spacing-22: 5.5rem;
+
+      /* Transitions */
+      --t-all:      all 0.25s ease-out;
+      --t-all-slow: all 0.5s ease-out;
+      --t-bg:       background 0.5s;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      font-family: var(--ff-sans);
+      background: var(--dp-c-white);
+      color: var(--dp-c-black);
+      font-size: var(--fs-16);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 85rem;
+      margin-inline: auto;
+      padding-inline: var(--gutter);
+    }
+
+    /* ════════════════════════════════════════════
+       PAGE HEADER — transparent over dark, sticky white on scroll
+    ════════════════════════════════════════════ */
+    .page-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 30;
+      background: transparent;
+      border-bottom: 1px solid transparent;
+      transition: background 0.25s ease-out, border-color 0.25s ease-out;
+    }
+
+    .page-header.is-scrolled {
+      background: var(--dp-c-white);
+      border-bottom-color: var(--dp-c-periwinkle);
+    }
+
+    .region-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 3rem;
+      gap: 2rem;
+    }
+
+    /* Logo — white on dark, black when scrolled */
+    .site-logo {
+      font-family: var(--ff-sans);
+      font-size: 1.125rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--dp-c-white);
+      text-decoration: none;
+      transition: color 0.25s;
+      line-height: 1;
+    }
+
+    .page-header.is-scrolled .site-logo { color: var(--dp-c-black); }
+
+    /* Nav links — underline animation */
+    .menu-list--main {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .menu-list--main a {
+      font-size: var(--fs-14);
+      font-weight: 400;
+      color: var(--dp-c-white);
+      text-decoration: none;
+      background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), linear-gradient(currentcolor, currentcolor);
+      background-position: 100% 100%, 0 100%;
+      background-repeat: no-repeat;
+      background-size: 100% 0.0625rem, 0 0.0625rem;
+      transition: background-size 0.5s, color 0.25s;
+      padding-bottom: 0.125rem;
+    }
+
+    .page-header.is-scrolled .menu-list--main a { color: var(--dp-c-black); }
+
+    .menu-list--main a:hover {
+      background-size: 0 0.0625rem, 100% 0.0625rem;
+    }
+
+    /* ════════════════════════════════════════════
+       PAGE MAIN — black background
+    ════════════════════════════════════════════ */
+    .page-main {
+      background-color: var(--dp-c-black);
+      background-image:
+        radial-gradient(circle at top right, rgba(255,255,255,0.06) 0, transparent 50%),
+        linear-gradient(-9deg, rgba(255,255,255,0.03) 39%, transparent 70%);
+      background-position: 100% 0, center bottom;
+      background-repeat: no-repeat;
+      background-size: 50vw 50vw, 100% 40%;
+      padding-top: 5.5rem; /* clear fixed header */
+      padding-bottom: var(--spacing-20);
+    }
+
+    /* ════════════════════════════════════════════
+       BLOCK: RECENT UPDATES
+    ════════════════════════════════════════════ */
+    .block--recent-updates {
+      margin-bottom: var(--spacing-22);
+    }
+
+    .block--recent-updates__title {
+      font-family: var(--ff-sans);
+      font-size: var(--fs-16);
+      font-weight: 500;
+      color: var(--dp-c-white);
+      margin-bottom: var(--spacing-4);
+    }
+
+    .field-name--field_recent_updates {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    /* Card: white-bordered box, invisible fill → white on hover */
+    .node-mode-recent_update {
+      flex: 0 0 calc(33.333% - 0.75rem);
+      max-width: calc(33.333% - 0.75rem);
+      border: 0.0625rem solid var(--dp-c-white);
+      height: 0;
+      padding-top: calc(30.333% - 0.667rem);
+      position: relative;
+      overflow: hidden;
+    }
+
+    a.recent-update__link {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: var(--dp-c-black);
+      color: var(--dp-c-white);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 2.5rem;
+      text-decoration: none;
+      transition: background 0.5s, color 0.5s;
+    }
+
+    a.recent-update__link:hover,
+    a.recent-update__link:focus {
+      background: var(--dp-c-white);
+      color: var(--dp-c-black);
+    }
+
+    .node-mode-recent_update .eyebrow {
+      font-size: var(--fs-14);
+      font-weight: 700;
+      line-height: 1.5;
+      margin-bottom: 0.5rem;
+    }
+
+    .node-mode-recent_update h3 {
+      font-family: var(--ff-serif);
+      font-size: 1.5rem;
+      line-height: 1.334;
+      font-weight: 400;
+      color: inherit;
+      margin-bottom: 0;
+    }
+
+    .recent-update__see-update {
+      font-weight: 500;
+      font-size: var(--fs-14);
+      margin-top: auto;
+      padding-top: 1rem;
+    }
+
+    /* ════════════════════════════════════════════
+       BLOCK: GIANT WORDMARK — full width
+    ════════════════════════════════════════════ */
+    .block-giant-logo {
+      margin-bottom: var(--spacing-22);
+      line-height: 1;
+      padding-inline: var(--gutter);
+    }
+
+    .giant-logo__text {
+      font-family: var(--ff-sans);
+      font-weight: 700;
+      font-size: clamp(2rem, 15vw, 17rem);
+      letter-spacing: -0.04em;
+      color: var(--dp-c-white);
+      white-space: nowrap;
+      user-select: none;
+      display: block;
+    }
+
+    /* ════════════════════════════════════════════
+       BLOCK: OUR WORK
+    ════════════════════════════════════════════ */
+    .block--our-work {
+      position: relative;
+      padding-left: 4rem; /* room for sideways left title */
+      margin-bottom: var(--spacing-22);
+    }
+
+    /* Sideways title — left side */
+    .block--our-work .block-title {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      transform: rotate(-90deg) translateX(-100%);
+      transform-origin: 0 100%;
+      white-space: nowrap;
+      font-family: var(--ff-serif);
+      font-size: var(--fs-24);
+      font-weight: 400;
+      color: var(--dp-c-white);
+      line-height: 1;
+    }
+
+    .field-label--field_notable_matters {
+      font-family: var(--ff-sans);
+      font-size: var(--fs-12);
+      font-weight: 700;
+      letter-spacing: 0.0625rem;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 1rem;
+    }
+
+    /* Dim non-hovered items */
+    .field-items:hover a.our-work__link { opacity: 0.32; }
+    .field-items:hover a.our-work__link:hover,
+    .field-items:hover a.our-work__link:focus { opacity: 1; }
+
+    /* HR separators */
+    .our-work-hr {
+      display: block;
+      border: none;
+      border-top: 0.0625rem solid rgba(255, 255, 255, 0.25);
+      width: 100%;
+      transition: border-color 0.3s;
+    }
+
+    a.our-work__link:hover .our-work-hr,
+    a.our-work__link:focus .our-work-hr {
+      border-top-color: rgba(255, 255, 255, 0.6);
+    }
+
+    a.our-work__link {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+      text-decoration: none;
+      color: var(--dp-c-white);
+      transition: opacity 0.3s;
+    }
+
+    .our-work__link .our-work-hr {
+      flex: 0 0 100%;
+      margin: 0;
+    }
+
+    .our-work__link .field-name--field_snippet {
+      font-family: var(--ff-serif);
+      font-size: var(--fs-24);
+      font-weight: 400;
+      line-height: 1.334;
+      flex: 0 0 calc(100% - var(--gutter) - 9rem);
+      max-width: calc(100% - var(--gutter) - 9rem);
+      margin-right: var(--gutter);
+      padding: 0.5rem 0;
+    }
+
+    .our-work__read-more {
+      flex: 0 0 9rem;
+      max-width: 9rem;
+      font-size: var(--fs-14);
+      font-weight: 500;
+      text-align: right;
+      padding: 0.5rem 0;
+    }
+
+    /* ════════════════════════════════════════════
+       BLOCK: OUR FIRM
+    ════════════════════════════════════════════ */
+    .block--our-firm {
+      display: flex;
+      align-items: center;
+      margin-bottom: var(--spacing-22);
+      min-height: 13.8125rem;
+      padding-right: 4.1875rem;
+      position: relative;
+    }
+
+    /* Sideways title — right side */
+    .block--our-firm .block-title {
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: rotate(-90deg) translateY(-100%);
+      transform-origin: 100% 0;
+      white-space: nowrap;
+      font-family: var(--ff-serif);
+      font-size: var(--fs-24);
+      font-weight: 400;
+      color: var(--dp-c-white);
+      line-height: 1;
+    }
+
+    .our-firm__content { flex: 1; }
+
+    .block--our-firm p {
+      font-family: var(--ff-serif);
+      font-size: var(--fs-24);
+      line-height: 1.334;
+      font-weight: 400;
+      color: var(--dp-c-white);
+      margin-bottom: 2rem;
+    }
+
+    a.our-firm__link {
+      font-size: var(--fs-14);
+      font-weight: 500;
+      color: var(--dp-c-white);
+      text-decoration: none;
+      background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), linear-gradient(currentcolor, currentcolor);
+      background-position: 100% 100%, 0 100%;
+      background-repeat: no-repeat;
+      background-size: 100% 0.0625rem, 0 0.0625rem;
+      transition: background-size 0.5s;
+      padding-bottom: 0.125rem;
+    }
+
+    a.our-firm__link:hover {
+      background-size: 0 0.0625rem, 100% 0.0625rem;
+    }
+
+    /* ════════════════════════════════════════════
+       BLOCK: ABOUT — white background, 2 columns
+    ════════════════════════════════════════════ */
+    .block--about {
+      background-color: var(--dp-c-white);
+      color: var(--dp-c-black);
+      margin-inline: calc(-1 * var(--gutter));
+      padding: var(--spacing-12) var(--gutter);
+    }
+
+    .block--about__cols {
+      max-width: 85rem;
+      margin-inline: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .block-about__col {
+      flex: 0 0 calc(50% - 0.75rem);
+      max-width: calc(50% - 0.75rem);
+    }
+
+    /* Eyebrow with bottom border */
+    .block-about__col .eyebrow {
+      display: block;
+      font-family: var(--ff-sans);
+      font-size: var(--fs-14);
+      font-weight: 500;
+      border-bottom: 0.0625rem solid var(--dp-c-black);
+      padding-bottom: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Large bold teaser */
+    .block-about__col .field-name--field_teaser {
+      font-family: var(--ff-serif);
+      font-size: var(--fs-24);
+      font-weight: 600;
+      line-height: 1.334;
+      margin-bottom: 1rem;
+    }
+
+    .block-about__col p {
+      font-size: var(--fs-16);
+      line-height: 1.7;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    /* Arrow link */
+    .block-about__col a,
+    a.arrow-link {
+      font-size: var(--fs-14);
+      font-weight: 500;
+      color: var(--dp-c-black);
+      text-decoration: none;
+      background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), linear-gradient(currentcolor, currentcolor);
+      background-position: 100% 100%, 0 100%;
+      background-repeat: no-repeat;
+      background-size: 100% 0.0625rem, 0 0.0625rem;
+      transition: background-size 0.5s;
+      padding-bottom: 0.0625rem;
+    }
+
+    .block-about__col a:hover,
+    a.arrow-link:hover {
+      background-size: 0 0.0625rem, 100% 0.0625rem;
+    }
+
+    /* ════════════════════════════════════════════
+       FOOTER
+    ════════════════════════════════════════════ */
+    .page-footer {
+      background-color: var(--dp-c-black);
+      color: var(--dp-c-white);
+      padding-top: 2.5rem;
+      margin-top: auto;
+    }
+
+    .page-footer .block-system-branding-block {
+      margin-bottom: 2.5rem;
+    }
+
+    .footer-logo {
+      font-family: var(--ff-sans);
+      font-size: 1.125rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--dp-c-white);
+      text-decoration: none;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    /* Footer nav: columns layout */
+    ul.menu-list--footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      list-style: none;
+    }
+
+    .menu-list--footer .menu-item--expanded {
+      flex: 0 0 45%;
+      margin-bottom: 2.5rem;
+    }
+
+    .menu-list--footer .menu-item--expanded:nth-child(2),
+    .menu-list--footer .menu-item--expanded:nth-child(4) {
+      margin-left: auto;
+      max-width: 8.25rem;
+    }
+
+    .menu-list--footer > .menu-item--expanded > span {
+      display: block;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: var(--fs-12);
+      font-weight: 700;
+      letter-spacing: 0.0625rem;
+      line-height: 1.667;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .menu-list--footer li li {
+      margin-bottom: 0.5rem;
+    }
+
+    .menu-list--footer a {
+      font-size: var(--fs-14);
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+
+    .menu-list--footer a:hover { color: var(--dp-c-white); }
+
+    .footer-copyright {
+      border-top: 0.0625rem solid rgba(255, 255, 255, 0.12);
+      padding: 1rem 0 2rem;
+      font-size: var(--fs-12);
+      color: rgba(255, 255, 255, 0.35);
+      line-height: 1.6;
+    }
+
+    /* ════════════════════════════════════════════
+       RESPONSIVE
+    ════════════════════════════════════════════ */
+    @media (max-width: 48rem) {
+      .menu-list--main { display: none; }
+
+      .node-mode-recent_update {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-top: 91.9%;
+      }
+
+      .block--our-work { padding-left: 0; }
+      .block--our-work .block-title { display: none; }
+
+      .block--our-firm { padding-right: 0; }
+      .block--our-firm .block-title { display: none; }
+
+      .block-about__col {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+
+    @media (min-width: 48rem) and (max-width: 75rem) {
+      .node-mode-recent_update {
+        flex: 0 0 calc(50% - 0.5rem);
+        max-width: calc(50% - 0.5rem);
+        padding-top: calc(45% - 0.5rem);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ PAGE HEADER ══ -->
+  <header class="page-header" id="site-header">
+    <div class="container region-header">
+      <a href="/" class="site-logo">Trading852</a>
+      <nav aria-label="Main navigation">
+        <ul class="menu-list--main">
+          <li class="menu-item"><a href="#">Analyses</a></li>
+          <li class="menu-item"><a href="#">Hong Kong</a></li>
+          <li class="menu-item"><a href="#">Method</a></li>
+          <li class="menu-item"><a href="#">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ══ PAGE MAIN ══ -->
+  <main class="page-main">
+    <div class="container region-content">
+
+      <!-- ── RECENT ARTICLES ── -->
+      <div class="block--recent-updates">
+        <h2 class="block--recent-updates__title">Recent Analyses</h2>
+        <div class="field-name--field_recent_updates">
+
+          <article class="node-mode-recent_update">
+            <a href="analyses/0113-dickson-concepts.html" class="recent-update__link">
+              <div class="eyebrow">Special Situation · 0113.HK</div>
+              <h3>The Market Is Paying You HKD 375 Million to Buy This Company</h3>
+              <div class="recent-update__see-update"><span class="see-update-inner">Read the analysis →</span></div>
+            </a>
+          </article>
+
+          <article class="node-mode-recent_update">
+            <a href="analyses/1167-jacobio-pharmaceuticals.html" class="recent-update__link">
+              <div class="eyebrow">Biotech · 1167.HK</div>
+              <h3>AstraZeneca Paid US$100M for One Molecule. The Rest Trades at US$507M.</h3>
+              <div class="recent-update__see-update"><span class="see-update-inner">Read the analysis →</span></div>
+            </a>
+          </article>
+
+          <article class="node-mode-recent_update">
+            <a href="analyses/why-hk-why-now.html" class="recent-update__link">
+              <div class="eyebrow">Market Thesis</div>
+              <h3>Why Hong Kong, Why Now — Great Eagle Told You It Trades at 88% Below Its Own Estimated Value</h3>
+              <div class="recent-update__see-update"><span class="see-update-inner">Read the thesis →</span></div>
+            </a>
+          </article>
+
+        </div>
+      </div>
+
+    </div><!-- /container -->
+
+    <!-- ── GIANT WORDMARK ── -->
+    <div class="block-giant-logo" aria-hidden="true">
+      <div class="giant-logo__text">Trading852</div>
+    </div>
+
+    <div class="container region-content">
+
+      <!-- ── OUR ANALYSES ── -->
+      <div class="block--our-work">
+        <h2 class="block-title">Our Analyses</h2>
+        <div class="field-name--field_notable_matters">
+          <div class="field-label field-label--field_notable_matters">Identified Situations</div>
+          <div class="field-items">
+
+            <div class="node-type-experience_article">
+              <a href="analyses/1167-jacobio-pharmaceuticals.html" class="our-work__link">
+                <hr class="our-work-hr our-work-hr--before">
+                <span class="field-name--field_snippet">Jacobio Pharmaceuticals (1167.HK) — AstraZeneca paid US$100M for one molecule. After subtracting cash, the rest trades at US$507M.</span>
+                <span class="our-work__read-more">Read the analysis →</span>
+                <hr class="our-work-hr our-work-hr--after">
+              </a>
+            </div>
+
+            <div class="node-type-experience_article">
+              <a href="analyses/0113-dickson-concepts.html" class="our-work__link">
+                <hr class="our-work-hr our-work-hr--before">
+                <span class="field-name--field_snippet">Dickson Concepts (0113.HK) — Negative enterprise value, privatization offer at HKD 7.20 in 2025</span>
+                <span class="our-work__read-more">Read the analysis →</span>
+                <hr class="our-work-hr our-work-hr--after">
+              </a>
+            </div>
+
+            <div class="node-type-experience_article">
+              <a href="analyses/why-hk-why-now.html" class="our-work__link">
+                <hr class="our-work-hr our-work-hr--before">
+                <span class="field-name--field_snippet">Why Hong Kong, Why Now — Great Eagle published its own 88% NAV discount. Hongkong Land sits at 75% below assessed value. Four conditions are converging for the first time.</span>
+                <span class="our-work__read-more">Read the thesis →</span>
+                <hr class="our-work-hr our-work-hr--after">
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- ── OUR THESIS ── -->
+      <div class="block--our-firm">
+        <h2 class="block-title">Our Thesis</h2>
+        <div class="our-firm__content">
+          <p>Hong Kong is an inefficient market for small caps. Institutional funds cannot enter at scale. Trading852 focuses on special situations, documented discounts, and identifiable catalysts — doing the work no one else takes the time to do.</p>
+          <a href="#" class="our-firm__link">Learn more about our approach →</a>
+        </div>
+      </div>
+
+      <!-- ── ABOUT ── -->
+      <div class="block--about">
+        <div class="block--about__cols">
+
+          <div class="block-about__col">
+            <span class="eyebrow">Our Approach</span>
+            <div class="field-name--field_teaser">Situations the market ignores.</div>
+            <p>Trading852 analyzes balance sheets, ownership structures, and catalysts on the Hong Kong market. We read what no one reads, to find what no one sees.</p>
+            <a href="#">Our method →</a>
+          </div>
+
+          <div class="block-about__col">
+            <span class="eyebrow">The Market</span>
+            <div class="field-name--field_teaser">Why Hong Kong, why now.</div>
+            <p>The Hong Kong stock exchange is home to holdings, family conglomerates, and spinoffs whose valuations rarely reflect the reality of their balance sheets. The filings are public. The discounts are measurable.</p>
+            <a href="analyses/why-hk-why-now.html">Learn more →</a>
+          </div>
+
+        </div>
+      </div>
+
+    </div><!-- /container -->
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="page-footer">
+    <div class="container region-footer">
+
+      <div class="block-system-branding-block">
+        <a href="/" class="footer-logo">Trading852</a>
+      </div>
+
+      <nav aria-label="Footer">
+        <ul class="menu-list--footer">
+          <li class="menu-item menu-item--expanded">
+            <span>Explore</span>
+            <ul>
+              <li class="menu-item"><a href="#">Analyses</a></li>
+              <li class="menu-item"><a href="#">Hong Kong</a></li>
+              <li class="menu-item"><a href="#">Method</a></li>
+              <li class="menu-item"><a href="#">About</a></li>
+            </ul>
+          </li>
+          <li class="menu-item menu-item--expanded">
+            <span>Legal</span>
+            <ul>
+              <li class="menu-item"><a href="disclaimer.html">Disclaimer</a></li>
+              <li class="menu-item"><a href="legal-notice.html">Legal Notice</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="footer-copyright">
+        © 2026 Trading852. The analyses published on this site do not constitute investment advice. Investing involves risk of capital loss.
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Scroll-aware header -->
+  <script>
+    const header = document.getElementById('site-header');
+    const toggle = () => header.classList.toggle('is-scrolled', window.scrollY > 20);
+    window.addEventListener('scroll', toggle, { passive: true });
+    toggle();
+  </script>
+
+</body>
+</html>

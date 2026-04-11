@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Great Eagle published its own 88% NAV discount in its investor deck. Hongkong Land sits at 75% below assessed property values. The discount is documented. The question is why it persists — and whether four converging factors are about to close it.">
+  <title>Why Hong Kong, Why Now — Great Eagle Told You It Trades at 88% Below Its Own Estimated Value · Trading852</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dp-c-black:        #000;
+      --dp-c-white:        #fff;
+      --dp-c-gray-2:       #697188;
+      --dp-c-gray-border:  #d6d5db;
+      --dp-c-gray-pale:    #eff0f5;
+      --dp-c-periwinkle:   #d6d5dbcc;
+      --dp-c-primary:      #000;
+
+      --ff-sans:  "Space Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --ff-serif: "Lora", "Warnock Pro", "Goudy Old Style", Palatino, Georgia, serif;
+
+      --fs-12: 0.75rem;
+      --fs-14: 0.875rem;
+      --fs-16: 1rem;
+      --fs-18: 1.125rem;
+      --fs-20: 1.25rem;
+      --fs-24: 1.5rem;
+
+      --gutter: 1.5rem;
+      --spacing-4: 1rem;
+      --spacing-8: 2rem;
+      --spacing-10: 2.5rem;
+      --spacing-12: 3rem;
+      --spacing-20: 5rem;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      font-family: var(--ff-sans);
+      background: var(--dp-c-black);
+      color: var(--dp-c-white);
+      font-size: var(--fs-16);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 85rem;
+      margin-inline: auto;
+      padding-inline: var(--gutter);
+    }
+
+    /* ─── Header ─── */
+    .page-header {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      z-index: 30;
+      background: transparent;
+      border-bottom: 1px solid transparent;
+      transition: background 0.25s ease-out, border-color 0.25s ease-out;
+    }
+
+    .page-header.is-scrolled {
+      background: var(--dp-c-black);
+      border-bottom-color: rgba(255,255,255,0.12);
+    }
+
+    .region-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 3rem;
+      gap: 2rem;
+    }
+
+    .site-logo {
+      font-family: var(--ff-sans);
+      font-size: 1.125rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--dp-c-white);
+      text-decoration: none;
+    }
+
+    .menu-list--main {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .menu-list--main a {
+      font-size: var(--fs-14);
+      font-weight: 400;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), linear-gradient(currentcolor, currentcolor);
+      background-position: 100% 100%, 0 100%;
+      background-repeat: no-repeat;
+      background-size: 100% 0.0625rem, 0 0.0625rem;
+      transition: background-size 0.5s, color 0.25s;
+      padding-bottom: 0.125rem;
+    }
+
+    .menu-list--main a:hover { color: var(--dp-c-white); background-size: 0 0.0625rem, 100% 0.0625rem; }
+
+    /* ─── Article hero ─── */
+    .article-hero {
+      background-color: var(--dp-c-black);
+      background-image:
+        radial-gradient(circle at top right, rgba(255,255,255,0.05) 0, transparent 50%),
+        linear-gradient(-9deg, rgba(255,255,255,0.02) 39%, transparent 70%);
+      padding-top: 7rem;
+      padding-bottom: 3rem;
+      border-bottom: 0.0625rem solid rgba(255,255,255,0.12);
+    }
+
+    .article-breadcrumb {
+      font-size: var(--fs-12);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.0625rem;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 1.5rem;
+    }
+
+    .article-breadcrumb a {
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .article-breadcrumb a:hover { color: var(--dp-c-white); }
+
+    .article-meta-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .meta-category {
+      font-family: var(--ff-sans);
+      font-size: var(--fs-12);
+      font-weight: 700;
+      letter-spacing: 0.0625rem;
+      text-transform: uppercase;
+      color: var(--dp-c-white);
+      border: 0.0625rem solid rgba(255,255,255,0.35);
+      padding: 0.25rem 0.625rem;
+      border-radius: 2px;
+    }
+
+    .meta-sep {
+      color: rgba(255,255,255,0.2);
+      font-weight: 300;
+    }
+
+    .meta-text {
+      font-size: var(--fs-12);
+      color: rgba(255,255,255,0.45);
+    }
+
+    .article-hero h1 {
+      font-family: var(--ff-serif);
+      font-size: clamp(1.75rem, 4vw, 3rem);
+      font-weight: 600;
+      line-height: 1.2;
+      color: var(--dp-c-white);
+      max-width: 46rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .article-subtitle {
+      font-family: var(--ff-serif);
+      font-size: var(--fs-18);
+      font-weight: 400;
+      font-style: italic;
+      color: rgba(255,255,255,0.55);
+      max-width: 42rem;
+      line-height: 1.5;
+      margin-bottom: 1.75rem;
+    }
+
+    .article-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag {
+      font-size: var(--fs-12);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: rgba(255,255,255,0.4);
+      border: 0.0625rem solid rgba(255,255,255,0.12);
+      padding: 0.2rem 0.5rem;
+      border-radius: 2px;
+    }
+
+    /* ─── Article body layout ─── */
+    .article-body {
+      background: var(--dp-c-white);
+      color: var(--dp-c-black);
+    }
+
+    .article-body .container {
+      display: grid;
+      grid-template-columns: 1fr min(46rem, 100%) 1fr;
+      padding-block: var(--spacing-10);
+      gap: 0;
+    }
+
+    .article-body .container > * {
+      grid-column: 2;
+    }
+
+    /* Key takeaway box */
+    .key-takeaway {
+      grid-column: 2;
+      border-left: 3px solid var(--dp-c-black);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2.5rem;
+      background: var(--dp-c-gray-pale);
+    }
+
+    .key-takeaway__label {
+      font-size: var(--fs-12);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.0625rem;
+      color: var(--dp-c-gray-2);
+      margin-bottom: 0.5rem;
+    }
+
+    .key-takeaway p {
+      font-family: var(--ff-serif);
+      font-size: var(--fs-18);
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--dp-c-black);
+    }
+
+    /* Section heading */
+    .article-body h2 {
+      font-family: var(--ff-serif);
+      font-size: var(--fs-24);
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--dp-c-black);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      padding-top: 2.5rem;
+      border-top: 0.0625rem solid var(--dp-c-gray-border);
+    }
+
+    .article-body h2:first-of-type {
+      border-top: none;
+      padding-top: 0;
+      margin-top: 0;
+    }
+
+    /* Body copy */
+    .article-body p {
+      font-family: var(--ff-serif);
+      font-size: var(--fs-18);
+      line-height: 1.75;
+      color: #111;
+      margin-bottom: 1.25rem;
+    }
+
+    /* Emphasis line */
+    .article-body p.lead {
+      font-size: var(--fs-20);
+      font-weight: 400;
+      font-style: italic;
+      color: #000;
+      border-left: 3px solid #000;
+      padding-left: 1.25rem;
+      margin-left: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Numbered list */
+    .article-body ol {
+      padding-left: 0;
+      list-style: none;
+      margin-bottom: 1.5rem;
+    }
+
+    .article-body ol li {
+      display: flex;
+      gap: 1rem;
+      font-family: var(--ff-serif);
+      font-size: var(--fs-18);
+      line-height: 1.75;
+      color: #111;
+      margin-bottom: 0.875rem;
+    }
+
+    .article-body ol li .num {
+      flex-shrink: 0;
+      font-family: var(--ff-sans);
+      font-size: var(--fs-14);
+      font-weight: 700;
+      color: var(--dp-c-gray-2);
+      width: 1.5rem;
+      padding-top: 0.3rem;
+    }
+
+    /* Risk callout */
+    .risk-callout {
+      margin: 1.5rem 0;
+      padding: 1.25rem 1.5rem;
+      border: 0.0625rem solid var(--dp-c-gray-border);
+      background: var(--dp-c-gray-pale);
+    }
+
+    .risk-callout__label {
+      font-family: var(--ff-sans);
+      font-size: var(--fs-12);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.0625rem;
+      color: var(--dp-c-gray-2);
+      margin-bottom: 0.5rem;
+    }
+
+    .risk-callout p {
+      font-size: var(--fs-16);
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+
+    /* Table */
+    .data-table-wrap {
+      overflow-x: auto;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--ff-sans);
+      font-size: var(--fs-14);
+    }
+
+    .data-table thead tr {
+      border-bottom: 2px solid var(--dp-c-black);
+    }
+
+    .data-table thead th {
+      text-align: left;
+      font-weight: 700;
+      font-size: var(--fs-12);
+      text-transform: uppercase;
+      letter-spacing: 0.0625rem;
+      padding: 0.5rem 1rem 0.5rem 0;
+      color: var(--dp-c-gray-2);
+    }
+
+    .data-table tbody tr {
+      border-bottom: 0.0625rem solid var(--dp-c-gray-border);
+    }
+
+    .data-table tbody tr:last-child {
+      border-bottom: 2px solid var(--dp-c-black);
+    }
+
+    .data-table tbody tr.row--highlight {
+      background: var(--dp-c-gray-pale);
+    }
+
+    .data-table tbody tr.row--highlight td:first-child {
+      font-weight: 700;
+    }
+
+    .data-table tbody td {
+      padding: 0.625rem 1rem 0.625rem 0;
+      line-height: 1.4;
+      vertical-align: top;
+    }
+
+    .data-table .col--scenario { font-weight: 700; }
+    .data-table .col--signal   { color: #333; }
+    .data-table .col--impact   { font-weight: 500; }
+
+    /* Divider in body */
+    .article-body hr {
+      border: none;
+      border-top: 0.0625rem solid var(--dp-c-gray-border);
+      margin: 2rem 0;
+    }
+
+    /* Date line */
+    .article-date {
+      font-family: var(--ff-sans);
+      font-size: var(--fs-12);
+      color: var(--dp-c-gray-2);
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 0.0625rem solid var(--dp-c-gray-border);
+    }
+
+    /* ─── Article footer ─── */
+    .article-footer-section {
+      background: var(--dp-c-black);
+      border-top: 0.0625rem solid rgba(255,255,255,0.12);
+      padding: 3rem 0 4rem;
+    }
+
+    .disclaimer {
+      font-size: var(--fs-14);
+      color: rgba(255,255,255,0.3);
+      line-height: 1.7;
+      max-width: 46rem;
+      margin-bottom: 2rem;
+    }
+
+    .back-link {
+      font-size: var(--fs-14);
+      font-weight: 500;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), linear-gradient(currentcolor, currentcolor);
+      background-position: 100% 100%, 0 100%;
+      background-repeat: no-repeat;
+      background-size: 100% 0.0625rem, 0 0.0625rem;
+      transition: background-size 0.5s, color 0.25s;
+      padding-bottom: 0.125rem;
+    }
+
+    .back-link:hover {
+      color: var(--dp-c-white);
+      background-size: 0 0.0625rem, 100% 0.0625rem;
+    }
+
+    /* ─── Footer ─── */
+    .page-footer {
+      background-color: var(--dp-c-black);
+      color: var(--dp-c-white);
+      padding-top: 2.5rem;
+      border-top: 0.0625rem solid rgba(255,255,255,0.12);
+    }
+
+    .page-footer .block-system-branding-block { margin-bottom: 2.5rem; }
+
+    .footer-logo {
+      font-family: var(--ff-sans);
+      font-size: 1.125rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--dp-c-white);
+      text-decoration: none;
+    }
+
+    ul.menu-list--footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      list-style: none;
+    }
+
+    .menu-list--footer .menu-item--expanded { flex: 0 0 45%; margin-bottom: 2.5rem; }
+    .menu-list--footer .menu-item--expanded:nth-child(2) { margin-left: auto; max-width: 8.25rem; }
+
+    .menu-list--footer > .menu-item--expanded > span {
+      display: block;
+      color: rgba(255,255,255,0.4);
+      font-size: var(--fs-12);
+      font-weight: 700;
+      letter-spacing: 0.0625rem;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .menu-list--footer li li { margin-bottom: 0.5rem; }
+
+    .menu-list--footer a {
+      font-size: var(--fs-14);
+      font-weight: 500;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+
+    .menu-list--footer a:hover { color: var(--dp-c-white); }
+
+    .footer-copyright {
+      border-top: 0.0625rem solid rgba(255,255,255,0.12);
+      padding: 1rem 0 2rem;
+      font-size: var(--fs-12);
+      color: rgba(255,255,255,0.3);
+      line-height: 1.6;
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 48rem) {
+      .menu-list--main { display: none; }
+
+      .article-body .container {
+        grid-template-columns: 1fr;
+        padding-inline: var(--gutter);
+      }
+
+      .article-body .container > * { grid-column: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ HEADER ══ -->
+  <header class="page-header" id="site-header">
+    <div class="container region-header">
+      <a href="../index.html" class="site-logo">Trading852</a>
+      <nav aria-label="Main navigation">
+        <ul class="menu-list--main">
+          <li class="menu-item"><a href="../index.html">Analyses</a></li>
+          <li class="menu-item"><a href="#">Hong Kong</a></li>
+          <li class="menu-item"><a href="#">Method</a></li>
+          <li class="menu-item"><a href="#">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ══ ARTICLE HERO ══ -->
+  <div class="article-hero">
+    <div class="container">
+      <div class="article-breadcrumb">
+        <a href="../index.html">Trading852</a>
+        &nbsp;/&nbsp; Hong Kong &nbsp;/&nbsp; Market Thesis
+      </div>
+
+      <div class="article-meta-row">
+        <span class="meta-category">Market Thesis</span>
+        <span class="meta-sep">·</span>
+        <span class="meta-text">April 11, 2026</span>
+        <span class="meta-sep">·</span>
+        <span class="meta-text">10 min read</span>
+      </div>
+
+      <h1>Why Hong Kong, Why Now — Great Eagle Told You It Trades at 88% Below Its Own Estimated Value. In Its Own Investor Deck.</h1>
+
+      <p class="article-subtitle">
+        The Hong Kong stock exchange is home to holdings, family conglomerates, and spinoffs whose valuations rarely reflect the reality of their balance sheets. The filings are public. The discounts are measurable. Four conditions are converging — and for the first time, corporate actions are not just promised. They are executing.
+      </p>
+
+      <div class="article-tags">
+        <span class="tag">Market Thesis</span>
+        <span class="tag">Conglomerates</span>
+        <span class="tag">SOTP</span>
+        <span class="tag">NAV Discount</span>
+        <span class="tag">CK Hutchison</span>
+        <span class="tag">Hongkong Land</span>
+        <span class="tag">Great Eagle</span>
+        <span class="tag">Jardine Matheson</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ ARTICLE BODY ══ -->
+  <div class="article-body">
+    <div class="container">
+
+      <!-- Key takeaway -->
+      <div class="key-takeaway">
+        <div class="key-takeaway__label">Key Takeaway</div>
+        <p>Great Eagle published its own 88% NAV discount in its investor presentation. Hongkong Land sits at 75% below assessed property values. CK Hutchison trades at roughly one third of book. These are not estimates — they come from the companies' own filings. The question is not whether the discount exists. It is whether four converging conditions are about to close it.</p>
+      </div>
+
+      <!-- Opening hook — no h2 -->
+      <p>Great Eagle Holdings published its own discount to NAV in its investor presentation. Not a third-party estimate. Not a bear case from a short seller. The company itself put 88% on the slide.</p>
+
+      <p>That is where the Hong Kong story starts. Not with a macro call. Not with a geopolitical thesis. With a company telling you — in its own documents — that you are buying its assets for twelve cents on the dollar.</p>
+
+      <p class="lead">The question is not whether the discount exists. It is why it persists, and whether that is about to change.</p>
+
+      <!-- Section 1 -->
+      <h2>What Hong Kong actually is</h2>
+
+      <p>Hong Kong is not a proxy for the Chinese economy. That confusion costs investors money every year.</p>
+
+      <p>The legal system runs on English common law. The currency has been pegged to the US dollar since 1983. Every annual report, every filing, every prospectus is in English. The exchange has been operating continuously since 1891. When CK Hutchison moves, it is not because China's PMI moved — it is because its ports in Rotterdam, Panama, and Colombo moved.</p>
+
+      <p>That detail matters more than most people realise. CK Hutchison earns only 12% of its revenues from Greater China. Yet it trades at roughly one third of book value. The market applied a China discount to a business that is structurally global. That is a category error — and category errors are where the money is.</p>
+
+      <p>What you find listed on the HKEX is genuinely unusual. Decades-old family conglomerates with five or six distinct business lines. Holding companies that own listed subsidiaries, which themselves own real assets. Spinoffs sitting at discounts to their parent. These structures create pricing gaps that are measurable, documented, and public. The filings are all there. The math is not complicated. The work is reading them.</p>
+
+      <!-- Section 2 -->
+      <h2>Why the discount exists</h2>
+
+      <p>Three things explain the discount — and only one of them is about fundamentals.</p>
+
+      <p>The first is structural complexity. When a conglomerate owns a hotel group, a property portfolio, a retail chain, and a financial services arm, most analysts either ignore it or apply a blanket multiple. A sum-of-parts valuation requires reading four different businesses and weighting them separately. Most generalist funds do not have the capacity for that. The discount is, in part, a complexity discount — and complexity discounts do not reflect economics.</p>
+
+      <p>The second is the China label. After the regulatory crackdowns of 2021–2022, capital flows out of anything with a Hong Kong listing were largely indiscriminate. Jardine Matheson — a company with deep roots in Southeast Asia and significant exposure to Astra International in Indonesia — was sold alongside Alibaba. Hongkong Land — whose premium Central office portfolio has near-full occupancy — was treated as a distressed property name. These are not the same businesses. They were priced as if they were.</p>
+
+      <p>The third is information asymmetry. The filings are public. The numbers are there. But the institutional coverage on mid-sized Hong Kong conglomerates is thin. Analyst reports are rare. Bloomberg consensus estimates are often stale. Fewer eyes means slower price discovery — and slower price discovery means the discount can persist for longer than it should.</p>
+
+      <!-- Section 3 -->
+      <h2>Four things that are different right now</h2>
+
+      <p>The discount has existed for years. So why now?</p>
+
+      <p>Because four specific conditions are converging — and for the first time, corporate actions are not just promised. They are executing.</p>
+
+      <ol>
+        <li>
+          <span class="num">01</span>
+          <span><strong>The crackdown is over.</strong> Beijing signalled that clearly when the PBOC announced its coordinated stimulus package on September 24, 2024: reserve requirements cut by 50 basis points, mortgage support, and RMB 800 billion earmarked directly for equity market stabilisation. That package was not a one-line announcement — it combined three tools deployed at once. The Hang Seng gained +28% in 2025. Foreign institutional flows turned positive in October 2024 for the first time since February 2022. HKEX became the world's number one IPO venue in 2025.</span>
+        </li>
+        <li>
+          <span class="num">02</span>
+          <span><strong>Corporate actions are executing, not just promised.</strong> CK Hutchison did not just announce it was "exploring options." It signed a $22.8 billion deal with Blackrock for its ports division — cash in the door, not a promise. Jardine Matheson recycled $4.8 billion in 2025. Hongkong Land completed 90% of its own capital recycling target. Completed transactions compress the gap between NAV and market price in ways that slide deck commitments do not.</span>
+        </li>
+        <li>
+          <span class="num">03</span>
+          <span><strong>Mainland capital is structural, not cyclical.</strong> Southbound flows through Stock Connect — mainland investors buying Hong Kong stocks — more than doubled in 2025, reaching HK$121.1 billion per day on average. That capital is not speculative. It is institutional, rules-based, and growing as more mainland products are authorised to allocate to HKEX. The buyer base for Hong Kong equities is being rebuilt from a different source.</span>
+        </li>
+        <li>
+          <span class="num">04</span>
+          <span><strong>The exchange itself is reforming.</strong> HKEX launched a major listing framework overhaul in 2025, with reforms effective into 2026. New public float thresholds, simplified ongoing requirements, and a framework that removed structural friction that had been keeping quality issuers away. More listings, more liquidity, more institutional participation.</span>
+        </li>
+      </ol>
+
+      <p>These four factors existed separately at different points in the last decade. This is the first time they are operating simultaneously.</p>
+
+      <!-- Section 4 -->
+      <h2>What the numbers say</h2>
+
+      <p>Hongkong Land carries a portfolio of premium Central Hong Kong offices and luxury retail — assessed at values that the share price implies you can buy for 25 cents on the dollar. The company published that 75% NAV discount in its own results materials (full-year 2025, filed February 2026).</p>
+
+      <p>Great Eagle — which owns the Langham Hotels chain and a Central commercial portfolio — went further. Its investor deck put the self-estimated NAV discount at 88%.</p>
+
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Company</th>
+              <th>Documented NAV Discount</th>
+              <th>Source</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Great Eagle Holdings</td>
+              <td>−88%</td>
+              <td>2025 Interim Investor Presentation</td>
+            </tr>
+            <tr>
+              <td>Hongkong Land</td>
+              <td>−75%</td>
+              <td>FY2025 Preliminary Results</td>
+            </tr>
+            <tr>
+              <td>CK Hutchison</td>
+              <td>~−67% (trades at ~1/3 book)</td>
+              <td>FY2024 balance sheet, Bloomberg</td>
+            </tr>
+            <tr class="row--highlight">
+              <td>Jardine Matheson</td>
+              <td>−27%</td>
+              <td>FY2025 Analyst Presentation</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>These are not value investor estimates. They are the companies' own figures, or derivations from their published balance sheets. The floor is in the filing.</p>
+
+      <p>A sum-of-parts valuation on any of these names follows the same logic: take each major asset line separately, apply a conservative market multiple relative to comparable listed peers, and compare the total to the current market cap. The gap is not subtle. On CK Hutchison — even after the $22.8 billion ports transaction reduces the discount — the remaining assets trade at less than half of their assessed value.</p>
+
+      <!-- Section 5 -->
+      <h2>The risks we do not minimise</h2>
+
+      <div class="risk-callout">
+        <div class="risk-callout__label">Risk 1 — Taiwan escalation</div>
+        <p>The tail risk on US-China relations has not disappeared. A military confrontation over Taiwan would reset every HK valuation regardless of NAV. This is documented, not hypothetical. Position sizing has to reflect that any position in Hong Kong carries geopolitical beta that cannot be diversified away within the market.</p>
+      </div>
+
+      <div class="risk-callout">
+        <div class="risk-callout__label">Risk 2 — Governance traps</div>
+        <p>Family-controlled conglomerates do not always act in minority shareholder interests. Related-party transactions, asset transfers at below-market prices, and dividend policies that prioritise family cashflow over total return are recurring features of this market. The discount is sometimes correct pricing — not an error. Separating the two requires reading the related-party notes in the annual report. That is not optional.</p>
+      </div>
+
+      <p>The other honest thing to say: cheap can get cheaper. The Hang Seng traded at 8x earnings in 2022. It reached 6x in October 2023. Valuation alone does not set a floor. Catalysts do.</p>
+
+      <!-- Section 6 -->
+      <h2>How to think about this</h2>
+
+      <p>This is not an argument for buying Hong Kong broadly. The discount is market-wide. The opportunity is company-specific. Buying the index means absorbing both the businesses with documented catalysts and the ones whose discount is structurally permanent.</p>
+
+      <p>What matters is the methodology: identify a specific asset, read the balance sheet, run a SOTP on the public filings, and look for a near-term corporate action — a buyback, a disposal, a privatisation — that compresses the gap within a defined window. Without a catalyst, cheap is just a description. With one, it is a thesis.</p>
+
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Scenario</th>
+              <th>Observable Signal</th>
+              <th>Implication</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col--scenario">Bull</td>
+              <td class="col--signal">CK Hutchison ports cash returned to shareholders; second PBOC stimulus tranche; southbound flows sustain HK$120B+/day</td>
+              <td class="col--impact">−30% to −40% discount compression on select names</td>
+            </tr>
+            <tr>
+              <td class="col--scenario">Neutral</td>
+              <td class="col--signal">Corporate recycling continues at current pace; no geopolitical escalation; Hang Seng holds 20 000–22 000 range</td>
+              <td class="col--impact">Selective upside of +10% to +20% on SOTP-grounded positions</td>
+            </tr>
+            <tr>
+              <td class="col--scenario">Bear</td>
+              <td class="col--signal">Taiwan risk premium repriced sharply; mainland capital flows reverse; governance incident on a major conglomerate</td>
+              <td class="col--impact">−20% to −30% on broad HK exposure</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>The asymmetry is real — and it is grounded in documents you can read today, not assumptions about what management might do next quarter.</p>
+
+      <p>When a company publishes its own 88% discount to NAV, it is not asking you to feel sorry for it. It is giving you the formula. The question is whether you do the arithmetic.</p>
+
+      <div class="article-date">April 11, 2026</div>
+
+    </div>
+  </div>
+
+  <!-- ══ ARTICLE FOOTER ══ -->
+  <div class="article-footer-section">
+    <div class="container">
+      <p class="disclaimer">The analyses published on Trading852 do not constitute investment advice. Investing in securities involves risk of capital loss. All figures sourced from company filings, investor presentations, and Bloomberg consensus data as of the dates cited. Verify all data before acting.</p>
+      <a href="../index.html" class="back-link">← Back to all analyses</a>
+    </div>
+  </div>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="page-footer">
+    <div class="container region-footer">
+      <div class="block-system-branding-block">
+        <a href="../index.html" class="footer-logo">Trading852</a>
+      </div>
+      <nav aria-label="Footer">
+        <ul class="menu-list--footer">
+          <li class="menu-item menu-item--expanded">
+            <span>Explore</span>
+            <ul>
+              <li class="menu-item"><a href="../index.html">Analyses</a></li>
+              <li class="menu-item"><a href="#">Hong Kong</a></li>
+              <li class="menu-item"><a href="#">Method</a></li>
+              <li class="menu-item"><a href="#">About</a></li>
+            </ul>
+          </li>
+          <li class="menu-item menu-item--expanded">
+            <span>Legal</span>
+            <ul>
+              <li class="menu-item"><a href="#">Disclaimer</a></li>
+              <li class="menu-item"><a href="#">Legal Notice</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="footer-copyright">
+        © 2026 Trading852. The analyses published on this site do not constitute investment advice. Investing involves risk of capital loss.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('site-header');
+    const toggle = () => header.classList.toggle('is-scrolled', window.scrollY > 20);
+    window.addEventListener('scroll', toggle, { passive: true });
+    toggle();
+  </script>
+
+</body>
+</html>
