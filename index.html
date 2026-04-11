@@ -243,6 +243,11 @@
     .block-giant-logo {
       margin-bottom: var(--spacing-22);
       line-height: 1;
+    }
+
+    .block-giant-logo .giant-logo__inner {
+      max-width: 85rem;
+      margin-inline: auto;
       padding-inline: var(--gutter);
     }
 
@@ -262,14 +267,14 @@
     ════════════════════════════════════════════ */
     .block--our-work {
       position: relative;
-      padding-left: 4rem; /* room for sideways left title */
+      padding-left: 0;
       margin-bottom: var(--spacing-22);
     }
 
-    /* Sideways title — left side */
+    /* Sideways title — left side, floats into the gutter */
     .block--our-work .block-title {
       position: absolute;
-      left: 0;
+      left: -1.5rem;
       bottom: 0;
       transform: rotate(-90deg) translateX(-100%);
       transform-origin: 0 100%;
@@ -637,7 +642,9 @@
 
     <!-- ── GIANT WORDMARK ── -->
     <div class="block-giant-logo" aria-hidden="true">
-      <div class="giant-logo__text">Trading852</div>
+      <div class="giant-logo__inner">
+        <div class="giant-logo__text">Trading852</div>
+      </div>
     </div>
 
     <div class="container region-content">
@@ -720,19 +727,19 @@
         <a href="/" class="footer-logo">Trading852</a>
       </div>
 
-      <p style="font-family:var(--ff-serif);font-size:var(--fs-16);color:rgba(255,255,255,0.45);line-height:1.7;max-width:32rem;margin-bottom:2.5rem;">I read HKEX filings in my spare time, look for companies the market is mispricing, and write about what I find. No fund. No firm. Just the math.</p>
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:2.5rem;flex-wrap:wrap;">
 
-      <nav aria-label="Footer">
-        <ul class="menu-list--footer">
-          <li class="menu-item menu-item--expanded">
-            <span>Explore</span>
-            <ul>
-              <li class="menu-item"><a href="/#recent-analyses">Analyses</a></li>
-              <li class="menu-item"><a href="analyses/why-hk-why-now">Hong Kong</a></li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
+        <nav aria-label="Footer">
+          <ul style="list-style:none;">
+            <li style="color:rgba(255,255,255,0.5);font-size:0.75rem;font-weight:700;letter-spacing:0.0625rem;text-transform:uppercase;margin-bottom:0.5rem;">Explore</li>
+            <li style="margin-bottom:0.5rem;"><a href="/#recent-analyses" style="font-size:0.875rem;font-weight:500;color:rgba(255,255,255,0.75);text-decoration:none;">Analyses</a></li>
+            <li><a href="analyses/why-hk-why-now" style="font-size:0.875rem;font-weight:500;color:rgba(255,255,255,0.75);text-decoration:none;">Hong Kong</a></li>
+          </ul>
+        </nav>
+
+        <p style="font-family:var(--ff-serif);font-size:var(--fs-18);color:rgba(255,255,255,0.45);line-height:1.7;max-width:32rem;text-align:right;">Be water, My friend.</p>
+
+      </div>
 
       <div class="footer-copyright">
         © 2026 Trading852. The analyses published on this site do not constitute investment advice. Investing involves risk of capital loss.
