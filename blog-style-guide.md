@@ -115,6 +115,34 @@ Ce style est **journalistique-analytique** : il parle à un lecteur intelligent 
 
 ---
 
+## Voix Howard Marks — 4 techniques à imiter
+
+Ces techniques ont été validées sur [[1913-prada]] (avril 2026). Les appliquer systématiquement aux sections "Pourquoi la décote existe" et "Décision".
+
+### 1. Nommer ce que le marché a pricé — pas juste ce qu'il a vu
+Ne pas dire : "Most participants have processed one of these."
+Dire : "The market has priced one. The other two are not in the current price."
+→ Identifier explicitement le gap entre consensus et réalité. C'est la phrase qui fait que le lecteur réalise qu'il y a une opportunité.
+
+### 2. Le pendule en une phrase
+Après avoir décrit le risque, ajouter une phrase courte qui nomme où est le sentiment :
+"Pessimism this acute against fundamentals this durable is not a stable state."
+→ Ne jamais développer en paragraphe. Une phrase suffit. Elle dit : le balancier a trop oscillé.
+
+### 3. Clore sur le gap entre ce qui est pricé et ce qui est réel
+Jamais finir sur une formule de prudence ("the arithmetic tolerates patience").
+Finir sur l'asymétrie nue :
+"The market has priced the worst. The business has not delivered it."
+→ Deux phrases courtes. La première nomme le consensus. La deuxième nomme la réalité. L'écart est l'investissement.
+
+### 4. Pronoms financiers — toujours redonner le nom
+Jamais utiliser "one" ou "it" pour un concept financier clé apparu 5 mots plus tôt.
+Ne pas dire : "a balance sheet that can absorb a two-year one without stress"
+Dire : "a balance sheet with capacity for two"
+→ Le lecteur ne doit jamais faire de lookup mental pour comprendre ce que "one" représente.
+
+---
+
 ## Ce qu'on ne fait jamais
 
 - Jamais de bullet points dans le corps de l'article (sauf la table de scénarios)
@@ -162,6 +190,74 @@ Exemples de la formule :
 - "Analyse de [société]"
 - "[Société] : une opportunité à saisir"
 - Titre sans chiffre
+
+---
+
+## Title Writer — Règles opérationnelles (Trading852)
+
+> Référence : conversation avril 2026 — révision des titres Dickson, Prada, Why HK
+
+### Le principe fondamental
+
+Un titre Trading852 doit créer une **tension arithmétique** que le lecteur ne peut pas résoudre sans lire l'article. Pas un teaser. Pas une promesse. Un paradoxe factuellement vrai.
+
+### Les 4 structures qui fonctionnent
+
+**1. La contradiction nue** *(le plus fort)*
+Deux chiffres vrais qui se contredisent en apparence. Le lecteur doit lire pour comprendre pourquoi les deux sont exacts.
+> "EPS Down 74%. Revenue Up 9%. One of These Numbers Is a Distraction."
+> Formule : `[Métrique A] [direction]. [Métrique B] [direction opposée]. [Résolution en suspens].`
+
+**2. Le prix inversé**
+L'arithmétique dit que le marché paie dans la mauvaise direction.
+> "The Market Is Paying You HKD 375 Million to Buy This Company"
+> Formule : `[Qui paie qui] + [montant exact] + [ce qu'on obtient en échange].`
+
+**3. La séquence factuellement vraie**
+Trois faits courts, chacun un mot de plus que nécessaire ne devrait être. Crée un rythme qui force la lecture.
+> "Six Tests. Five Bounces. One Entry."
+> Formule : `[Fait 1]. [Fait 2]. [Conclusion implicite].`
+
+**4. La validation externe vs le prix actuel**
+Un tiers a payé X pour un actif. Le marché valorise l'ensemble à Y < X.
+> "AstraZeneca Paid $100M for One Molecule. The Market Forgot to Price the Rest."
+> Formule : `[Tiers crédible] payé [montant] pour [partie]. [Ce que le marché a raté].`
+
+---
+
+### Règles de rédaction
+
+| Règle | Exemple à éviter | Exemple Trading852 |
+|---|---|---|
+| Toujours un chiffre dans le titre | "Prada Trades at a Discount" | "EPS Down 74%. Revenue Up 9%." |
+| Jamais de superlatif | "The Most Undervalued Stock" | "6.8× EV/EBIT. Peers at 11–24×." |
+| Jamais de formule clickbait | "You Won't Believe This Trade" | "The Market Is Paying You HKD 375M" |
+| Le paradoxe doit être résolvable | *(contradiction sans explication dans l'article)* | Le titre pose la tension, l'article la résout |
+| Un chiffre = une date ou un document | "Revenue grew" | "Revenue +31% FY2025" |
+
+---
+
+### Homepage card vs article title
+
+La card homepage et le H1 article peuvent diverger — la card est plus courte.
+
+- **Card** : 5–10 mots max, tension ou chiffre-clé
+- **H1** : peut aller jusqu'à 20 mots, plus de contexte
+
+> Card : "Six Tests. Five Bounces. One Entry."
+> H1 : "Five Times the Hang Seng Touched This Line and Bounced. At 25 893, the Sixth Test Has Begun"
+
+La card doit teaser l'article, pas le résumer. Si la card et le H1 sont identiques, la card est probablement trop longue.
+
+---
+
+### Self-check avant de publier
+
+- [ ] Le titre contient au moins un chiffre précis
+- [ ] Il y a une tension ou un paradoxe (deux faits apparemment incompatibles, ou un prix qui semble impossible)
+- [ ] Le titre ne donne pas la réponse — il force la lecture
+- [ ] Aucun superlatif, aucun adjectif d'enthousiasme
+- [ ] La card homepage est distincte du H1 (si longueur > 10 mots)
 
 ---
 
