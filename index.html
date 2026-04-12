@@ -25,21 +25,15 @@
   <style>
     /* ─── CSS variables ─── */
     :root {
-      --dp-c-black:        #000;
-      --dp-c-white:        #fff;
-      --dp-c-gray-2:       #697188;
-      --dp-c-gray-border:  #d6d5db;
-      --dp-c-gray-pale:    #eff0f5;
-      --dp-c-periwinkle:   #d6d5dbcc;
+      --dp-c-black:       #000;
+      --dp-c-white:       #fff;
+      --dp-c-gray-2:      #697188;
+      --dp-c-gray-border: #d6d5db;
+      --dp-c-periwinkle:  #d6d5dbcc;
 
-      /* Brand color */
-      --dp-c-primary: #000;
-
-      /* Fonts */
       --ff-sans:  "Space Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
       --ff-serif: "Lora", "Warnock Pro", "Goudy Old Style", Palatino, Georgia, serif;
 
-      /* Type scale */
       --fs-12: 0.75rem;
       --fs-14: 0.875rem;
       --fs-16: 1rem;
@@ -47,19 +41,14 @@
       --fs-20: 1.25rem;
       --fs-24: 1.5rem;
 
-      /* Spacing */
-      --gutter: 1.5rem;
-      --spacing-4: 1rem;
-      --spacing-8: 2rem;
-      --spacing-10: 2.5rem;
+      --gutter:     1.5rem;
+      --spacing-4:  1rem;
       --spacing-12: 3rem;
       --spacing-20: 5rem;
       --spacing-22: 5.5rem;
 
-      /* Transitions */
       --t-all:      all 0.25s ease-out;
       --t-all-slow: all 0.5s ease-out;
-      --t-bg:       background 0.5s;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -80,24 +69,21 @@
     }
 
     /* ════════════════════════════════════════════
-       PAGE HEADER — transparent over dark, sticky white on scroll
+       PAGE HEADER
     ════════════════════════════════════════════ */
     .page-header {
       position: fixed;
-      top: 0;
-      left: 0;
+      top: 0; left: 0;
       width: 100%;
       z-index: 30;
       background: transparent;
       border-bottom: 1px solid transparent;
       transition: background 0.25s ease-out, border-color 0.25s ease-out;
     }
-
     .page-header.is-scrolled {
       background: var(--dp-c-white);
       border-bottom-color: var(--dp-c-periwinkle);
     }
-
     .region-header {
       display: flex;
       align-items: center;
@@ -105,8 +91,6 @@
       min-height: 3rem;
       gap: 2rem;
     }
-
-    /* Logo — white on dark, black when scrolled */
     .site-logo {
       font-family: var(--ff-sans);
       font-size: 1.125rem;
@@ -117,16 +101,13 @@
       transition: color 0.25s;
       line-height: 1;
     }
-
     .page-header.is-scrolled .site-logo { color: var(--dp-c-black); }
 
-    /* Nav links — underline animation */
     .menu-list--main {
       display: flex;
       gap: 2rem;
       list-style: none;
     }
-
     .menu-list--main a {
       font-size: var(--fs-14);
       font-weight: 400;
@@ -139,15 +120,11 @@
       transition: background-size 0.5s, color 0.25s;
       padding-bottom: 0.125rem;
     }
-
     .page-header.is-scrolled .menu-list--main a { color: var(--dp-c-black); }
-
-    .menu-list--main a:hover {
-      background-size: 0 0.0625rem, 100% 0.0625rem;
-    }
+    .menu-list--main a:hover { background-size: 0 0.0625rem, 100% 0.0625rem; }
 
     /* ════════════════════════════════════════════
-       PAGE MAIN — black background
+       PAGE MAIN
     ════════════════════════════════════════════ */
     .page-main {
       background-color: var(--dp-c-black);
@@ -156,16 +133,15 @@
         radial-gradient(ellipse 60% 40% at 88% 8%, rgba(119, 246, 255, 0.09) 0%, transparent 60%),
         radial-gradient(ellipse 70% 30% at 15% 85%, rgba(24, 6, 255, 0.06) 0%, transparent 70%);
       background-repeat: no-repeat;
-      padding-top: 5.5rem; /* clear fixed header */
+      padding-top: 5.5rem;
       padding-bottom: var(--spacing-20);
     }
 
     /* ════════════════════════════════════════════
-       BLOCK: RECENT UPDATES
+       BLOCK: RECENT ANALYSES — asymmetric grid
+       Featured card (2/3) + stacked pair (1/3)
     ════════════════════════════════════════════ */
-    .block--recent-updates {
-      margin-bottom: var(--spacing-22);
-    }
+    .block--recent-updates { margin-bottom: var(--spacing-22); }
 
     .block--recent-updates__title {
       font-family: var(--ff-sans);
@@ -177,22 +153,36 @@
 
     .field-name--field_recent_updates {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+      align-items: stretch;
       gap: 1rem;
     }
 
-    /* Card: white-bordered box, invisible fill → white on hover */
+    /* Base card */
     .node-mode-recent_update {
-      flex: 0 0 calc(33.333% - 0.75rem);
-      max-width: calc(33.333% - 0.75rem);
       border: 0.0625rem solid var(--dp-c-white);
-      height: 0;
-      padding-top: calc(30.333% - 0.667rem);
       position: relative;
       overflow: hidden;
     }
 
+    /* Featured: 2/3 width */
+    .node-mode-recent_update--featured {
+      flex: 0 0 calc(66.666% - 0.5rem);
+      min-height: 22rem;
+    }
+
+    /* Stack container: 1/3 width, two equal cards */
+    .card-stack {
+      flex: 0 0 calc(33.333% - 0.5rem);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .node-mode-recent_update--small {
+      flex: 1;
+      min-height: 0;
+    }
+
+    /* Link fills card completely */
     a.recent-update__link {
       position: absolute;
       top: 0; left: 0;
@@ -202,10 +192,11 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      padding: 2.5rem;
+      padding: 1.5rem;
       text-decoration: none;
       transition: background 0.5s, color 0.5s;
     }
+    .node-mode-recent_update--featured a.recent-update__link { padding: 2.5rem; }
 
     a.recent-update__link:hover,
     a.recent-update__link:focus {
@@ -217,16 +208,38 @@
       font-size: var(--fs-14);
       font-weight: 700;
       line-height: 1.5;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.625rem;
+    }
+
+    /* Key number — the thesis in one figure */
+    .card-key-number {
+      font-family: var(--ff-sans);
+      font-weight: 700;
+      font-size: var(--fs-20);
+      letter-spacing: -0.02em;
+      color: rgba(255, 255, 255, 0.3);
+      margin-bottom: 0.875rem;
+      transition: color 0.5s;
+    }
+    .node-mode-recent_update--featured .card-key-number {
+      font-size: clamp(1.5rem, 2.2vw, 2.125rem);
+    }
+    a.recent-update__link:hover .card-key-number,
+    a.recent-update__link:focus .card-key-number {
+      color: rgba(0, 0, 0, 0.22);
     }
 
     .node-mode-recent_update h3 {
       font-family: var(--ff-serif);
-      font-size: 1.5rem;
       line-height: 1.334;
       font-weight: 400;
       color: inherit;
-      margin-bottom: 0;
+    }
+    .node-mode-recent_update--featured h3 {
+      font-size: clamp(1.125rem, 1.8vw, 1.625rem);
+    }
+    .node-mode-recent_update--small h3 {
+      font-size: 0.9375rem;
     }
 
     .recent-update__see-update {
@@ -237,19 +250,17 @@
     }
 
     /* ════════════════════════════════════════════
-       BLOCK: GIANT WORDMARK — full width
+       GIANT WORDMARK
     ════════════════════════════════════════════ */
     .block-giant-logo {
       margin-bottom: var(--spacing-22);
       line-height: 1;
     }
-
     .block-giant-logo .giant-logo__inner {
       max-width: 85rem;
       margin-inline: auto;
       padding-inline: var(--gutter);
     }
-
     .giant-logo__text {
       font-family: var(--ff-sans);
       font-weight: 700;
@@ -262,15 +273,13 @@
     }
 
     /* ════════════════════════════════════════════
-       BLOCK: OUR WORK
+       BLOCK: OUR ANALYSES — numbered rows + verdict tags
     ════════════════════════════════════════════ */
     .block--our-work {
       position: relative;
       padding-left: 0;
       margin-bottom: var(--spacing-22);
     }
-
-    /* Sideways title — left side, floats into the gutter */
     .block--our-work .block-title {
       position: absolute;
       left: -1.5rem;
@@ -284,7 +293,6 @@
       color: var(--dp-c-white);
       line-height: 1;
     }
-
     .field-label--field_notable_matters {
       font-family: var(--ff-sans);
       font-size: var(--fs-12);
@@ -295,12 +303,11 @@
       margin-bottom: 1rem;
     }
 
-    /* Dim non-hovered items */
+    /* Dim non-hovered rows */
     .field-items:hover a.our-work__link { opacity: 0.32; }
     .field-items:hover a.our-work__link:hover,
     .field-items:hover a.our-work__link:focus { opacity: 1; }
 
-    /* HR separators */
     .our-work-hr {
       display: block;
       border: none;
@@ -308,26 +315,29 @@
       width: 100%;
       transition: border-color 0.3s;
     }
-
     a.our-work__link:hover .our-work-hr,
-    a.our-work__link:focus .our-work-hr {
-      border-top-color: rgba(255, 255, 255, 0.6);
-    }
+    a.our-work__link:focus .our-work-hr { border-top-color: rgba(255, 255, 255, 0.6); }
 
     a.our-work__link {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      justify-content: space-between;
       padding: 1rem 0;
       text-decoration: none;
       color: var(--dp-c-white);
       transition: opacity 0.3s;
+      gap: 0;
     }
+    .our-work__link .our-work-hr { flex: 0 0 100%; margin: 0; }
 
-    .our-work__link .our-work-hr {
-      flex: 0 0 100%;
-      margin: 0;
+    /* Row index: 01 / 02 / 03 */
+    .work-index {
+      flex: 0 0 3rem;
+      font-family: var(--ff-sans);
+      font-size: var(--fs-12);
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.28);
+      padding: 0.5rem 0.75rem 0.5rem 0;
     }
 
     .our-work__link .field-name--field_snippet {
@@ -335,15 +345,34 @@
       font-size: var(--fs-24);
       font-weight: 400;
       line-height: 1.334;
-      flex: 0 0 calc(100% - var(--gutter) - 9rem);
-      max-width: calc(100% - var(--gutter) - 9rem);
-      margin-right: var(--gutter);
-      padding: 0.5rem 0;
+      flex: 1;
+      min-width: 0;
+      padding: 0.5rem 1.25rem 0.5rem 0;
+    }
+
+    /* Verdict tag: CONVICTION / THESIS */
+    .verdict-tag {
+      flex: 0 0 auto;
+      font-family: var(--ff-sans);
+      font-size: 0.625rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.38);
+      border: 0.0625rem solid rgba(255, 255, 255, 0.15);
+      padding: 0.25rem 0.625rem;
+      margin-right: 1.5rem;
+      transition: color 0.3s, border-color 0.3s;
+      white-space: nowrap;
+    }
+    a.our-work__link:hover .verdict-tag,
+    a.our-work__link:focus .verdict-tag {
+      color: rgba(255, 255, 255, 0.75);
+      border-color: rgba(255, 255, 255, 0.4);
     }
 
     .our-work__read-more {
       flex: 0 0 9rem;
-      max-width: 9rem;
       font-size: var(--fs-14);
       font-weight: 500;
       text-align: right;
@@ -351,18 +380,15 @@
     }
 
     /* ════════════════════════════════════════════
-       BLOCK: OUR FIRM
+       BLOCK: MANIFESTO — replaces generic paragraph
     ════════════════════════════════════════════ */
     .block--our-firm {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       margin-bottom: var(--spacing-22);
-      min-height: 13.8125rem;
       padding-right: 4.1875rem;
       position: relative;
     }
-
-    /* Sideways title — right side */
     .block--our-firm .block-title {
       position: absolute;
       right: 0;
@@ -376,103 +402,66 @@
       color: var(--dp-c-white);
       line-height: 1;
     }
-
     .our-firm__content { flex: 1; }
 
-    .block--our-firm p {
+    .manifesto-list {
+      list-style: none;
+      counter-reset: manifesto-counter;
+    }
+    .manifesto-list li {
+      counter-increment: manifesto-counter;
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+      margin-bottom: 1.75rem;
       font-family: var(--ff-serif);
       font-size: var(--fs-24);
       line-height: 1.334;
       font-weight: 400;
       color: var(--dp-c-white);
-      margin-bottom: 2rem;
     }
-
-    a.our-firm__link {
-      font-size: var(--fs-14);
-      font-weight: 500;
-      color: var(--dp-c-white);
-      text-decoration: none;
-      background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), linear-gradient(currentcolor, currentcolor);
-      background-position: 100% 100%, 0 100%;
-      background-repeat: no-repeat;
-      background-size: 100% 0.0625rem, 0 0.0625rem;
-      transition: background-size 0.5s;
-      padding-bottom: 0.125rem;
-    }
-
-    a.our-firm__link:hover {
-      background-size: 0 0.0625rem, 100% 0.0625rem;
+    .manifesto-list li:last-child { margin-bottom: 0; }
+    .manifesto-list li::before {
+      content: counter(manifesto-counter, decimal-leading-zero);
+      font-family: var(--ff-sans);
+      font-size: var(--fs-12);
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.28);
+      flex: 0 0 2rem;
+      padding-top: 0.2rem;
     }
 
     /* ════════════════════════════════════════════
-       BLOCK: ABOUT — white background, 2 columns
+       BLOCK: BY THE NUMBERS — replaces About 2-col
     ════════════════════════════════════════════ */
-    .block--about {
-      background-color: var(--dp-c-white);
-      color: var(--dp-c-black);
-      margin-inline: calc(-1 * var(--gutter));
-      padding: var(--spacing-12) var(--gutter);
+    .block--numbers {
+      border-top: 0.0625rem solid rgba(255, 255, 255, 0.12);
+      padding-top: var(--spacing-12);
+      padding-bottom: var(--spacing-12);
     }
-
-    .block--about__cols {
-      max-width: 85rem;
-      margin-inline: auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
+    .numbers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
     }
-
-    .block-about__col {
-      flex: 0 0 calc(50% - 0.75rem);
-      max-width: calc(50% - 0.75rem);
+    .number-item {
+      border-top: 0.0625rem solid rgba(255, 255, 255, 0.15);
+      padding-top: 1.5rem;
     }
-
-    /* Eyebrow with bottom border */
-    .block-about__col .eyebrow {
-      display: block;
+    .number-value {
+      font-family: var(--ff-sans);
+      font-size: clamp(1.375rem, 2.8vw, 2.625rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--dp-c-white);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+    .number-label {
       font-family: var(--ff-sans);
       font-size: var(--fs-14);
-      font-weight: 500;
-      border-bottom: 0.0625rem solid var(--dp-c-black);
-      padding-bottom: 0.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    /* Large bold teaser */
-    .block-about__col .field-name--field_teaser {
-      font-family: var(--ff-serif);
-      font-size: var(--fs-24);
-      font-weight: 600;
-      line-height: 1.334;
-      margin-bottom: 1rem;
-    }
-
-    .block-about__col p {
-      font-size: var(--fs-16);
-      line-height: 1.7;
-      color: #333;
-      margin-bottom: 1rem;
-    }
-
-    /* Arrow link */
-    .block-about__col a,
-    a.arrow-link {
-      font-size: var(--fs-14);
-      font-weight: 500;
-      color: var(--dp-c-black);
-      text-decoration: none;
-      background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), linear-gradient(currentcolor, currentcolor);
-      background-position: 100% 100%, 0 100%;
-      background-repeat: no-repeat;
-      background-size: 100% 0.0625rem, 0 0.0625rem;
-      transition: background-size 0.5s;
-      padding-bottom: 0.0625rem;
-    }
-
-    .block-about__col a:hover,
-    a.arrow-link:hover {
-      background-size: 0 0.0625rem, 100% 0.0625rem;
+      color: rgba(255, 255, 255, 0.38);
+      line-height: 1.5;
     }
 
     /* ════════════════════════════════════════════
@@ -482,13 +471,8 @@
       background-color: var(--dp-c-black);
       color: var(--dp-c-white);
       padding-top: 2.5rem;
-      margin-top: auto;
     }
-
-    .page-footer .block-system-branding-block {
-      margin-bottom: 2.5rem;
-    }
-
+    .page-footer .block-system-branding-block { margin-bottom: 2.5rem; }
     .footer-logo {
       font-family: var(--ff-sans);
       font-size: 1.125rem;
@@ -499,52 +483,6 @@
       display: inline-block;
       line-height: 1;
     }
-
-    /* Footer nav: columns layout */
-    ul.menu-list--footer {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      margin-bottom: 2rem;
-      list-style: none;
-    }
-
-    .menu-list--footer .menu-item--expanded {
-      flex: 0 0 45%;
-      margin-bottom: 2.5rem;
-    }
-
-    .menu-list--footer .menu-item--expanded:nth-child(2),
-    .menu-list--footer .menu-item--expanded:nth-child(4) {
-      margin-left: auto;
-      max-width: 8.25rem;
-    }
-
-    .menu-list--footer > .menu-item--expanded > span {
-      display: block;
-      color: rgba(255, 255, 255, 0.5);
-      font-size: var(--fs-12);
-      font-weight: 700;
-      letter-spacing: 0.0625rem;
-      line-height: 1.667;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-    }
-
-    .menu-list--footer li li {
-      margin-bottom: 0.5rem;
-    }
-
-    .menu-list--footer a {
-      font-size: var(--fs-14);
-      font-weight: 500;
-      color: rgba(255, 255, 255, 0.75);
-      text-decoration: none;
-      transition: color 0.25s;
-    }
-
-    .menu-list--footer a:hover { color: var(--dp-c-white); }
-
     .footer-copyright {
       border-top: 0.0625rem solid rgba(255, 255, 255, 0.12);
       padding: 1rem 0 2rem;
@@ -559,30 +497,41 @@
     @media (max-width: 48rem) {
       .menu-list--main { display: none; }
 
-      .node-mode-recent_update {
-        flex: 0 0 100%;
-        max-width: 100%;
-        padding-top: 91.9%;
+      /* Cards: stack vertically */
+      .field-name--field_recent_updates { flex-direction: column; }
+      .node-mode-recent_update--featured {
+        flex: 0 0 auto;
+        min-height: 18rem;
       }
+      .card-stack {
+        flex: 0 0 auto;
+        gap: 1rem;
+      }
+      .node-mode-recent_update--small {
+        flex: 0 0 auto;
+        min-height: 11rem;
+      }
+
+      /* List: hide index + verdict on small screens */
+      .work-index { display: none; }
+      .verdict-tag { display: none; }
+      .our-work__link .field-name--field_snippet { padding-right: 0.5rem; }
 
       .block--our-work { padding-left: 0; }
       .block--our-work .block-title { display: none; }
-
       .block--our-firm { padding-right: 0; }
       .block--our-firm .block-title { display: none; }
 
-      .block-about__col {
-        flex: 0 0 100%;
-        max-width: 100%;
+      /* Numbers: 2-column */
+      .numbers-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
       }
     }
 
     @media (min-width: 48rem) and (max-width: 75rem) {
-      .node-mode-recent_update {
-        flex: 0 0 calc(50% - 0.5rem);
-        max-width: calc(50% - 0.5rem);
-        padding-top: calc(45% - 0.5rem);
-      }
+      .node-mode-recent_update--featured { min-height: 20rem; }
+      .numbers-grid { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
@@ -605,34 +554,43 @@
   <main class="page-main">
     <div class="container region-content">
 
-      <!-- ── RECENT ARTICLES ── -->
+      <!-- ── RECENT ANALYSES: asymmetric grid ── -->
       <div class="block--recent-updates" id="recent-analyses">
         <h2 class="block--recent-updates__title">Recent Analyses</h2>
         <div class="field-name--field_recent_updates">
 
-          <article class="node-mode-recent_update">
+          <!-- Featured card: 2/3 width — strongest thesis first -->
+          <article class="node-mode-recent_update node-mode-recent_update--featured">
             <a href="/analyses/0113-dickson-concepts" class="recent-update__link">
               <div class="eyebrow">Special Situation · 0113.HK</div>
-              <h3>The Market Is Paying You HKD 375 Million to Buy This Company</h3>
-              <div class="recent-update__see-update"><span class="see-update-inner">Read the analysis →</span></div>
+              <div class="card-key-number">−HKD 375M EV</div>
+              <h3>The Market Is Paying You HKD&nbsp;375&nbsp;Million to Buy This Company</h3>
+              <div class="recent-update__see-update">Read the analysis →</div>
             </a>
           </article>
 
-          <article class="node-mode-recent_update">
-            <a href="/analyses/1167-jacobio-pharmaceuticals" class="recent-update__link">
-              <div class="eyebrow">Biotech · 1167.HK</div>
-              <h3>AstraZeneca Paid US$100M for One Molecule. The Rest Trades at US$507M.</h3>
-              <div class="recent-update__see-update"><span class="see-update-inner">Read the analysis →</span></div>
-            </a>
-          </article>
+          <!-- Stack of 2 small cards: 1/3 width -->
+          <div class="card-stack">
 
-          <article class="node-mode-recent_update">
-            <a href="/analyses/why-hk-why-now" class="recent-update__link">
-              <div class="eyebrow">Market Thesis</div>
-              <h3>Why Hong Kong, Why Now. Great Eagle Told You It Trades at 88% Below Its Own Estimated Value</h3>
-              <div class="recent-update__see-update"><span class="see-update-inner">Read the thesis →</span></div>
-            </a>
-          </article>
+            <article class="node-mode-recent_update node-mode-recent_update--small">
+              <a href="/analyses/1167-jacobio-pharmaceuticals" class="recent-update__link">
+                <div class="eyebrow">Biotech · 1167.HK</div>
+                <div class="card-key-number">US$100M / molecule</div>
+                <h3>AstraZeneca Paid US$100M for One Molecule. The Rest Trades at US$507M.</h3>
+                <div class="recent-update__see-update">Read the analysis →</div>
+              </a>
+            </article>
+
+            <article class="node-mode-recent_update node-mode-recent_update--small">
+              <a href="/analyses/why-hk-why-now" class="recent-update__link">
+                <div class="eyebrow">Market Thesis</div>
+                <div class="card-key-number">−88% NAV discount</div>
+                <h3>Why Hong Kong, Why Now</h3>
+                <div class="recent-update__see-update">Read the thesis →</div>
+              </a>
+            </article>
+
+          </div><!-- /card-stack -->
 
         </div>
       </div>
@@ -648,7 +606,7 @@
 
     <div class="container region-content">
 
-      <!-- ── OUR ANALYSES ── -->
+      <!-- ── OUR ANALYSES: numbered + verdict tags ── -->
       <div class="block--our-work">
         <h2 class="block-title">Our Analyses</h2>
         <div class="field-name--field_notable_matters">
@@ -658,7 +616,9 @@
             <div class="node-type-experience_article">
               <a href="/analyses/1167-jacobio-pharmaceuticals" class="our-work__link">
                 <hr class="our-work-hr our-work-hr--before">
+                <span class="work-index">01</span>
                 <span class="field-name--field_snippet">Biotech · 1167.HK — A cash-adjusted market cap of HKD 3.9B for a pipeline that includes one molecule already proven worth US$100M. The discount is structural, not operational.</span>
+                <span class="verdict-tag">CONVICTION</span>
                 <span class="our-work__read-more">Read the analysis →</span>
                 <hr class="our-work-hr our-work-hr--after">
               </a>
@@ -667,7 +627,9 @@
             <div class="node-type-experience_article">
               <a href="/analyses/0113-dickson-concepts" class="our-work__link">
                 <hr class="our-work-hr our-work-hr--before">
+                <span class="work-index">02</span>
                 <span class="field-name--field_snippet">Special Situation · 0113.HK — The company's own balance sheet shows HKD 375M more in net assets than its entire market cap. Enterprise value is negative. A privatization offer at HKD 7.20 was already tabled in 2025.</span>
+                <span class="verdict-tag">CONVICTION</span>
                 <span class="our-work__read-more">Read the analysis →</span>
                 <hr class="our-work-hr our-work-hr--after">
               </a>
@@ -676,7 +638,9 @@
             <div class="node-type-experience_article">
               <a href="/analyses/why-hk-why-now" class="our-work__link">
                 <hr class="our-work-hr our-work-hr--before">
+                <span class="work-index">03</span>
                 <span class="field-name--field_snippet">Market Thesis — Four converging conditions: peak institutional pessimism, documented NAV discounts across major property groups, USD peg stability, and capital rotating back to Asia. A setup not seen since 2003.</span>
+                <span class="verdict-tag">THESIS</span>
                 <span class="our-work__read-more">Read the thesis →</span>
                 <hr class="our-work-hr our-work-hr--after">
               </a>
@@ -686,30 +650,40 @@
         </div>
       </div>
 
-      <!-- ── OUR THESIS ── -->
+      <!-- ── MANIFESTO ── -->
       <div class="block--our-firm">
         <h2 class="block-title">Our Thesis</h2>
         <div class="our-firm__content">
-          <p>Hong Kong is an inefficient market for small caps. Institutional funds cannot enter at scale. Trading852 focuses on special situations, documented discounts, and identifiable catalysts, the work no one else takes the time to do.</p>
-          <a href="/analyses/why-hk-why-now" class="our-firm__link">Learn more about our approach →</a>
+          <ol class="manifesto-list">
+            <li>We only write about what we own or would own.</li>
+            <li>Every discount we publish is measurable from public filings.</li>
+            <li>One catalyst. One entry. One conviction.</li>
+          </ol>
         </div>
       </div>
 
-      <!-- ── ABOUT ── -->
-      <div class="block--about">
-        <div class="block--about__cols">
+      <!-- ── BY THE NUMBERS ── -->
+      <div class="block--numbers">
+        <div class="numbers-grid">
 
-          <div class="block-about__col">
-            <span class="eyebrow">Our Approach</span>
-            <div class="field-name--field_teaser">Situations the market ignores.</div>
-            <p>Trading852 analyzes balance sheets, ownership structures, and catalysts on the Hong Kong market. We read what no one reads, to find what no one sees.</p>
+          <div class="number-item">
+            <div class="number-value">3</div>
+            <div class="number-label">analyses published</div>
           </div>
 
-          <div class="block-about__col">
-            <span class="eyebrow">The Market</span>
-            <div class="field-name--field_teaser">Why Hong Kong, why now.</div>
-            <p>The Hong Kong stock exchange is home to holdings, family conglomerates, and spinoffs whose valuations rarely reflect the reality of their balance sheets. The filings are public. The discounts are measurable.</p>
-            <a href="/analyses/why-hk-why-now">Learn more →</a>
+          <div class="number-item">
+            <div class="number-value">−88%</div>
+            <div class="number-label">largest documented NAV discount</div>
+          </div>
+
+          <div class="number-item">
+            <div class="number-value">−HKD 375M</div>
+            <div class="number-label">negative enterprise value identified</div>
+          </div>
+
+          <div class="number-item">
+            <div class="number-value">0</div>
+            <div class="number-label">investment banks covering these stocks</div>
           </div>
 
         </div>
