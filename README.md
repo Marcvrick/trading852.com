@@ -8,7 +8,7 @@ tags:
 category: Trading/Blog
 type: readme
 created: 2026-04-11
-updated: 2026-04-11
+updated: 2026-04-12
 ---
 
 # Trading852 — Blog Article Workflow
@@ -28,10 +28,11 @@ Trading852/
 ├── about.html                  ← About page
 ├── analyses/
 │   ├── 0113-dickson-concepts.html
-│   ├── 1167-jacobio-pharmaceuticals.html
+│   ├── 1913-prada.html
 │   ├── why-hk-why-now.html
-│   └── *.md                    ← Source drafts (not published)
-├── Cold content/               ← Drafts, reference docs, unpublished pages
+│   └── why-hk-why-now_20260411.md   ← Source draft
+├── Cold content/               ← Drafts, reference docs, unpublished articles
+│   ├── 1167_20260411_Jacobio-blog.md  ← Jacobio draft (not published)
 │   ├── disclaimer.html
 │   ├── legal-notice.html
 │   ├── investment philosophy.md
@@ -120,7 +121,7 @@ source: "[[{source-file}]]"
 ## Step 4 — Build the HTML page
 
 Each published article needs an `.html` file in `analyses/`. Use an existing article as template:
-- Stock analysis → copy from `1167-jacobio-pharmaceuticals.html`
+- Stock analysis → copy from `1913-prada.html`
 - Market thesis → copy from `why-hk-why-now.html`
 
 Key elements:
@@ -157,9 +158,9 @@ git push origin main
 
 | File | Ticker | Title | Date |
 |---|---|---|---|
-| [0113-dickson-concepts.html](analyses/0113-dickson-concepts.html) | 0113.HK | The Market Is Paying You HKD 375M to Buy This Company | 2026-04-11 |
-| [1167-jacobio-pharmaceuticals.html](analyses/1167-jacobio-pharmaceuticals.html) | 1167.HK | AstraZeneca Paid US$100M for One Molecule. The Rest Trades at US$507M. | 2026-04-11 |
-| [why-hk-why-now.html](analyses/why-hk-why-now.html) | — | Why Hong Kong, Why Now — Great Eagle Told You It Trades at 88% Below Its Own Estimated Value | 2026-04-11 |
+| [0113-dickson-concepts.html](0113-dickson-concepts.html) | 0113.HK | The Market Is Paying You HKD 375M to Buy This Company | 2026-04-11 |
+| [1913-prada.html](1913-prada.html) | 1913.HK | A Reported EPS Miss of −74%. The Business Grew 9%. | 2026-04-12 |
+| [why-hk-why-now.html](why-hk-why-now.html) | — | Why Hong Kong, Why Now — Great Eagle Told You It Trades at 88% Below Its Own Estimated Value | 2026-04-11 |
 
 ---
 
