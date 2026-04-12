@@ -240,6 +240,10 @@
     }
     .node-mode-recent_update--small h3 {
       font-size: 0.9375rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
     .recent-update__see-update {
@@ -479,7 +483,7 @@
       }
       .node-mode-recent_update--small {
         flex: 0 0 auto;
-        min-height: 11rem;
+        min-height: 13rem;
       }
 
       /* List: hide index + verdict on small screens */
@@ -546,7 +550,7 @@
               <a href="/analyses/1913-prada" class="recent-update__link">
                 <div class="eyebrow">Luxury · 1913.HK</div>
                 <div class="card-key-number">EV/EBIT 9.2× vs peers 15–30×</div>
-                <h3>A Reported EPS Miss of &minus;74%. The Business Grew 9%.</h3>
+                <h3>EPS Down 74%. Revenue Up 9%. One of These Numbers Is a Distraction.</h3>
                 <div class="recent-update__see-update">Read the analysis →</div>
               </a>
             </article>
