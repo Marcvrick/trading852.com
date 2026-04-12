@@ -222,6 +222,8 @@
       color: rgba(255, 255, 255, 0.3);
       margin-bottom: 0.875rem;
       transition: color 0.5s;
+      min-width: 0;
+      max-width: 100%;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -239,6 +241,10 @@
       line-height: 1.334;
       font-weight: 400;
       color: inherit;
+      min-width: 0;
+      max-width: 100%;
+      overflow-wrap: break-word;
+      word-break: break-word;
     }
     .node-mode-recent_update--featured h3 {
       font-size: clamp(1.125rem, 1.8vw, 1.625rem);
