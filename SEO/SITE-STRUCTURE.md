@@ -13,7 +13,7 @@ trading852.com/
 ├── analyses/
 │   ├── 0113-dickson-concepts.html
 │   ├── 1167-jacobio-pharmaceuticals.html
-│   └── why-hk-why-now.html
+│   └── hsi-35-year-trendline.html
 ```
 
 **Problems:**
@@ -35,7 +35,7 @@ trading852.com/
 ├── /analyses/                  ← Article hub (all published analyses)
 │   ├── /0113-dickson-concepts
 │   ├── /1167-jacobio-pharmaceuticals
-│   ├── /why-hk-why-now
+│   ├── /hsi-35-year-trendline
 │   └── /[ticker]-[slug]        ← future articles
 │
 ├── /method/                    ← How we work (pillar page)
@@ -45,7 +45,7 @@ trading852.com/
 │   └── /catalyst-framework     ← "What makes a catalyst"
 │
 ├── /hong-kong/                 ← Market context pillar
-│   ├── /why-now                ← Redirect → /analyses/why-hk-why-now
+│   ├── /why-now                ← Redirect → /analyses/hsi-35-year-trendline
 │   └── /market-structure       ← Future: HK market explained
 │
 ├── /about/                     ← Author page (E-E-A-T critical)

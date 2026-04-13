@@ -29,8 +29,8 @@ Trading852/
 ├── analyses/
 │   ├── 0113-dickson-concepts.html
 │   ├── 1913-prada.html
-│   ├── why-hk-why-now.html
-│   └── why-hk-why-now_20260411.md   ← Source draft
+│   ├── hsi-35-year-trendline.html
+│   └── hsi-35-year-trendline_20260411.md   ← Source draft
 ├── Cold content/               ← Drafts, reference docs, unpublished articles
 │   ├── 1167_20260411_Jacobio-blog.md  ← Jacobio draft (not published)
 │   ├── disclaimer.html
@@ -122,7 +122,7 @@ source: "[[{source-file}]]"
 
 Each published article needs an `.html` file in `analyses/`. Use an existing article as template:
 - Stock analysis → copy from `1913-prada.html`
-- Market thesis → copy from `why-hk-why-now.html`
+- Market thesis → copy from `hsi-35-year-trendline.html`
 
 Key elements:
 - Hero with breadcrumb, meta row (ticker/category + date + read time), h1, subtitle, tags
@@ -160,7 +160,7 @@ git push origin main
 |---|---|---|---|
 | [0113-dickson-concepts.html](0113-dickson-concepts.html) | 0113.HK | The Market Is Paying You HKD 375M to Buy This Company | 2026-04-11 |
 | [1913-prada.html](1913-prada.html) | 1913.HK | A Reported EPS Miss of −74%. The Business Grew 9%. | 2026-04-12 |
-| [why-hk-why-now.html](why-hk-why-now.html) | — | Why Hong Kong, Why Now — Great Eagle Told You It Trades at 88% Below Its Own Estimated Value | 2026-04-11 |
+| [hsi-35-year-trendline.html](hsi-35-year-trendline.html) | — | Why Hong Kong, Why Now — Great Eagle Told You It Trades at 88% Below Its Own Estimated Value | 2026-04-11 |
 
 ---
 
