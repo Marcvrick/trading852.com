@@ -8,7 +8,7 @@ tags:
 category: Trading/Blog
 type: readme
 created: 2026-04-11
-updated: 2026-04-12
+updated: 2026-04-15
 ---
 
 # Trading852 — Blog Article Workflow
@@ -24,21 +24,30 @@ GitHub: [Marcvrick/trading852.com](https://github.com/Marcvrick/trading852.com)
 
 ```
 Trading852/
-├── index.html                  ← Homepage
-├── about.html                  ← About page
-├── analyses/
-│   ├── 0113-dickson-concepts.html
-│   ├── 1913-prada.html
-│   ├── hsi-35-year-trendline.html
-│   └── hsi-35-year-trendline_20260411.md   ← Source draft
-├── Cold content/               ← Drafts, reference docs, unpublished articles
-│   ├── 1167_20260411_Jacobio-blog.md  ← Jacobio draft (not published)
-│   ├── disclaimer.html
-│   ├── legal-notice.html
-│   ├── investment philosophy.md
-│   └── wirte me a 700 lines articles of blog about_  Why.md
-├── blog-style-guide.md         ← Voice + structure reference (this session)
-└── README.md                   ← This file
+├── index.html                    ← Homepage
+├── feed.xml                      ← RSS feed (update when publishing)
+├── CNAME                         ← Custom domain
+├── vercel.json                   ← Rewrites + security headers
+├── README.md
+│
+├── analyses/                     ← Published articles
+│   ├── *.html
+│   └── images/
+│
+├── assets/                       ← Favicons + OG image
+│
+├── static/                       ← Cold content (rarely changed, served via rewrites)
+│   ├── about.html                   → trading852.com/about
+│   ├── disclaimer.html              → trading852.com/disclaimer
+│   ├── legal-notice.html            → trading852.com/legal-notice
+│   ├── robots.txt                   → trading852.com/robots.txt
+│   └── sitemap.xml                  → trading852.com/sitemap.xml
+│
+├── docs/                         ← Workflow docs (not served)
+│   ├── blog-style-guide.md
+│   └── seo/
+│
+└── sources/                      ← Source .md files behind published articles
 ```
 
 ---
@@ -47,11 +56,12 @@ Trading852/
 
 | Resource | Path |
 |---|---|
-| **Style guide** | [blog-style-guide.md](blog-style-guide.md) |
+| **Style guide** | [docs/blog-style-guide.md](docs/blog-style-guide.md) |
 | **Voice guide** | `MarcOS/Voix Marc/VOIX-Marc.md` |
 | **Expert analyses** | `Trading-research/HK Stocks/Experts analysis/` |
 | **Published articles** | [analyses/](analyses/) |
-| **Drafts / cold content** | [Cold content/](Cold%20content/) |
+| **Source .md files** | [sources/](sources/) |
+| **SEO strategy** | [docs/seo/](docs/seo/) |
 
 ---
 
@@ -71,7 +81,7 @@ Only proceed if the verdict is **CONVICTION**.
 
 ## Step 2 — Read the style guide
 
-Open [blog-style-guide.md](blog-style-guide.md) and `VOIX-Marc.md` before writing. Key rules:
+Open [docs/blog-style-guide.md](docs/blog-style-guide.md) and `VOIX-Marc.md` before writing. Key rules:
 
 - **7 canonical sections** — Hook → Company/Context → Discount → Catalyst → Valuation → Risks → Decision
 - **No bullet points** in the article body (except numbered catalyst points and scenario table)
@@ -143,6 +153,37 @@ Three places to update in `index.html`:
 
 ---
 
+## Step 5b — Update feed.xml and sitemap.xml
+
+### RSS feed (`feed.xml`)
+
+Add a new `<item>` **at the top** (before existing items) and update `<lastBuildDate>`:
+
+```xml
+<item>
+  <title>TITLE</title>
+  <link>https://trading852.com/analyses/SLUG</link>
+  <guid>https://trading852.com/analyses/SLUG</guid>
+  <pubDate>Day, DD Mon YYYY 00:00:00 +0800</pubDate>
+  <description>EXCERPT (1-2 sentences)</description>
+</item>
+```
+
+### Sitemap (`sitemap.xml`)
+
+Add a new `<url>` entry and update the homepage `<lastmod>`:
+
+```xml
+<url>
+  <loc>https://trading852.com/analyses/SLUG</loc>
+  <lastmod>YYYY-MM-DD</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+```
+
+---
+
 ## Step 6 — Commit and push
 
 ```bash
@@ -158,9 +199,12 @@ git push origin main
 
 | File | Ticker | Title | Date |
 |---|---|---|---|
-| [0113-dickson-concepts.html](0113-dickson-concepts.html) | 0113.HK | The Market Is Paying You HKD 375M to Buy This Company | 2026-04-11 |
-| [1913-prada.html](1913-prada.html) | 1913.HK | A Reported EPS Miss of −74%. The Business Grew 9%. | 2026-04-12 |
-| [hsi-35-year-trendline.html](hsi-35-year-trendline.html) | — | Why Hong Kong, Why Now — Great Eagle Told You It Trades at 88% Below Its Own Estimated Value | 2026-04-11 |
+| [9988-alibaba.html](analyses/9988-alibaba.html) | 9988.HK | EBITA Down 57%. Cloud Up 36%. This Is What Amazon Looked Like in 2014. | 2026-04-14 |
+| [1585-yadea.html](analyses/1585-yadea.html) | 1585.HK | Profit +129%. EV/EBIT 6.1x. The Market Sees a Bicycle Company. | 2026-04-14 |
+| [1167-jacobio.html](analyses/1167-jacobio.html) | 1167.HK | AstraZeneca Paid US$100M for One Molecule. The Rest Trades at US$507M. | 2026-04-14 |
+| [1913-prada.html](analyses/1913-prada.html) | 1913.HK | EPS Down 74%. Revenue Up 9%. One of These Numbers Is a Distraction. | 2026-04-12 |
+| [0113-dickson-concepts.html](analyses/0113-dickson-concepts.html) | 0113.HK | The Market Is Paying You HKD 375M to Buy This Company | 2026-04-11 |
+| [hsi-35-year-trendline.html](analyses/hsi-35-year-trendline.html) | — | Six Bounces. One Break. Now the Retest. | 2026-04-11 |
 
 ---
 
@@ -171,6 +215,18 @@ git push origin main
 - Any section title as a teaser: "What's next?", "The bottom line"
 - A number without its source date or document
 - A risk framed as hypothetical when it is documented
+
+---
+
+## SEO checklist (every page)
+
+Every HTML page must include:
+- `<link rel="canonical" href="https://trading852.com/...">` (self-referencing)
+- `<link rel="alternate" type="application/rss+xml" title="Trading852" href="https://trading852.com/feed.xml">` (RSS autodiscovery)
+- `<meta name="twitter:card">`, `twitter:title`, `twitter:description`, `twitter:image`
+- Open Graph tags (`og:type`, `og:title`, `og:description`, `og:image`, `og:url`, `og:site_name`)
+- Structured data (`application/ld+json`) — `WebSite` for homepage, `Article` for analyses
+- Images: always include `width`, `height`, `alt`; below-fold images get `loading="lazy" decoding="async"`
 
 ---
 
@@ -187,4 +243,7 @@ git push origin main
 - [ ] Word count between 1 000 and 1 400
 - [ ] Title contains a concrete number
 - [ ] HTML page built and linked from homepage
+- [ ] New `<item>` added to `feed.xml` + `<lastBuildDate>` updated
+- [ ] New `<url>` added to `static/sitemap.xml` + homepage `<lastmod>` updated
+- [ ] Canonical + Twitter cards + RSS autodiscovery in new page `<head>`
 - [ ] Committed and pushed to GitHub

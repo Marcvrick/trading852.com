@@ -1,6 +1,13 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    { "source": "/about", "destination": "/static/about.html" },
+    { "source": "/disclaimer", "destination": "/static/disclaimer.html" },
+    { "source": "/legal-notice", "destination": "/static/legal-notice.html" },
+    { "source": "/robots.txt", "destination": "/static/robots.txt" },
+    { "source": "/sitemap.xml", "destination": "/static/sitemap.xml" }
+  ],
   "headers": [
     {
       "source": "/(.*)",

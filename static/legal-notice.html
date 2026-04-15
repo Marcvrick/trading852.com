@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Trading852 is a personal website. Nothing published here is investment advice. Read this before you do anything with what you find on these pages.">
-  <title>Disclaimer · Trading852</title>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="description" content="Legal notice for Trading852 — a personal website with no commercial purpose.">
+  <title>Legal Notice · Trading852</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Disclaimer · Trading852">
-  <meta property="og:description" content="Trading852 is a personal website. Nothing published here is investment advice.">
-  <meta property="og:image" content="https://trading852.com/og-image.png">
-  <meta property="og:url" content="https://trading852.com/disclaimer">
-  <link rel="canonical" href="https://trading852.com/disclaimer">
+  <meta property="og:title" content="Legal Notice · Trading852">
+  <meta property="og:description" content="Legal notice for Trading852 — a personal website with no commercial purpose.">
+  <meta property="og:image" content="https://trading852.com/assets/og-image.png">
+  <meta property="og:url" content="https://trading852.com/legal-notice">
+  <link rel="canonical" href="https://trading852.com/legal-notice">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Disclaimer · Trading852">
-  <meta name="twitter:description" content="Trading852 is a personal website. Nothing published here is investment advice.">
+  <meta name="twitter:title" content="Legal Notice · Trading852">
+  <meta name="twitter:description" content="Legal notice for Trading852 — a personal website with no commercial purpose.">
   <meta property="og:site_name" content="Trading852">
   <link rel="alternate" type="application/rss+xml" title="Trading852" href="https://trading852.com/feed.xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,8 +43,6 @@
 
       --gutter: 1.5rem;
       --spacing-10: 2.5rem;
-      --spacing-12: 3rem;
-      --spacing-20: 5rem;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -64,7 +62,6 @@
       padding-inline: var(--gutter);
     }
 
-    /* ─── Header ─── */
     .page-header {
       position: fixed;
       top: 0; left: 0;
@@ -118,7 +115,6 @@
 
     .menu-list--main a:hover { color: var(--dp-c-white); background-size: 0 0.0625rem, 100% 0.0625rem; }
 
-    /* ─── Hero ─── */
     .page-hero {
       background-color: var(--dp-c-black);
       background-image: radial-gradient(circle at top right, rgba(255,255,255,0.05) 0, transparent 50%);
@@ -146,7 +142,6 @@
       line-height: 1.6;
     }
 
-    /* ─── Body ─── */
     .page-body {
       background: var(--dp-c-white);
       color: var(--dp-c-black);
@@ -185,12 +180,20 @@
       margin-bottom: 1.25rem;
     }
 
-    .page-body p.lead {
-      font-size: var(--fs-20);
-      font-style: italic;
-      color: #000;
-      border-left: 3px solid #000;
-      padding-left: 1.25rem;
+    .page-body .label {
+      font-family: var(--ff-sans);
+      font-size: var(--fs-12);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.0625rem;
+      color: var(--dp-c-gray-2);
+      margin-bottom: 0.25rem;
+    }
+
+    .page-body .value {
+      font-family: var(--ff-serif);
+      font-size: var(--fs-18);
+      color: #111;
       margin-bottom: 1.5rem;
     }
 
@@ -203,7 +206,6 @@
       border-top: 0.0625rem solid var(--dp-c-gray-border);
     }
 
-    /* ─── Footer ─── */
     .page-footer {
       background-color: var(--dp-c-black);
       color: var(--dp-c-white);
@@ -287,45 +289,50 @@
 
   <div class="page-hero">
     <div class="container">
-      <h1>Disclaimer</h1>
-      <p>Before you act on anything you read here, read this first.</p>
+      <h1>Legal Notice</h1>
+      <p>Who runs this site and what it is.</p>
     </div>
   </div>
 
   <div class="page-body">
     <div class="container">
 
-      <h2>This is a personal website</h2>
+      <h2>Site owner</h2>
 
-      <p class="lead">Trading852 is run by one person. There is no company behind it, no fund, no financial advisory firm, no team of analysts. Just someone who reads filings and writes down what he sees.</p>
+      <p class="label">Name</p>
+      <p class="value">Marc</p>
 
-      <p>Nothing on this site is investment advice. Nothing here is a recommendation to buy or sell any security. The analyses, opinions, and numbers published on these pages reflect personal research and personal views — nothing more.</p>
+      <p class="label">Nature</p>
+      <p class="value">Private individual — not a company, not a registered entity, not a financial institution.</p>
 
-      <p>I am not a licensed financial advisor. I am not a broker. I am not acting in any professional capacity when I write here. I have no fiduciary duty toward you. I do not know your financial situation, your risk tolerance, or your investment goals.</p>
+      <p class="label">Website</p>
+      <p class="value">trading852.com</p>
 
-      <h2>What this site actually is</h2>
+      <h2>What this site is</h2>
 
-      <p>I look at Hong Kong-listed companies. I read their annual reports, their interim results, their HKEX filings. I try to understand what the assets are worth and whether the market price reflects that. Then I write about it.</p>
+      <p>Trading852 is a personal website. It exists for one reason: to publish research notes on Hong Kong-listed companies that I find interesting. It has no commercial purpose. It does not sell anything. It does not charge for access. It does not solicit clients.</p>
 
-      <p>That is it. A personal research log, made public.</p>
+      <p>There is no business behind it. No fund. No advisory firm. No registered financial services provider of any kind. Just one person reading annual reports and writing about what he finds.</p>
 
-      <p>Some of what I write will be right. Some of it will be wrong. Markets are uncertain, filings can be misleading, and my analysis is imperfect. I make no claim to the contrary.</p>
+      <h2>No financial services</h2>
 
-      <h2>Do your own research</h2>
+      <p>Trading852 does not provide investment advice, portfolio management, financial planning, or any other regulated financial service. Nothing published here constitutes a personal recommendation to buy or sell any security.</p>
 
-      <p>If something I write makes you curious about a stock, treat that as a starting point — not a conclusion. Read the company's own filings. Cross-check the numbers. Understand the risks. Make your own decision.</p>
+      <p>If you are looking for regulated financial advice, please consult a licensed professional in your jurisdiction.</p>
 
-      <p>Investing involves the real risk of losing money. That includes losing all of it. Past results, whether mine or anyone else's, do not predict future performance.</p>
+      <h2>Intellectual property</h2>
 
-      <h2>No conflict of interest disclosure</h2>
+      <p>The writing and analysis on this site is personal work. You are welcome to quote it, link to it, or share it — with attribution. Reproducing entire articles without permission is not.</p>
 
-      <p>At the time of writing, I may or may not hold positions in the securities discussed. I do not receive any compensation — from companies, brokers, or anyone else — for anything I publish here. I have no financial relationship with any company mentioned on this site.</p>
+      <p>Company names, ticker symbols, and financial data referenced on this site remain the property of their respective owners. Use of these does not imply any affiliation with or endorsement by those companies.</p>
 
-      <p>If that changes, I will say so explicitly in the relevant article.</p>
+      <h2>External links</h2>
 
-      <h2>Errors and updates</h2>
+      <p>Where articles link to external sources — company filings, HKEX announcements, third-party data — those links are provided for reference only. I have no control over external sites and cannot guarantee their accuracy or availability.</p>
 
-      <p>I try to get the numbers right. But figures can change, filings get restated, and I am one person reading documents in my spare time. If you find an error, I want to know — but I make no warranty as to the accuracy or completeness of anything published here.</p>
+      <h2>Governing law</h2>
+
+      <p>This site is operated by a private individual. No specific jurisdiction is claimed. The content is intended for a general international audience. Nothing here is directed at any specific country or regulated market.</p>
 
       <div class="date-line">Last updated: April 11, 2026</div>
 
