@@ -1,9 +1,11 @@
 /*
  * Trading852 — Scorecard client
  *
- * Fetches the latest HK close for each blog recommendation via the
- * yahoo-proxy Cloudflare worker, computes the % change since the first
- * post-publication close (April 10, 2026 issue), and renders into the DOM.
+ * Fetches the daily HK OHLC series for each blog recommendation via the
+ * yahoo-proxy Cloudflare worker. Computes:
+ *   - entry price = first close after the April 10 pub date
+ *   - stop loss   = −10% from entry, triggered on the intraday low
+ *   - return      = pct change from entry to last close, OR −10% if stopped
  *
  * Two render targets supported on the same page:
  *   #scorecard-strip  — compact 1-line summary for the homepage
@@ -15,6 +17,7 @@
   // Pub date for the inaugural issue. Entry price = first trading session close
   // strictly AFTER this date (Monday Apr 13 for a Friday Apr 10 publish).
   var PUB_DATE_UTC = Date.UTC(2026, 3, 10); // months are 0-indexed
+  var STOP_LOSS_PCT = -10;                  // −10% below entry, intraday trigger
 
   var RECOS = [
     { t: "0113.HK", company: "Dickson Concepts",  eyebrow: "Special Situation", slug: "0113-dickson-concepts" },
@@ -36,27 +39,54 @@
         var result = j && j.chart && j.chart.result && j.chart.result[0];
         if (!result) throw new Error("no_data");
         var ts = result.timestamp || [];
-        var closes = (result.indicators && result.indicators.quote && result.indicators.quote[0] && result.indicators.quote[0].close) || [];
-        var entry = null, entryDate = null;
+        var quote = (result.indicators && result.indicators.quote && result.indicators.quote[0]) || {};
+        var closes = quote.close || [];
+        var lows = quote.low || [];
+
+        // Find entry: first valid close strictly after pub date
+        var entry = null, entryDate = null, entryIdx = -1;
         for (var i = 0; i < ts.length; i++) {
           if (closes[i] == null) continue;
           if (ts[i] * 1000 > PUB_DATE_UTC) {
             entry = closes[i];
             entryDate = new Date(ts[i] * 1000);
+            entryIdx = i;
             break;
           }
         }
-        var last = null, lastDate = null;
-        for (var k = closes.length - 1; k >= 0; k--) {
-          if (closes[k] != null) { last = closes[k]; lastDate = new Date(ts[k] * 1000); break; }
+        if (entry == null) throw new Error("no_entry_bar");
+
+        // Scan subsequent bars for a stop trigger (intraday low ≤ entry × 0.90)
+        var stopLevel = entry * (1 + STOP_LOSS_PCT / 100);
+        var stopped = false, stopDate = null;
+        for (var k = entryIdx + 1; k < ts.length; k++) {
+          var lo = lows[k];
+          if (lo == null) continue;
+          if (lo <= stopLevel) {
+            stopped = true;
+            stopDate = new Date(ts[k] * 1000);
+            break;
+          }
         }
-        if (entry == null || last == null) throw new Error("no_bars");
+
+        // Last close (current state) — only used when still open
+        var last = null, lastDate = null;
+        for (var m = closes.length - 1; m >= 0; m--) {
+          if (closes[m] != null) { last = closes[m]; lastDate = new Date(ts[m] * 1000); break; }
+        }
+        if (last == null) throw new Error("no_close");
+
+        var pct = stopped ? STOP_LOSS_PCT : (last - entry) / entry * 100;
+
         return Object.assign({}, rec, {
           entry: entry,
           entryDate: entryDate,
-          last: last,
-          lastDate: lastDate,
-          pct: (last - entry) / entry * 100,
+          last: stopped ? stopLevel : last,
+          lastDate: stopped ? stopDate : lastDate,
+          pct: pct,
+          stopped: stopped,
+          stopDate: stopDate,
+          stopLevel: stopLevel,
         });
       })
       .catch(function (e) {
@@ -84,17 +114,21 @@
       return;
     }
     var avg = valid.reduce(function (a, r) { return a + r.pct; }, 0) / valid.length;
-    var wins = valid.filter(function (r) { return r.pct > 0; }).length;
-    var losses = valid.filter(function (r) { return r.pct < 0; }).length;
-    var flats = valid.length - wins - losses;
+    var wins = valid.filter(function (r) { return !r.stopped && r.pct > 0; }).length;
+    var losses = valid.filter(function (r) { return !r.stopped && r.pct < 0; }).length;
+    var stoppedCount = valid.filter(function (r) { return r.stopped; }).length;
+    var flats = valid.length - wins - losses - stoppedCount;
     var avgCls = avg >= 0 ? "pos" : "neg";
+    var wlText = wins + 'W / ' + losses + 'L';
+    if (stoppedCount) wlText += ' / ' + stoppedCount + ' stopped';
+    if (flats) wlText += ' / ' + flats + ' flat';
     el.innerHTML =
       '<a href="/scorecard" class="strip-link" aria-label="Scorecard since April 10">' +
         '<span class="strip-label">Scorecard · April 10 issue</span>' +
         '<span class="strip-sep">·</span>' +
         '<span class="strip-avg ' + avgCls + '">' + fmtPct(avg) + ' avg</span>' +
         '<span class="strip-sep">·</span>' +
-        '<span class="strip-wl">' + wins + 'W / ' + losses + 'L' + (flats ? ' / ' + flats + ' flat' : '') + '</span>' +
+        '<span class="strip-wl">' + wlText + '</span>' +
         '<span class="strip-cta">View scorecard →</span>' +
       '</a>';
   }
@@ -104,8 +138,9 @@
     if (!el) return;
     var valid = rows.filter(function (r) { return r.pct != null; });
     var avg = valid.length ? valid.reduce(function (a, r) { return a + r.pct; }, 0) / valid.length : null;
-    var wins = valid.filter(function (r) { return r.pct > 0; }).length;
-    var losses = valid.filter(function (r) { return r.pct < 0; }).length;
+    var wins = valid.filter(function (r) { return !r.stopped && r.pct > 0; }).length;
+    var losses = valid.filter(function (r) { return !r.stopped && r.pct < 0; }).length;
+    var stoppedCount = valid.filter(function (r) { return r.stopped; }).length;
     var mostRecent = null;
     rows.forEach(function (r) {
       if (r.lastDate && (!mostRecent || r.lastDate > mostRecent)) mostRecent = r.lastDate;
@@ -113,9 +148,11 @@
 
     var summary = document.getElementById("scorecard-summary");
     if (summary) {
+      var stoppedHtml = stoppedCount ? ('<span>' + stoppedCount + ' stopped @ −10%</span>') : '';
       summary.innerHTML =
         '<span>Average <strong class="' + (avg >= 0 ? "pos" : "neg") + '">' + fmtPct(avg) + '</strong></span>' +
         '<span>' + wins + ' winners · ' + losses + ' losers</span>' +
+        stoppedHtml +
         '<span>As of ' + (mostRecent ? fmtDate(mostRecent) + ", 2026" : "—") + '</span>';
     }
 
@@ -125,17 +162,25 @@
           '<th>Ticker</th>' +
           '<th>Company</th>' +
           '<th class="num">Entry<br><span class="th-sub">First close after Apr 10</span></th>' +
-          '<th class="num">Last</th>' +
+          '<th class="num">Last / Stop</th>' +
           '<th class="num">% since</th>' +
         '</tr></thead><tbody>';
     rows.forEach(function (r) {
       var pctCls = r.pct == null ? "" : r.pct >= 0 ? "pos" : "neg";
+      var rowCls = r.stopped ? "sc-row-stopped" : "";
+      var badge = r.stopped
+        ? ' <span class="sc-badge sc-badge-stopped">Stopped</span>'
+        : '';
+      var lastCell = r.stopped
+        ? '<span class="sc-last-stop">' + fmtPrice(r.stopLevel) + '</span>' +
+          '<div class="sc-stop-date">stop hit ' + fmtDate(r.stopDate) + '</div>'
+        : fmtPrice(r.last);
       html +=
-        '<tr>' +
-          '<td class="sc-ticker"><a href="/analyses/' + r.slug + '">' + r.t + '</a></td>' +
+        '<tr class="' + rowCls + '">' +
+          '<td class="sc-ticker"><a href="/analyses/' + r.slug + '">' + r.t + '</a>' + badge + '</td>' +
           '<td class="sc-company"><div class="sc-eyebrow">' + r.eyebrow + '</div>' + r.company + '</td>' +
           '<td class="num">' + fmtPrice(r.entry) + '</td>' +
-          '<td class="num">' + fmtPrice(r.last) + '</td>' +
+          '<td class="num">' + lastCell + '</td>' +
           '<td class="num ' + pctCls + '">' + fmtPct(r.pct) + '</td>' +
         '</tr>';
     });

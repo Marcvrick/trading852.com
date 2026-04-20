@@ -204,6 +204,36 @@
       margin-bottom: 0.15rem;
     }
 
+    /* Stopped-out row */
+    .sc-table tr.sc-row-stopped td { opacity: 0.52; }
+    .sc-table tr.sc-row-stopped:hover td { opacity: 0.72; }
+    .sc-badge {
+      display: inline-block;
+      margin-left: 0.5rem;
+      padding: 0.12rem 0.45rem;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      vertical-align: middle;
+    }
+    .sc-badge-stopped {
+      background: #ffe2e3;
+      color: #b91e23;
+      border: 1px solid #f3b7ba;
+    }
+    .sc-table .sc-row-stopped .sc-badge-stopped { opacity: 1; }
+    .sc-last-stop { text-decoration: line-through; color: var(--dp-c-gray-2); }
+    .sc-stop-date {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 500;
+      color: #b91e23;
+      margin-top: 0.15rem;
+      letter-spacing: 0.02em;
+    }
+
     .sc-loading {
       padding: 3rem 1rem;
       text-align: center;
@@ -311,6 +341,13 @@
         <p>
           <strong>Last price</strong> is the most recent daily close available
           from Yahoo Finance, fetched live when you open this page.
+        </p>
+        <p>
+          <strong>Stop loss at −10%.</strong> If the intraday low of any session
+          after entry touches 90% of the entry price, the position is considered
+          closed at the −10% level. The row is grayed, stamped "Stopped" with
+          the date, and the return is frozen at −10% even if the stock drops
+          further.
         </p>
         <p>
           The scorecard is an honest accountability log, not investment advice.
