@@ -2,10 +2,10 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/about", "destination": "/static/about.html" },
-    { "source": "/scorecard", "destination": "/static/scorecard.html" },
-    { "source": "/disclaimer", "destination": "/static/disclaimer.html" },
-    { "source": "/legal-notice", "destination": "/static/legal-notice.html" },
+    { "source": "/about", "destination": "/static/about" },
+    { "source": "/scorecard", "destination": "/static/scorecard" },
+    { "source": "/disclaimer", "destination": "/static/disclaimer" },
+    { "source": "/legal-notice", "destination": "/static/legal-notice" },
     { "source": "/robots.txt", "destination": "/static/robots.txt" },
     { "source": "/sitemap.xml", "destination": "/static/sitemap.xml" }
   ],
