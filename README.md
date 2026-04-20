@@ -8,7 +8,7 @@ tags:
 category: Trading/Blog
 type: readme
 created: 2026-04-11
-updated: 2026-04-15
+updated: 2026-04-20
 ---
 
 # Trading852 — Blog Article Workflow
@@ -34,9 +34,11 @@ Trading852/
 │   ├── *.html
 │   └── images/
 │
-├── assets/                       ← Favicons + OG image
+├── assets/                       ← Favicons + OG image + scorecard.js
+│   └── scorecard.js                 Live HK price fetcher (Yahoo proxy)
 │
 ├── static/                       ← Cold content (rarely changed, served via rewrites)
+│   ├── scorecard.html               → trading852.com/scorecard
 │   ├── about.html                   → trading852.com/about
 │   ├── disclaimer.html              → trading852.com/disclaimer
 │   ├── legal-notice.html            → trading852.com/legal-notice
@@ -57,11 +59,12 @@ Trading852/
 | Resource | Path |
 |---|---|
 | **Style guide** | [docs/blog-style-guide.md](docs/blog-style-guide.md) |
-| **Voice guide** | `MarcOS/Voix Marc/VOIX-Marc.md` |
-| **Expert analyses** | `Trading-research/HK Stocks/Experts analysis/` |
+| **Voice guide** | [../../Voix Marc/VOIX-Marc.md](../../Voix%20Marc/VOIX-Marc.md) |
+| **Expert analyses** | [../Trading-research/HK Stocks/Experts analysis/](../Trading-research/HK%20Stocks/Experts%20analysis/) |
 | **Published articles** | [analyses/](analyses/) |
 | **Source .md files** | [sources/](sources/) |
 | **SEO strategy** | [docs/seo/](docs/seo/) |
+| **Scorecard tracker** | [static/scorecard.html](static/scorecard.html) · [assets/scorecard.js](assets/scorecard.js) |
 
 ---
 
@@ -195,6 +198,58 @@ git push origin main
 
 ---
 
+## Scorecard — live performance tracker
+
+A public accountability page at [trading852.com/scorecard](https://trading852.com/scorecard) that tracks every blog recommendation from the first trading session after publication.
+
+**Data flow** (100% client-side, zero backend):
+1. [assets/scorecard.js](assets/scorecard.js) defines the editorial list of recos (ticker, slug, eyebrow, company).
+2. On page load, each ticker hits the [yahoo-proxy Cloudflare worker](https://yahoo-proxy.marccharnal.workers.dev/) for a 3-month daily OHLC series.
+3. The script computes entry = first close after `PUB_DATE_UTC`, checks intraday lows for the −10% stop loss, and renders the table.
+4. Same `scorecard.js` also feeds the 1-line **strip teaser** on the homepage (`<div id="scorecard-strip">`).
+
+**Stop-loss rule**: intraday low ≤ entry × 0.90 on any session after entry closes the position at −10%. Return is frozen at −10% and the row is grayed out with a "Stopped" badge + exit date.
+
+**To add a new reco to the scorecard**: edit the `RECOS` array in [assets/scorecard.js](assets/scorecard.js). No backend, no rebuild — commit and push.
+
+**To change the pub date or stop-loss level**: edit `PUB_DATE_UTC` and `STOP_LOSS_PCT` constants at the top of [assets/scorecard.js](assets/scorecard.js).
+
+---
+
+## Site plumbing
+
+### Navigation — 4 items, identical on every page
+
+**Header nav** (in `<ul class="menu-list--main">`) on every page:
+
+```
+Analyses · Scorecard · Hong Kong · About
+```
+
+**Footer Explore column** on every page includes the same Scorecard link. Any new page must carry both navs — copy from [static/scorecard.html](static/scorecard.html) or any analyses/*.html as template.
+
+### Vercel rewrites — `cleanUrls` gotcha
+
+[vercel.json](vercel.json) has `cleanUrls: true`, which means `.html` is stripped from URLs. **Rewrite destinations must NOT include `.html`** or they return 404.
+
+✅ Correct:
+```json
+{ "source": "/scorecard", "destination": "/static/scorecard" }
+```
+
+❌ Wrong (404s):
+```json
+{ "source": "/scorecard", "destination": "/static/scorecard.html" }
+```
+
+When adding a new rewrite for a static page, drop the `.html`.
+
+### Footer links — absolute paths only
+
+Relative paths like `about.html` break under the clean-URL rewrites. **Always use absolute paths** (`/about`, `/disclaimer`, `/legal-notice`) in every footer.
+
+---
+
 ## Published articles
 
 | File | Ticker | Title | Date |
@@ -247,3 +302,25 @@ Every HTML page must include:
 - [ ] New `<url>` added to `static/sitemap.xml` + homepage `<lastmod>` updated
 - [ ] Canonical + Twitter cards + RSS autodiscovery in new page `<head>`
 - [ ] Committed and pushed to GitHub
+
+---
+
+## Changelog
+
+### Apr 20, 2026 — Scorecard launch + site consistency
+
+- **`/scorecard` live performance tracker** ([static/scorecard.html](static/scorecard.html)). Fetches 3-mo daily OHLC per ticker from the yahoo-proxy worker, computes entry = first close after Apr 10 pub date, renders the 5-column table. Also powers a 1-line teaser strip on the homepage.
+- **Automatic −10% stop loss.** Intraday low triggers exit at the −10% level; stopped rows are grayed with a "Stopped" badge and exit date. Return is frozen at −10%.
+- **Unified 4-item nav** across all 11 pages (header + footer Explore column): Analyses · Scorecard · Hong Kong · About.
+- **Fixed [vercel.json](vercel.json) rewrites**: dropped `.html` suffix from destinations. `cleanUrls: true` was causing `/about`, `/disclaimer`, `/legal-notice` to 404 on production — never noticed because only the new Scorecard link exposed the bug.
+- **Fixed footer relative links** on about/disclaimer/legal-notice (`about.html` → `/about`, etc).
+- **Giant wordmark** no longer overflows the content column on wide viewports: clamp cap reduced from 17rem to 14.5rem, overflow:hidden safety net added.
+- **Thesis block rewrite**: replaced "One catalyst. One entry. One conviction." with "Absorb what the filing shows. Discard what the narrative adds." (Bruce Lee / JKD voice matching the "Be water" footer).
+
+### Apr 15, 2026 — SEO hardening
+
+- RSS feed, canonicals, Twitter cards, Open Graph, JSON-LD, security headers.
+
+### Apr 11, 2026 — Site launch
+
+- Homepage, 6 inaugural articles, domain live.
