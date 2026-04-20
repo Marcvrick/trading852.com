@@ -339,12 +339,17 @@
       max-width: 85rem;
       margin-inline: auto;
       padding-inline: var(--gutter);
+      overflow: hidden;
     }
-    .giant-logo__svg {
-      display: block;
-      width: 100%;
-      height: auto;
+    .giant-logo__text {
+      font-family: var(--ff-sans);
+      font-weight: 700;
+      font-size: clamp(2rem, 12.5vw, 12rem);
+      letter-spacing: -0.04em;
+      color: var(--dp-c-white);
+      white-space: nowrap;
       user-select: none;
+      display: block;
     }
 
     /* ════════════════════════════════════════════
@@ -648,9 +653,7 @@
     <!-- ── GIANT WORDMARK ── -->
     <div class="block-giant-logo" aria-hidden="true">
       <div class="giant-logo__inner">
-        <svg class="giant-logo__svg" viewBox="0 0 1000 135" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-          <text x="500" y="118" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="160" letter-spacing="-5" textLength="1000" lengthAdjust="spacingAndGlyphs" fill="#fff">TRADING852</text>
-        </svg>
+        <div class="giant-logo__text">TRADING852</div>
       </div>
     </div>
 
