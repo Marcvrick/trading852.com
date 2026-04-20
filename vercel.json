@@ -3,6 +3,7 @@
   "trailingSlash": false,
   "rewrites": [
     { "source": "/about", "destination": "/static/about.html" },
+    { "source": "/scorecard", "destination": "/static/scorecard.html" },
     { "source": "/disclaimer", "destination": "/static/disclaimer.html" },
     { "source": "/legal-notice", "destination": "/static/legal-notice.html" },
     { "source": "/robots.txt", "destination": "/static/robots.txt" },
