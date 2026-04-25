@@ -586,6 +586,82 @@
       line-height: 1.6;
     }
 
+    .data-snapshot {
+      display: flex;
+      gap: 1px;
+      background: var(--dp-c-gray-border);
+      border: 0.0625rem solid var(--dp-c-gray-border);
+      margin-bottom: 2.5rem;
+    }
+    .data-snapshot__panel {
+      flex: 1 1 50%;
+      background: var(--dp-c-white);
+      padding: 1.25rem;
+      min-width: 0;
+    }
+    .data-snapshot__title {
+      font-family: var(--ff-sans);
+      font-size: var(--fs-12);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.0625rem;
+      color: var(--dp-c-gray-2);
+      padding-bottom: 0.5rem;
+      margin-bottom: 0.875rem;
+      border-bottom: 0.0625rem solid var(--dp-c-gray-border);
+    }
+    .snapshot-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--ff-sans);
+      font-size: 0.8125rem;
+    }
+    .snapshot-table tr {
+      border-bottom: 0.0625rem solid rgba(0,0,0,0.06);
+    }
+    .snapshot-table tr:last-child { border-bottom: none; }
+    .snapshot-table td {
+      padding: 0.375rem 0;
+      line-height: 1.3;
+      vertical-align: middle;
+    }
+    .snapshot-table td:first-child {
+      color: var(--dp-c-gray-2);
+      font-size: var(--fs-12);
+      width: 55%;
+    }
+    .snapshot-table td:last-child {
+      font-weight: 600;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+    .snapshot-table tr.row--haier td {
+      font-weight: 700;
+      color: var(--dp-c-black);
+      padding-top: 0.5rem;
+    }
+    .snapshot-table tr.row--haier td:first-child {
+      color: var(--dp-c-black);
+    }
+    .snapshot-badge {
+      display: inline-block;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      color: var(--dp-c-white);
+      background: var(--dp-c-black);
+      padding: 0.1rem 0.35rem;
+      border-radius: 2px;
+      margin-left: 0.35rem;
+      vertical-align: middle;
+    }
+    .snapshot-note {
+      font-size: 0.6875rem;
+      color: var(--dp-c-gray-2);
+      margin-top: 0.75rem;
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+
     /* ─── Responsive ─── */
     @media (max-width: 48rem) {
       .menu-list--main { display: none; }
@@ -598,6 +674,7 @@
       .article-body .container > * { grid-column: 1; }
 
       .price-targets__item { flex: 1 1 100%; }
+      .data-snapshot { flex-direction: column; }
     }
   </style>
 </head>
@@ -664,32 +741,72 @@
         <p>Prada's February 2026 headline EPS fell &minus;74% on Versace acquisition charges. Normalised earnings, stripped of one-off transaction costs, fell &minus;5%. The underlying business grew +9% organically for the twentieth consecutive quarter. At HKD&nbsp;38.40, EV/EBIT is approximately 9.2&times;. The luxury sector trades at 15–30&times;. The discount is documentable. The reason it exists is accounting, not deterioration.</p>
       </div>
 
-      <!-- Opening hook — no h2 -->
+      <!-- Data snapshot -->
+      <div class="data-snapshot">
+
+        <div class="data-snapshot__panel">
+          <div class="data-snapshot__title">Business Snapshot · FY2025</div>
+          <table class="snapshot-table">
+            <tbody>
+              <tr>
+                <td>Revenue</td>
+                <td>EUR 5.4B <span style="font-weight:400;color:var(--dp-c-gray-2);font-size:0.75rem">+9%</span></td>
+              </tr>
+              <tr><td>Gross Margin</td><td>80%</td></tr>
+              <tr><td>ROIC</td><td>20%</td></tr>
+              <tr><td>Free Cash Flow</td><td>&gt;EUR 765M</td></tr>
+              <tr><td>Net Debt / EBITDA</td><td>0.23&times;</td></tr>
+              <tr><td>Miu Miu Growth</td><td>+35%</td></tr>
+              <tr><td>52W High / Current</td><td>HKD 71.70 / <strong>38.40</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="data-snapshot__panel">
+          <div class="data-snapshot__title">Luxury Peers · EV/EBIT</div>
+          <table class="snapshot-table">
+            <tbody>
+              <tr><td>Herm&egrave;s</td><td>~30&times;</td></tr>
+              <tr><td>Richemont</td><td>~18&times;</td></tr>
+              <tr><td>LVMH</td><td>~15&times;</td></tr>
+              <tr><td>Kering</td><td>~11&times;</td></tr>
+              <tr class="row--haier">
+                <td>Prada (1913.HK)</td>
+                <td>9.2&times;<span class="snapshot-badge">&minus;39%</span></td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="snapshot-note">Source: Prada FY2025 annual results &middot; Peer multiples Apr&nbsp;2026</p>
+        </div>
+
+      </div>
+
+      <!-- Opening hook, no h2 -->
       <p>In February 2026, Prada reported a &minus;74% drop in headline EPS. The stock fell &minus;46% from its 52-week high of HKD&nbsp;71.70. Analysts flagged the miss. Funds cut positions.</p>
 
       <p>The business grew 9%.</p>
 
-      <p>Every centimetre of that EPS disaster traces to a single line item: Versace acquisition costs. In December 2025, Prada closed the purchase of Versace for EUR&nbsp;1.375&nbsp;billion. The transaction generated immediate accounting charges — goodwill, restructuring provisions, advisory fees — that collapsed the reported profit figure. Strip those out, and normalised EPS fell &minus;5%, broadly in line with a year that also absorbed one-time prior-cycle legal settlement costs. The Prada brand grew. Miu&nbsp;Miu grew +35%. Neither franchise deteriorated by a single metric.</p>
+      <p>Every centimetre of that EPS disaster traces to a single line item: Versace acquisition costs. In December 2025, Prada closed the purchase of Versace for EUR&nbsp;1.375&nbsp;billion. The transaction generated immediate accounting charges (goodwill, restructuring provisions, advisory fees) that collapsed the reported profit figure. Strip those out, and normalised EPS fell &minus;5%, broadly in line with a year that also absorbed one-time prior-cycle legal settlement costs. The Prada brand grew. Miu&nbsp;Miu grew +35%. Neither franchise deteriorated by a single metric.</p>
 
       <p>At HKD&nbsp;38.40 and EV/EBIT of approximately 9.2&times;, the market is valuing the world's #2 luxury operator by margin profile at the same multiple as a commodity industrial. That arithmetic deserves a second look.</p>
 
       <!-- Section 1 -->
       <h2>What Prada Does</h2>
 
-      <p>This is not a fashion company in the way the word is usually used. Prada Group owns two brands with no overlap in customer profile: Prada, the highest-margin leather goods and apparel franchise outside Hermès, and Miu&nbsp;Miu, the fastest-growing luxury brand in the world in 2025. The group runs its own stores directly — no wholesale, no licence fees, no franchisee economics. Every transaction is direct retail.</p>
+      <p>This is not a fashion company in the way the word is usually used. Prada Group owns two brands with no overlap in customer profile: Prada, the highest-margin leather goods and apparel franchise outside Hermès, and Miu&nbsp;Miu, the fastest-growing luxury brand in the world in 2025. The group runs its own stores directly, no wholesale, no licence fees, no franchisee economics. Every transaction is direct retail.</p>
 
-      <p>The numbers confirm the structure. Gross margins of 80% are not aspirational — they are the same level Hermès prints, and they reflect three decades of conditioning consumers not to expect discounts. ROIC of 20% on a network of 2&nbsp;500+ directly operated stores reflects operational execution that is invisible in any single-quarter filing. FY2025 revenue of EUR&nbsp;5.4&nbsp;billion grew +9% organically. Net&nbsp;Debt/EBITDA sits at 0.23&times;. Annual free cash flow exceeds EUR&nbsp;765&nbsp;million.</p>
+      <p>The numbers confirm the structure. Gross margins of 80% are not aspirational, they are the same level Hermès prints, and they reflect three decades of conditioning consumers not to expect discounts. ROIC of 20% on a network of 2&nbsp;500+ directly operated stores reflects operational execution that is invisible in any single-quarter filing. FY2025 revenue of EUR&nbsp;5.4&nbsp;billion grew +9% organically. Net&nbsp;Debt/EBITDA sits at 0.23&times;. Annual free cash flow exceeds EUR&nbsp;765&nbsp;million.</p>
 
       <p>Miu&nbsp;Miu is the accelerant. +35% YoY in FY2025. Not a seasonal bounce, not an anomaly in the comparable base. A generational consumer shift: the brand has resonated with a demographic under 30 that does not buy Prada, opening an entirely separate addressable market within the same group. Miu&nbsp;Miu currently represents approximately 20% of group revenue. The trajectory points toward 35–40% within three years.</p>
 
       <!-- Section 2 -->
       <h2>Why the Discount Exists</h2>
 
-      <p>The answer is Versace and one accounting line. In December 2025, Prada acquired Versace for EUR&nbsp;1.375&nbsp;billion — the first time in the group's history it has operated more than two brands simultaneously. The acquisition generated immediate recognition of goodwill, restructuring provisions, and advisory fees that hit the February 2026 results. Reported EPS collapsed. The market processed the headline number.</p>
+      <p>The answer is Versace and one accounting line. In December 2025, Prada acquired Versace for EUR&nbsp;1.375&nbsp;billion, the first time in the group's history it has operated more than two brands simultaneously. The acquisition generated immediate recognition of goodwill, restructuring provisions, and advisory fees that hit the February 2026 results. Reported EPS collapsed. The market processed the headline number.</p>
 
       <p>Most participants stopped there.</p>
 
-      <p>The discount also has a second layer: uncertainty about timeline. Prada's management team has run a single-brand empire for thirty years. Running a distressed fashion house with entirely different brand equity, customer profile, and operational infrastructure is a different problem. The market is pricing execution risk — and that risk is not imaginary. It is just not the risk the &minus;46% decline implies. Pessimism this acute against fundamentals this durable is not a stable state.</p>
+      <p>The discount also has a second layer: uncertainty about timeline. Prada's management team has run a single-brand empire for thirty years. Running a distressed fashion house with entirely different brand equity, customer profile, and operational infrastructure is a different problem. The market is pricing execution risk, and that risk is not imaginary. It is just not the risk the &minus;46% decline implies. Pessimism this acute against fundamentals this durable is not a stable state.</p>
 
       <p class="lead">The result: the discount exists, it is documentable, and it persists because the market is pricing five years of Versace drag into a balance sheet with capacity for two.</p>
 
@@ -701,7 +818,7 @@
       <ol>
         <li>
           <span class="num">01</span>
-          <span><strong>The accounting miss is not an earnings miss.</strong> The &minus;74% headline EPS decline is a legal and accounting artefact of the Versace transaction close. Normalised operating earnings — what the Prada and Miu&nbsp;Miu franchises actually produced — fell &minus;5% against a year that already included one-time costs from the prior cycle. No analyst who read the earnings call transcript walked away believing the underlying business had deteriorated. The market's &minus;46% reaction was to the headline. The underlying business was not the subject of that reaction.</span>
+          <span><strong>The accounting miss is not an earnings miss.</strong> The &minus;74% headline EPS decline is a legal and accounting artefact of the Versace transaction close. Normalised operating earnings (what the Prada and Miu&nbsp;Miu franchises actually produced) fell &minus;5% against a year that already included one-time costs from the prior cycle. No analyst who read the earnings call transcript walked away believing the underlying business had deteriorated. The market's &minus;46% reaction was to the headline. The underlying business was not the subject of that reaction.</span>
         </li>
         <li>
           <span class="num">02</span>
@@ -709,7 +826,7 @@
         </li>
         <li>
           <span class="num">03</span>
-          <span><strong>The valuation case requires no multiple expansion to work.</strong> At HKD&nbsp;38.40 and EV/EBIT of approximately 9.2&times;, the stock returns to the sector median of 15&times; simply by demonstrating that Versace is not a catastrophe. That is not a high bar. Kering, at peak pessimism in 2024, traded between 10–11&times; before recovering to 14–18&times;. LVMH declined &minus;40% in 2022–2023 on China fears before recovering. Prada is already inside the territory where luxury re-ratings historically occur — and it is doing so with a balance sheet that Kering at peak pessimism did not have.</span>
+          <span><strong>The valuation case requires no multiple expansion to work.</strong> At HKD&nbsp;38.40 and EV/EBIT of approximately 9.2&times;, the stock returns to the sector median of 15&times; simply by demonstrating that Versace is not a catastrophe. That is not a high bar. Kering, at peak pessimism in 2024, traded between 10–11&times; before recovering to 14–18&times;. LVMH declined &minus;40% in 2022–2023 on China fears before recovering. Prada is already inside the territory where luxury re-ratings historically occur, and it is doing so with a balance sheet that Kering at peak pessimism did not have.</span>
         </li>
       </ol>
 
@@ -718,7 +835,7 @@
 
       <p>Two components, separated cleanly.</p>
 
-      <p>The Prada/Miu&nbsp;Miu core business at 9.2&times; EV/EBIT today sits against a peer range of 15–30&times;. Using 15&times; — the floor of the sector, the multiple applied to the weakest large-cap luxury operators — as a conservative target for the core business only, and applying it to FY2025 EBIT of approximately EUR&nbsp;1.1&nbsp;billion, gives a core enterprise value of EUR&nbsp;16.5&nbsp;billion. Today's implied enterprise value is approximately EUR&nbsp;10.1&nbsp;billion. The gap is EUR&nbsp;6.4&nbsp;billion.</p>
+      <p>The Prada/Miu&nbsp;Miu core business at 9.2&times; EV/EBIT today sits against a peer range of 15–30&times;. Using 15&times; (the floor of the sector, the multiple applied to the weakest large-cap luxury operators) as a conservative target for the core business only, and applying it to FY2025 EBIT of approximately EUR&nbsp;1.1&nbsp;billion, gives a core enterprise value of EUR&nbsp;16.5&nbsp;billion. Today's implied enterprise value is approximately EUR&nbsp;10.1&nbsp;billion. The gap is EUR&nbsp;6.4&nbsp;billion.</p>
 
       <p>Versace is the offset. At a EUR&nbsp;1.375&nbsp;billion acquisition price, assuming 2–3 years of integration drag at EUR&nbsp;100–150&nbsp;million per year, total Versace drag on fair value is EUR&nbsp;300–450&nbsp;million. Against a EUR&nbsp;6.4&nbsp;billion gap to the 15&times; floor, Versace absorbs 7–10% of the discount. The math still closes.</p>
 
@@ -734,7 +851,7 @@
           <tbody>
             <tr>
               <td>Prada/Miu&nbsp;Miu core @ 15× EV/EBIT (sector floor)</td>
-              <td>Conservative — lowest large-cap luxury multiple</td>
+              <td>Conservative, lowest large-cap luxury multiple</td>
               <td>~62</td>
             </tr>
             <tr>
@@ -761,7 +878,7 @@
         </table>
       </div>
 
-      <p>The base case target of HKD&nbsp;50–55 requires only 15&times; on the core business and full credit for Versace drag. The bull case at HKD&nbsp;58–65 adds Miu&nbsp;Miu re-rating as it approaches 30% of group revenue. The bear case — a Versace write-down above EUR&nbsp;500&nbsp;million — pulls the stock toward HKD&nbsp;30–35, but requires an impairment that the current EUR&nbsp;4.4&nbsp;billion equity base absorbs without a capital raise.</p>
+      <p>The base case target of HKD&nbsp;50–55 requires only 15&times; on the core business and full credit for Versace drag. The bull case at HKD&nbsp;58–65 adds Miu&nbsp;Miu re-rating as it approaches 30% of group revenue. The bear case (a Versace write-down above EUR&nbsp;500&nbsp;million) pulls the stock toward HKD&nbsp;30–35, but requires an impairment that the current EUR&nbsp;4.4&nbsp;billion equity base absorbs without a capital raise.</p>
 
       <!-- Section 5 -->
       <h2>Risks We Are Not Downplaying</h2>
@@ -783,7 +900,7 @@
       <!-- Section 6 -->
       <h2>The Decision</h2>
 
-      <p>This is a special situation, not a growth investment. The thesis does not rest on Prada accelerating. It rests on the market correcting an accounting-driven mis-price as Versace uncertainty resolves — and on the Prada/Miu&nbsp;Miu franchise continuing to do what it has done for twenty consecutive quarters.</p>
+      <p>This is a special situation, not a growth investment. The thesis does not rest on Prada accelerating. It rests on the market correcting an accounting-driven mis-price as Versace uncertainty resolves, and on the Prada/Miu&nbsp;Miu franchise continuing to do what it has done for twenty consecutive quarters.</p>
 
       <p>The upside from HKD&nbsp;38.40 to the base case at HKD&nbsp;50–55 is +30–43%. The downside to the invalidation zone at HKD&nbsp;30–35 is &minus;9–22%. Asymmetry is approximately 2–3:1 in favour of the long.</p>
 

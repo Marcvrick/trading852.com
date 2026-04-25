@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Alibaba's adjusted EBITA fell 57% in Q3 FY2026. Cloud grew 36%. At HK$122.90, EV/EBIT is 10.8x while Tencent trades at 15x and Amazon at 35x. The EBITA drop is deliberate — this is AWS in 2014.">
+  <meta name="description" content="Alibaba's adjusted EBITA fell 57% in Q3 FY2026. Cloud grew 36%. At HK$122.90, EV/EBIT is 10.8x while Tencent trades at 15x and Amazon at 35x. The EBITA drop is deliberate. This is AWS in 2014.">
   <title>Alibaba (9988.HK): EBITA Down 57%. Cloud Up 36%. This Is What Amazon Looked Like in 2014. · Trading852</title>
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
@@ -24,7 +24,7 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Alibaba (9988.HK): EBITA Down 57%. Cloud Up 36%. This Is What Amazon Looked Like in 2014.",
-    "description": "Alibaba's adjusted EBITA fell 57% in Q3 FY2026. Cloud grew 36%. At HK$122.90, EV/EBIT is 10.8x while Tencent trades at 15x and Amazon at 35x. The EBITA drop is deliberate — this is AWS in 2014.",
+    "description": "Alibaba's adjusted EBITA fell 57% in Q3 FY2026. Cloud grew 36%. At HK$122.90, EV/EBIT is 10.8x while Tencent trades at 15x and Amazon at 35x. The EBITA drop is deliberate. This is AWS in 2014.",
     "datePublished": "2026-04-14T00:00:00Z",
     "dateModified": "2026-04-14T00:00:00Z",
     "author": {
@@ -586,6 +586,82 @@
       line-height: 1.6;
     }
 
+    .data-snapshot {
+      display: flex;
+      gap: 1px;
+      background: var(--dp-c-gray-border);
+      border: 0.0625rem solid var(--dp-c-gray-border);
+      margin-bottom: 2.5rem;
+    }
+    .data-snapshot__panel {
+      flex: 1 1 50%;
+      background: var(--dp-c-white);
+      padding: 1.25rem;
+      min-width: 0;
+    }
+    .data-snapshot__title {
+      font-family: var(--ff-sans);
+      font-size: var(--fs-12);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.0625rem;
+      color: var(--dp-c-gray-2);
+      padding-bottom: 0.5rem;
+      margin-bottom: 0.875rem;
+      border-bottom: 0.0625rem solid var(--dp-c-gray-border);
+    }
+    .snapshot-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--ff-sans);
+      font-size: 0.8125rem;
+    }
+    .snapshot-table tr {
+      border-bottom: 0.0625rem solid rgba(0,0,0,0.06);
+    }
+    .snapshot-table tr:last-child { border-bottom: none; }
+    .snapshot-table td {
+      padding: 0.375rem 0;
+      line-height: 1.3;
+      vertical-align: middle;
+    }
+    .snapshot-table td:first-child {
+      color: var(--dp-c-gray-2);
+      font-size: var(--fs-12);
+      width: 55%;
+    }
+    .snapshot-table td:last-child {
+      font-weight: 600;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+    .snapshot-table tr.row--haier td {
+      font-weight: 700;
+      color: var(--dp-c-black);
+      padding-top: 0.5rem;
+    }
+    .snapshot-table tr.row--haier td:first-child {
+      color: var(--dp-c-black);
+    }
+    .snapshot-badge {
+      display: inline-block;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      color: var(--dp-c-white);
+      background: var(--dp-c-black);
+      padding: 0.1rem 0.35rem;
+      border-radius: 2px;
+      margin-left: 0.35rem;
+      vertical-align: middle;
+    }
+    .snapshot-note {
+      font-size: 0.6875rem;
+      color: var(--dp-c-gray-2);
+      margin-top: 0.75rem;
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+
     /* ─── Responsive ─── */
     @media (max-width: 48rem) {
       .menu-list--main { display: none; }
@@ -598,6 +674,7 @@
       .article-body .container > * { grid-column: 1; }
 
       .price-targets__item { flex: 1 1 100%; }
+      .data-snapshot { flex-direction: column; }
     }
   </style>
 </head>
@@ -660,24 +737,63 @@
       <!-- Key takeaway -->
       <div class="key-takeaway">
         <div class="key-takeaway__label">Key Takeaway</div>
-        <p>Alibaba's adjusted EBITA fell 57% in Q3 FY2026 because the company is building data centers, buying GPUs, and constructing the infrastructure for China's largest cloud platform. Cloud Intelligence Group revenue grew 36% year-over-year. At HK$122.90, EV/EBIT is 10.8&times; against Tencent at 15&times; and Amazon at 35&times;. The company holds approximately US$40&nbsp;billion in net cash &mdash; 13% of market cap &mdash; with over US$12&nbsp;billion in active buyback authorization. The market has priced the EBITA decline. It has not priced the cloud trajectory.</p>
+        <p>Alibaba's adjusted EBITA fell 57% in Q3 FY2026 because the company is building data centers, buying GPUs, and constructing the infrastructure for China's largest cloud platform. Cloud Intelligence Group revenue grew 36% year-over-year. At HK$122.90, EV/EBIT is 10.8&times; against Tencent at 15&times; and Amazon at 35&times;. The company holds approximately US$40&nbsp;billion in net cash (13% of market cap) with over US$12&nbsp;billion in active buyback authorization. The market has priced the EBITA decline. It has not priced the cloud trajectory.</p>
       </div>
 
-      <!-- Opening hook — no h2 -->
+      <!-- Data snapshot -->
+      <div class="data-snapshot">
+
+        <div class="data-snapshot__panel">
+          <div class="data-snapshot__title">Business Snapshot · Q3 FY2026</div>
+          <table class="snapshot-table">
+            <tbody>
+              <tr><td>Revenue</td><td>+9% YoY</td></tr>
+              <tr>
+                <td>Cloud Revenue</td>
+                <td>RMB 43.3B/Q <span style="font-weight:400;color:var(--dp-c-gray-2);font-size:0.75rem">+36%</span></td>
+              </tr>
+              <tr><td>Adj. EBITA (Reported)</td><td>&minus;57% YoY</td></tr>
+              <tr><td>Net Cash</td><td>~US$40B</td></tr>
+              <tr><td>Active Buyback</td><td>US$12B+</td></tr>
+              <tr><td>52W High / Current</td><td>HK$186.20 / <strong>122.90</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="data-snapshot__panel">
+          <div class="data-snapshot__title">Tech Peers · EV/EBIT</div>
+          <table class="snapshot-table">
+            <tbody>
+              <tr><td>Amazon</td><td>35&times;</td></tr>
+              <tr><td>Microsoft</td><td>~25&times;</td></tr>
+              <tr><td>Google</td><td>19&times;</td></tr>
+              <tr><td>Tencent</td><td>15&times;</td></tr>
+              <tr class="row--haier">
+                <td>Alibaba (9988.HK)</td>
+                <td>10.8&times;<span class="snapshot-badge">&minus;28%</span></td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="snapshot-note">Source: HKEX filing Q3 FY2026 &middot; Peer multiples Apr&nbsp;2026</p>
+        </div>
+
+      </div>
+
+      <!-- Opening hook, no h2 -->
       <p>Alibaba's adjusted EBITA fell 57% in the December quarter. Revenue grew 9% after stripping out disposals. One of those numbers is producing the headlines. The other is producing the business.</p>
 
-      <p>At HK$122.90, the market values all of Alibaba &mdash; China's dominant cloud platform, its largest e-commerce marketplace, a logistics network spanning 200 countries &mdash; at roughly 10.8&times; forward EV/EBIT. Tencent trades at 15&times;. Amazon at 35&times; forward earnings. Google at 19&times;. The company holds approximately US$40&nbsp;billion in net cash, which represents 13% of its market capitalization. That cash is not being hoarded. Over US$12&nbsp;billion in buyback authorization remains active.</p>
+      <p>At HK$122.90, the market values all of Alibaba (China's dominant cloud platform, its largest e-commerce marketplace, a logistics network spanning 200 countries) at roughly 10.8&times; forward EV/EBIT. Tencent trades at 15&times;. Amazon at 35&times; forward earnings. Google at 19&times;. The company holds approximately US$40&nbsp;billion in net cash, which represents 13% of its market capitalization. That cash is not being hoarded. Over US$12&nbsp;billion in buyback authorization remains active.</p>
 
       <p>The EBITA decline is real. It is also deliberate. That distinction is the entire thesis.</p>
 
       <!-- Section 1 -->
       <h2>What Alibaba Does</h2>
 
-      <p>Alibaba operates China's largest digital commerce ecosystem. Taobao and Tmall together handle more gross merchandise volume than any other marketplace in the country. That is the core business &mdash; profitable, cash-generative, and growing at low single digits in a saturated domestic e-commerce market.</p>
+      <p>Alibaba operates China's largest digital commerce ecosystem. Taobao and Tmall together handle more gross merchandise volume than any other marketplace in the country. That is the core business: profitable, cash-generative, and growing at low single digits in a saturated domestic e-commerce market.</p>
 
       <p>The second business is Alibaba Cloud Intelligence Group. Q3 FY2026 revenue: RMB&nbsp;43.3&nbsp;billion, up 36% year-over-year. AI-related revenue has grown at triple-digit rates for ten consecutive quarters. Alibaba Cloud is the number one public cloud provider in China by market share.</p>
 
-      <p>Eddie Wu took over as CEO in October 2023. Since then, the company has executed a restructuring that divested non-core assets, consolidated reporting segments, and redirected capital toward cloud infrastructure. The free cash flow decline of 71% year-over-year in Q3 FY2026 is a direct consequence of that capital reallocation &mdash; data center construction, GPU procurement, network buildout. The cash is leaving the balance sheet through capex, not through losses.</p>
+      <p>Eddie Wu took over as CEO in October 2023. Since then, the company has executed a restructuring that divested non-core assets, consolidated reporting segments, and redirected capital toward cloud infrastructure. The free cash flow decline of 71% year-over-year in Q3 FY2026 is a direct consequence of that capital reallocation: data center construction, GPU procurement, network buildout. The cash is leaving the balance sheet through capex, not through losses.</p>
 
       <!-- Section 2 -->
       <h2>Why the Discount Exists</h2>
@@ -698,7 +814,7 @@
       <ol>
         <li>
           <span class="num">01</span>
-          <span><strong>Amazon reported near-zero consolidated earnings from 2012 to 2016 while building AWS.</strong> During that period, Amazon's stock rose from US$250 to US$750 &mdash; not because earnings improved, but because investors who understood the capex cycle recognized that AWS would eventually generate margins above 30%. Alibaba Cloud is following the same sequence. The revenue growth rate &mdash; 36% &mdash; is comparable to AWS at a similar stage. The EBITA compression is the cost of building the infrastructure that produces those margins. The parallel is not a metaphor. It is a documented pattern: heavy capex depresses reported earnings for 3 to 5 years before the installed base generates recurring, high-margin revenue.</span>
+          <span><strong>Amazon reported near-zero consolidated earnings from 2012 to 2016 while building AWS.</strong> During that period, Amazon's stock rose from US$250 to US$750, not because earnings improved, but because investors who understood the capex cycle recognized that AWS would eventually generate margins above 30%. Alibaba Cloud is following the same sequence. The revenue growth rate (36%) is comparable to AWS at a similar stage. The EBITA compression is the cost of building the infrastructure that produces those margins. The parallel is not a metaphor. It is a documented pattern: heavy capex depresses reported earnings for 3 to 5 years before the installed base generates recurring, high-margin revenue.</span>
         </li>
         <li>
           <span class="num">02</span>
@@ -706,7 +822,7 @@
         </li>
         <li>
           <span class="num">03</span>
-          <span><strong>Cloud Intelligence Group revenue of RMB&nbsp;43.3&nbsp;billion in a single quarter represents an annualized run rate above RMB&nbsp;170&nbsp;billion.</strong> For context, AWS generated US$62&nbsp;billion in 2022 &mdash; roughly RMB&nbsp;440&nbsp;billion &mdash; at margins near 30%. Alibaba Cloud is at approximately 40% of that revenue scale in a market where AI adoption is accelerating, government policy explicitly supports domestic cloud infrastructure, and the competitive gap between Alibaba and its nearest Chinese rival (Huawei Cloud) is widening, not narrowing. The question is not whether Alibaba Cloud will be profitable. The question is when.</span>
+          <span><strong>Cloud Intelligence Group revenue of RMB&nbsp;43.3&nbsp;billion in a single quarter represents an annualized run rate above RMB&nbsp;170&nbsp;billion.</strong> For context, AWS generated US$62&nbsp;billion in 2022 (roughly RMB&nbsp;440&nbsp;billion) at margins near 30%. Alibaba Cloud is at approximately 40% of that revenue scale in a market where AI adoption is accelerating, government policy explicitly supports domestic cloud infrastructure, and the competitive gap between Alibaba and its nearest Chinese rival (Huawei Cloud) is widening, not narrowing. The question is not whether Alibaba Cloud will be profitable. The question is when.</span>
         </li>
       </ol>
 
@@ -769,14 +885,14 @@
         </table>
       </div>
 
-      <p>At 10.8&times; forward EV/EBIT, the market assigns no premium for the cloud business growing at 36%. If cloud were valued separately at even 5&times; revenue &mdash; half of what AWS commands &mdash; the implied value of the e-commerce business would be close to zero. That arithmetic does not require optimism. It requires a calculator.</p>
+      <p>At 10.8&times; forward EV/EBIT, the market assigns no premium for the cloud business growing at 36%. If cloud were valued separately at even 5&times; revenue (half of what AWS commands), the implied value of the e-commerce business would be close to zero. That arithmetic does not require optimism. It requires a calculator.</p>
 
       <!-- Section 5 -->
       <h2>Risks We Are Not Downplaying</h2>
 
       <div class="risk-callout">
         <div class="risk-callout__label">Risk 1: Investment timeline uncertainty</div>
-        <p><strong>EBITA recovery depends on cloud margins inflecting upward as the installed base of AI infrastructure generates recurring revenue.</strong> If AI monetization in China is slower than expected &mdash; regulatory friction, enterprise adoption delays, pricing pressure from Huawei or Baidu &mdash; the recovery could extend to FY2028 or beyond. Two more years of compressed margins means two more years of institutional selling pressure. The Amazon parallel holds only if the investment converts to margin. Amazon proved it could. Alibaba has not yet.</p>
+        <p><strong>EBITA recovery depends on cloud margins inflecting upward as the installed base of AI infrastructure generates recurring revenue.</strong> If AI monetization in China is slower than expected (regulatory friction, enterprise adoption delays, pricing pressure from Huawei or Baidu), the recovery could extend to FY2028 or beyond. Two more years of compressed margins means two more years of institutional selling pressure. The Amazon parallel holds only if the investment converts to margin. Amazon proved it could. Alibaba has not yet.</p>
       </div>
 
       <div class="risk-callout">
@@ -787,7 +903,7 @@
       <!-- Section 6 -->
       <h2>The Decision</h2>
 
-      <p>This is an investment cycle thesis, not a growth thesis. The stock does not need Alibaba to accelerate. It needs the market to recognize that the EBITA decline is capex, not deterioration &mdash; and that capex has a documented pattern of converting to margin in cloud businesses.</p>
+      <p>This is an investment cycle thesis, not a growth thesis. The stock does not need Alibaba to accelerate. It needs the market to recognize that the EBITA decline is capex, not deterioration, and that capex has a documented pattern of converting to margin in cloud businesses.</p>
 
       <div class="price-targets" aria-label="Price targets">
         <div class="price-targets__item">
@@ -825,12 +941,12 @@
             <tr>
               <td class="col--scenario">Neutral</td>
               <td class="col--signal">Cloud grows &gt;25% but margins flat through FY2027</td>
-              <td class="col--impact">HK$130&ndash;150 &mdash; hold</td>
+              <td class="col--impact">HK$130&ndash;150, hold</td>
             </tr>
             <tr>
               <td class="col--scenario">Bear</td>
               <td class="col--signal">EBITA negative 2 consecutive quarters, or net cash &lt;&nbsp;US$20B</td>
-              <td class="col--impact">HK$85&ndash;95 &mdash; exit</td>
+              <td class="col--impact">HK$85&ndash;95, exit</td>
             </tr>
           </tbody>
         </table>

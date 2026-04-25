@@ -587,6 +587,82 @@
       line-height: 1.6;
     }
 
+    .data-snapshot {
+      display: flex;
+      gap: 1px;
+      background: var(--dp-c-gray-border);
+      border: 0.0625rem solid var(--dp-c-gray-border);
+      margin-bottom: 2.5rem;
+    }
+    .data-snapshot__panel {
+      flex: 1 1 50%;
+      background: var(--dp-c-white);
+      padding: 1.25rem;
+      min-width: 0;
+    }
+    .data-snapshot__title {
+      font-family: var(--ff-sans);
+      font-size: var(--fs-12);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.0625rem;
+      color: var(--dp-c-gray-2);
+      padding-bottom: 0.5rem;
+      margin-bottom: 0.875rem;
+      border-bottom: 0.0625rem solid var(--dp-c-gray-border);
+    }
+    .snapshot-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--ff-sans);
+      font-size: 0.8125rem;
+    }
+    .snapshot-table tr {
+      border-bottom: 0.0625rem solid rgba(0,0,0,0.06);
+    }
+    .snapshot-table tr:last-child { border-bottom: none; }
+    .snapshot-table td {
+      padding: 0.375rem 0;
+      line-height: 1.3;
+      vertical-align: middle;
+    }
+    .snapshot-table td:first-child {
+      color: var(--dp-c-gray-2);
+      font-size: var(--fs-12);
+      width: 55%;
+    }
+    .snapshot-table td:last-child {
+      font-weight: 600;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+    .snapshot-table tr.row--haier td {
+      font-weight: 700;
+      color: var(--dp-c-black);
+      padding-top: 0.5rem;
+    }
+    .snapshot-table tr.row--haier td:first-child {
+      color: var(--dp-c-black);
+    }
+    .snapshot-badge {
+      display: inline-block;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      color: var(--dp-c-white);
+      background: var(--dp-c-black);
+      padding: 0.1rem 0.35rem;
+      border-radius: 2px;
+      margin-left: 0.35rem;
+      vertical-align: middle;
+    }
+    .snapshot-note {
+      font-size: 0.6875rem;
+      color: var(--dp-c-gray-2);
+      margin-top: 0.75rem;
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+
     /* ─── Responsive ─── */
     @media (max-width: 48rem) {
       .menu-list--main { display: none; }
@@ -599,6 +675,7 @@
       .article-body .container > * { grid-column: 1; }
 
       .price-targets__item { flex: 1 1 100%; }
+      .data-snapshot { flex-direction: column; }
     }
   </style>
 </head>
@@ -664,6 +741,43 @@
         <p>Dickson Concepts holds HKD&nbsp;2,729M in net cash against a HKD&nbsp;2,354M market cap. The controlling shareholder offered HKD&nbsp;7.20 per share in April 2025, 18% above today's price. The scheme failed on procedure, not substance: 82% of independent shareholders had already said yes.</p>
       </div>
 
+      <!-- Data snapshot -->
+      <div class="data-snapshot">
+
+        <div class="data-snapshot__panel">
+          <div class="data-snapshot__title">Negative EV · Sep 2025</div>
+          <table class="snapshot-table">
+            <tbody>
+              <tr><td>Market Cap</td><td>HKD 2,354M</td></tr>
+              <tr><td>Net Cash</td><td>HKD 2,729M</td></tr>
+              <tr><td>Enterprise Value</td><td><strong>&minus;HKD 375M</strong></td></tr>
+              <tr><td>Net Cash / Share</td><td>HKD 7.08</td></tr>
+              <tr><td>Revenue H1 FY2026</td><td>+1.2% YoY</td></tr>
+              <tr><td>Net Profit H1 FY2026</td><td>+14% (HKD 150M)</td></tr>
+              <tr><td>Dividend Yield</td><td>3&ndash;5%</td></tr>
+              <tr class="row--haier"><td>Current Price</td><td><strong>HKD 6.10</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="data-snapshot__panel">
+          <div class="data-snapshot__title">NAV Breakdown · Per Share (HKD)</div>
+          <table class="snapshot-table">
+            <tbody>
+              <tr><td>Net Cash (Sep 2025)</td><td>7.08</td></tr>
+              <tr><td>Operating Business @ 7&times;</td><td>5.45</td></tr>
+              <tr><td>Gross NAV</td><td>~12.50</td></tr>
+              <tr><td>HC Discount (20&ndash;30%)</td><td>&minus;2.50 to &minus;3.75</td></tr>
+              <tr><td>Adj. NAV (conservative)</td><td>~9.00&ndash;10.00</td></tr>
+              <tr><td>Privatisation Offer (Apr 2025)</td><td>7.20</td></tr>
+              <tr class="row--haier"><td>Current</td><td><strong>6.10</strong><span class="snapshot-badge">&minus;36%</span></td></tr>
+            </tbody>
+          </table>
+          <p class="snapshot-note">Source: HKEX balance sheet Sep&nbsp;2025 &middot; Offer document Apr&nbsp;2025</p>
+        </div>
+
+      </div>
+
       <!-- Opening -->
       <p>There are situations in the stock market where the numbers are so clear you rub your eyes before believing what you are reading. Dickson Concepts is one of them.</p>
 
@@ -724,7 +838,7 @@
 
       <p>First, the cash. <strong>HKD&nbsp;2,729&nbsp;million on the balance sheet, or HKD&nbsp;7.08 per share.</strong> This figure is pulled directly from the balance sheet as of September&nbsp;30,&nbsp;2025. Not a projection, not an estimate.</p>
 
-      <p>Then, the operating business. Normalized earnings of HKD&nbsp;300&nbsp;million — consistent with pre-FY2025 levels — at a 7× multiple, conservative relative to HK luxury peers trading at 8×–15× EV/EBIT, gives a business value of HKD&nbsp;2,100&nbsp;million. That is HKD&nbsp;5.45 per share.</p>
+      <p>Then, the operating business. Normalized earnings of HKD&nbsp;300&nbsp;million (consistent with pre-FY2025 levels) at a 7× multiple, conservative relative to HK luxury peers trading at 8×–15× EV/EBIT, gives a business value of HKD&nbsp;2,100&nbsp;million. That is HKD&nbsp;5.45 per share.</p>
 
       <p>Total intrinsic value: approximately HKD&nbsp;12.50 per share. Apply a 20–30% holding company discount, standard for this type of structure in Hong Kong, and you get a conservative adjusted value between <strong>HKD&nbsp;9.00 and HKD&nbsp;10.00</strong>, against a current price of HKD&nbsp;6.10.</p>
 
@@ -774,7 +888,7 @@
 
       <div class="risk-callout">
         <div class="risk-callout__label">Risk 1: Governance</div>
-        <p><strong>The cash does not belong to minority shareholders directly.</strong> The HKD&nbsp;2,729&nbsp;million is in Dickson Concepts' accounts, but Dickson Poon controls the board. If this cash is deployed into unstrategic acquisitions or related-party transactions, the valuation floor disappears from the balance sheet. Poon's track record has been broadly favorable to minorities. The HKD&nbsp;7.20 offer is the best evidence — but this governance risk is real and must be kept in mind.</p>
+        <p><strong>The cash does not belong to minority shareholders directly.</strong> The HKD&nbsp;2,729&nbsp;million is in Dickson Concepts' accounts, but Dickson Poon controls the board. If this cash is deployed into unstrategic acquisitions or related-party transactions, the valuation floor disappears from the balance sheet. Poon's track record has been broadly favorable to minorities. The HKD&nbsp;7.20 offer is the best evidence, but this governance risk is real and must be kept in mind.</p>
       </div>
 
       <div class="risk-callout">
