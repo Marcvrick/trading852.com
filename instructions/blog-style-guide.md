@@ -163,6 +163,7 @@ Jamais de recommandation sur quand acheter, quand vendre, combien investir, ou c
 - 3 colonnes : Scénario | Signal observable | Implication cours
 - 3 lignes maximum : bull / neutre / bear
 - Scénario en **gras**, signal doit être actionnable (visible, vérifiable publiquement)
+- Colonne "Implication cours" = fourchette de prix + état de la thèse ("thesis intact", "thesis invalidated") — jamais une action ("hold", "exit", "add", "reduce", "X% du portefeuille")
 
 ---
 
