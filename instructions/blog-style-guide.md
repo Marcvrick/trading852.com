@@ -12,6 +12,7 @@ source: "[[0113-blog-article]]"
 ---
 
 > **Référence :** [[0113-blog-article]] — modèle canonique du format blog conviction HK stocks
+> **Voix de base :** [VOIX-Marc.md](/Users/mc/Library/Mobile Documents/com~apple~CloudDocs/MarcOS/Voix Marc/VOIX-Marc.md) — ce guide fixe le format et les règles analytiques. VOIX-Marc fixe le ton, le rythme et les anti-patterns IA. Les deux s'appliquent simultanément.
 
 ---
 
@@ -113,6 +114,8 @@ Le subtitle et la Key Takeaway ne peuvent jamais contenir la même information c
 > Mauvais : subtitle dit "the market values everything else at US$507M" → Key Takeaway répète US$730M et US$507M.
 > Bon : subtitle dit "one of the world's largest pharmaceutical companies paid nine figures for a single early-stage molecule. The math that follows is worth reading carefully." → Key Takeaway livre les chiffres.
 
+**Key Takeaway — format et longueur :** 2 à 3 phrases maximum. Ton factuel, pas enthousiaste. La box ne compte pas dans les 80-120 mots du hook ouverture : c'est un élément structurel distinct. Elle doit pouvoir être lue seule, sans le reste de l'article, et donner au lecteur pressé les trois chiffres les plus importants.
+
 ### 1. Hook d'ouverture (sans titre)
 - Premier paragraphe sans `##` — va directement au fait surprenant
 - Chiffre concret dans les deux premières phrases
@@ -199,6 +202,46 @@ Jamais de recommandation sur quand acheter, quand vendre, combien investir, ou c
 - Pas de "comme nous l'avons vu dans la section précédente"
 - Les `---` (lignes de séparation) remplacent les phrases de transition lourdes
 
+### Pas d'insertions mid-sentence — règle absolue
+
+Un qualificatif, un contexte ou une explication qui s'intercale entre virgules ou entre parenthèses au milieu d'une phrase doit devenir une phrase à part. Trois formes interdites :
+
+**1. Parenthétique en milieu de clause**
+❌ "The company holds RMB 12.7B in net cash (36% of market cap), and operating cash flow..."
+✅ "The company holds RMB 12.7B in net cash, equal to 36% of market cap. Operating cash flow..."
+
+**2. Qualificatif sandwich entre virgules**
+❌ "A second year of weakness, particularly in lower-tier cities where density is highest, would compress margins..."
+✅ "Yadea's dealer density is highest in lower-tier cities. A second year of weakness in those markets would compress margins..."
+
+**3. Appositive collée en fin de phrase**
+❌ "...gross margin at 19.1%, a three-year high above the pre-trough level of 16.9%."
+✅ "...gross margin at 19.1%. That is a three-year high, above the 16.9% recorded before the trough."
+
+**Le test avant de publier :** lire la phrase à voix haute sans l'insertion. Si la phrase tient seule, l'insertion est une phrase séparée. La placer avant ou après, jamais à l'intérieur.
+
+**Règle des parenthèses : 4 mots maximum.**
+Les parenthèses ne fonctionnent que pour des apartés très courts. Au-delà de 4 mots, le lecteur doit tenir le début de la phrase en mémoire pendant qu'il traverse l'insertion. Il perd le fil avant d'arriver à la fin. C'est le problème du tunnel : on entre d'un côté, on ne sait plus de quoi on parlait en sortant de l'autre.
+
+❌ "The company makes scooters and motorcycles (not pedal-assist bicycles, not shared-mobility pods) across China..." — trop long, rompt le tunnel
+✅ "(36% of market cap)" — 3 mots, acceptable
+✅ Sinon : phrase séparée, avant ou après.
+
+**Origine de la règle :** identifiée sur 1585-yadea (avril 2026), six occurrences corrigées après publication.
+
+### Termes analytiques — règle d'usage, pas d'interdiction
+
+Les termes financiers ou analytiques ("macro headwinds", "re-rating", "ASPs", "quality of earnings") sont acceptables quand ils apportent une précision que le langage courant ne peut pas rendre aussi bien. Ils sont à remplacer quand ils ajoutent du poids sans ajouter de sens.
+
+**Le test :** est-ce que le terme dit quelque chose que le mot courant ne dirait pas ?
+
+- "macro headwinds" dans une phrase sur la géopolitique ou les taux → utile, précis
+- "soft macro environment" pour dire "les consommateurs dépensaient moins" → remplacer par "when consumers pulled back"
+- "discretionary transport purchase" pour dire "discretionary purchase" → le mot "transport" n'ajoute rien, le couper
+- "the category absorbed the impact" alors qu'on parle de deux-roues → nommer le produit : "two-wheelers took the hit"
+
+**La règle :** utiliser le terme analytique quand il est irremplaçable. Utiliser le mot courant quand il dit la même chose. Ne jamais empiler les deux pour sonner plus rigoureux.
+
 ---
 
 ## Tables Markdown — Usage
@@ -244,7 +287,7 @@ Une formule utilisée dans un article ne peut jamais réapparaître dans un autr
 **Comment écrire une nouvelle phrase-pendule :**
 Ne pas partir d'un template. Partir du fait concret le plus frappant de l'article en cours.
 Exemples de directions valides (non utilisées) :
-- Nommer le gap entre le multiple actuel et le cash flow : "Three forces compressed the price. None of them changed the cash flow."
+- Nommer le gap entre le multiple actuel et le cash flow : "The price implies a business in decline. The accounts show a business accumulating cash."
 - Nommer l'acheteur silencieux : "The company is buying its own shares at HKD 20.76. The market is selling them."
 - Nommer le temps : "The filing is public. The price implies no one has read it."
 
@@ -264,25 +307,12 @@ Dire : "a balance sheet with capacity for two"
 
 ---
 
-## Checklist avant publication — contrôle inter-articles
-
-Avant de soumettre un article, vérifier ces 4 points contre les articles déjà publiés :
-
-- [ ] **Pendule** : la phrase-pendule de cet article n'est pas dans la liste des phrases bannies (§ Voix Howard Marks)
-- [ ] **Ouverture** : la structure de l'ouverture n'a pas été utilisée dans un article précédent ("This is not...", "The filing is public...", "The math is worth reading...")
-- [ ] **Subtitle** : la structure du subtitle est unique à cet article (pas la même formule qu'un subtitle existant)
-- [ ] **Clôture de la section Décision** : la dernière phrase est spécifique à cette entreprise, pas une variante d'une clôture déjà publiée
-
-Si un point échoue : réécrire à partir du fait le plus concret et spécifique à l'entreprise. Jamais partir d'un template existant.
-
----
-
 ## Ce qu'on ne fait jamais
 
-- Jamais d'article sans Data Snapshot (bloc §0) — c'est obligatoire, même pour un article court
+- Jamais d'article sans Data Snapshot (bloc §0), obligatoire même pour un article court
 - Jamais de bullet points dans le corps de l'article (sauf la table de scénarios)
 - Jamais de phrase comme "il convient de noter que" ou "il est important de souligner"
-- Jamais de disclaimer légal ("ceci n'est pas un conseil en investissement") — le format assume un lecteur adulte
+- Jamais de disclaimer légal ("ceci n'est pas un conseil en investissement"), le format assume un lecteur adulte
 - Jamais de titre de section en forme de teaser vague ("Et maintenant ?", "La suite")
 - Jamais de chiffre sans sa date source ou son document d'origine
 - Jamais de risque présenté comme hypothétique quand il est documenté : "ce risque est réel et il faut l'avoir en tête"
@@ -390,7 +420,7 @@ La card doit teaser l'article, pas le résumer. Si la card et le H1 sont identiq
 
 - [ ] Le titre contient au moins un chiffre précis
 - [ ] Il y a une tension ou un paradoxe (deux faits apparemment incompatibles, ou un prix qui semble impossible)
-- [ ] Le titre ne donne pas la réponse — il force la lecture
+- [ ] Le titre ne donne pas la réponse, il force la lecture
 - [ ] Aucun superlatif, aucun adjectif d'enthousiasme
 - [ ] La card homepage est distincte du H1 (si longueur > 10 mots)
 
@@ -416,7 +446,7 @@ L'article modèle fait ~1 200 mots. En dessous de 900, la thèse n'est pas déve
 
 ## Section Sources (obligatoire en bas de chaque article)
 
-Chaque article se termine par une section Sources, après la Décision. Ce n'est pas une formalité — c'est la preuve que chaque chiffre est traçable.
+Chaque article se termine par une section Sources, après la Décision. Ce n'est pas une formalité : c'est la preuve que chaque chiffre est traçable.
 
 **Format :**
 ```
@@ -428,7 +458,33 @@ Chaque article se termine par une section Sources, après la Décision. Ce n'est
 
 **Règles :**
 - Chaque chiffre cité dans le corps de l'article doit être traçable à une ligne de cette section.
-- Jamais "Bloomberg" seul — toujours avec la date du consensus et, si possible, le code de la série.
+- Jamais "Bloomberg" seul : toujours avec la date du consensus et, si possible, le code de la série.
 - Les multiples de pairs doivent citer leur source et leur date. Un multiple sans date est une estimation non vérifiable.
 - Si un chiffre vient d'un calcul propre (ex : EV = capitalisation boursière + dette nette), l'indiquer explicitement : "calcul propre sur base du bilan au [date]".
 - Les filings HKEX sont la source primaire. Bloomberg est acceptable pour les données de marché et les multiples de pairs, pas pour les données fondamentales de la société analysée.
+
+---
+
+## Checklist avant publication — contrôle inter-articles
+
+Avant de soumettre un article, vérifier ces points contre les articles déjà publiés :
+
+**Titre**
+- [ ] Le titre contient au moins un chiffre précis
+- [ ] Il y a une tension ou un paradoxe (deux faits apparemment incompatibles, ou un prix qui semble impossible)
+- [ ] Le titre ne donne pas la réponse, il force la lecture
+- [ ] Aucun superlatif, aucun adjectif d'enthousiasme
+- [ ] La card homepage est distincte du H1 (si longueur > 10 mots)
+
+**Unicité inter-articles**
+- [ ] **Pendule** : la phrase-pendule de cet article n'est pas dans la liste des phrases bannies (§ Voix Howard Marks)
+- [ ] **Ouverture** : la structure de l'ouverture n'a pas été utilisée dans un article précédent ("This is not...", "The filing is public...", "The math is worth reading...")
+- [ ] **Subtitle** : la structure du subtitle est unique à cet article (pas la même formule qu'un subtitle existant)
+- [ ] **Clôture Décision** : la dernière phrase est spécifique à cette entreprise, pas une variante d'une clôture déjà publiée
+
+**Style**
+- [ ] Aucun em dash dans l'article
+- [ ] Aucune insertion mid-sentence (test : lire la phrase sans l'insertion, si elle tient, l'insertion devient une phrase séparée)
+- [ ] Aucune parenthèse de plus de 4 mots
+
+Si un point échoue : réécrire à partir du fait le plus concret et spécifique à l'entreprise. Jamais partir d'un template existant.
