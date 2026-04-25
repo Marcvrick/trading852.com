@@ -26,6 +26,23 @@ Ce style est **journalistique-analytique** : il parle à un lecteur intelligent 
 
 ---
 
+## Format par défaut : Lite
+
+**À partir de maintenant, tous les articles sont écrits en format Lite.** Le format Full (dense, jargon assumé) n'est plus le standard.
+
+**Ce qui distingue le format Lite :**
+- Chaque terme financier est **expliqué la première fois qu'il apparaît**, entre parenthèses ou dans la phrase suivante. Ex : "EV/EBIT (ce que le marché paie pour chaque euro de bénéfice opérationnel)" — jamais utilisé à froid.
+- Pas de literacy financière assumée : le lecteur n'a pas besoin de connaître ROIC, EBIT, sum-of-parts, phase III avant de lire l'article.
+- Ton narratif : on raconte une situation avant d'en faire l'arithmétique.
+- Phrases plus longues que le format Full, mais jamais de jargon non défini.
+
+**Ce que Lite n'est pas :**
+- Simplifié à outrance — les chiffres restent précis, les sources restent citées.
+- Plus court — il est souvent plus long car les définitions prennent de la place.
+- Moins rigoureux — la rigueur analytique est identique, seule la forme change.
+
+---
+
 ## Ponctuation — règle absolue
 
 **Jamais de tiret long (em dash —).** Interdit dans tous les articles sans exception. Remplacer par :
@@ -125,11 +142,24 @@ Le subtitle et la Key Takeaway ne peuvent jamais contenir la même information c
 - Multiple conservateur justifié par rapport aux pairs ("7x — conservateur par rapport aux pairs qui se traitent entre 8x et 15x")
 - Sourcer chaque chiffre à une date et un document précis ("tiré directement du bilan au 30 septembre 2025")
 
+**Cas particulier : entreprise pré-bénéfice (biotech, early-stage)**
+
+Pour les sociétés sans profit opérationnel (EBIT négatif), EV/EBIT ne s'applique pas. Utiliser une valorisation par somme des parties (sum-of-parts) :
+
+| Composante | Méthode de valorisation |
+|---|---|
+| Trésorerie nette | Valeur de marché directe (bilan) |
+| Actif de pipeline (molécule, licence) | Coût d'acquisition par un tiers, deal de licence comparable, ou multiple de M&A sectoriel |
+| Activité opérationnelle résiduelle | Multiple conservateur sur le chiffre d'affaires, ou valeur résiduelle |
+
+Le Data Snapshot remplace EV/EBIT par les métriques pertinentes pour l'étape de développement : cash runway (combien de mois l'entreprise peut opérer sans lever des fonds), coût historique par patient, taux de succès phase-par-phase. Expliquer chaque métrique en clair — le lecteur Lite ne connaît pas "cash runway" par défaut.
+
 ### 6. Risques
 - Section dédiée, intitulée clairement : "Les risques qu'on ne minore pas"
-- **Deux risques maximum, nommés en gras**
+- **Trois risques maximum, nommés en gras**
 - Chaque risque a : (1) le mécanisme concret, (2) l'historique qui le nuance, (3) pourquoi c'est le vrai risque et pas un détail
 - Risques opérationnels ajoutés en dernier, en un seul paragraphe, sans header propre
+- Les risques présentés dans un bloc `.risk-callout` (CSS de référence : `1167-jacobio.html`)
 
 ### 7. Décision
 - **Première ligne obligatoire :** `<p><em>Written at [PRIX] on [DATE]. The price level is part of the thesis.</em></p>` — c'est la ligne de timing implicite. Trading852 publie quand le cours est jugé intéressant sur la base du chart + fondamentaux. Cette ligne le signale au lecteur sans jamais donner de conseil.
@@ -205,6 +235,8 @@ Après avoir décrit le risque, ajouter une phrase courte qui nomme où est le s
 **RÈGLE ABSOLUE : chaque phrase-pendule est à usage unique.**
 Une formule utilisée dans un article ne peut jamais réapparaître dans un autre, même avec des adjectifs différents. Si la structure est reconnaissable, elle est interdite.
 
+**Pourquoi tenir cette liste :** chaque phrase-pendule perd sa force au moment où elle devient reconnaissable. Un lecteur qui a lu plusieurs articles Trading852 et retrouve la même structure arrête d'être surpris. C'est exactement le moment où la prose cesse d'être de la prose et devient du template. La liste est le mécanisme d'application.
+
 **Phrases-pendule déjà utilisées — bannies de tous les articles futurs :**
 - "Pessimism this acute against fundamentals this durable is not a stable state." → 1913-prada
 - "Pessimism this acute against a recovery this documented is not a stable state." → 1585-yadea
@@ -230,6 +262,19 @@ Jamais utiliser "one" ou "it" pour un concept financier clé apparu 5 mots plus 
 Ne pas dire : "a balance sheet that can absorb a two-year one without stress"
 Dire : "a balance sheet with capacity for two"
 → Le lecteur ne doit jamais faire de lookup mental pour comprendre ce que "one" représente.
+
+---
+
+## Checklist avant publication — contrôle inter-articles
+
+Avant de soumettre un article, vérifier ces 4 points contre les articles déjà publiés :
+
+- [ ] **Pendule** : la phrase-pendule de cet article n'est pas dans la liste des phrases bannies (§ Voix Howard Marks)
+- [ ] **Ouverture** : la structure de l'ouverture n'a pas été utilisée dans un article précédent ("This is not...", "The filing is public...", "The math is worth reading...")
+- [ ] **Subtitle** : la structure du subtitle est unique à cet article (pas la même formule qu'un subtitle existant)
+- [ ] **Clôture de la section Décision** : la dernière phrase est spécifique à cette entreprise, pas une variante d'une clôture déjà publiée
+
+Si un point échoue : réécrire à partir du fait le plus concret et spécifique à l'entreprise. Jamais partir d'un template existant.
 
 ---
 
@@ -367,3 +412,24 @@ La card doit teaser l'article, pas le résumer. Si la card et le H1 sont identiq
 | **Total prose** | **1 000-1 400** |
 
 L'article modèle fait ~1 200 mots. En dessous de 900, la thèse n'est pas développée. Au-delà de 1 600, il y a de la répétition.
+
+---
+
+## Section Sources (obligatoire en bas de chaque article)
+
+Chaque article se termine par une section Sources, après la Décision. Ce n'est pas une formalité — c'est la preuve que chaque chiffre est traçable.
+
+**Format :**
+```
+## Sources
+- Résultats annuels FY2025 : HKEX filing [numéro], [date], p. [X]
+- Données de valorisation pairs : [Bloomberg / Refinitiv / FactSet], consensus au [date]
+- [Données spécifiques] : [document], [date], [section]
+```
+
+**Règles :**
+- Chaque chiffre cité dans le corps de l'article doit être traçable à une ligne de cette section.
+- Jamais "Bloomberg" seul — toujours avec la date du consensus et, si possible, le code de la série.
+- Les multiples de pairs doivent citer leur source et leur date. Un multiple sans date est une estimation non vérifiable.
+- Si un chiffre vient d'un calcul propre (ex : EV = capitalisation boursière + dette nette), l'indiquer explicitement : "calcul propre sur base du bilan au [date]".
+- Les filings HKEX sont la source primaire. Bloomberg est acceptable pour les données de marché et les multiples de pairs, pas pour les données fondamentales de la société analysée.
