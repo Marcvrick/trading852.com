@@ -87,6 +87,16 @@ Sourcer en dessous en 11px : `Source: [filing] [date] · Peer multiples [date]`
 
 ---
 
+### 0b. Subtitle vs Key Takeaway — règle absolue de séparation
+
+Le subtitle et la Key Takeaway ne peuvent jamais contenir la même information clé.
+
+- **Subtitle** : pose la tension, nomme la situation, donne envie de lire. Pas de chiffres-clés, pas de conclusion. Le lecteur ne sait pas encore ce que le math révèle.
+- **Key Takeaway** : livre l'arithmétique, les chiffres précis, la conclusion. C'est ici que les nombres atterrissent pour la première fois.
+
+> Mauvais : subtitle dit "the market values everything else at US$507M" → Key Takeaway répète US$730M et US$507M.
+> Bon : subtitle dit "one of the world's largest pharmaceutical companies paid nine figures for a single early-stage molecule. The math that follows is worth reading carefully." → Key Takeaway livre les chiffres.
+
 ### 1. Hook d'ouverture (sans titre)
 - Premier paragraphe sans `##` — va directement au fait surprenant
 - Chiffre concret dans les deux premières phrases
