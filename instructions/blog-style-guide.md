@@ -112,6 +112,7 @@ Sourcer en dessous en 11px : `Source: [filing] [date] · Peer multiples [date]`
 - Risques opérationnels ajoutés en dernier, en un seul paragraphe, sans header propre
 
 ### 7. Décision
+- **Première ligne obligatoire :** `<p><em>Written at [PRIX] on [DATE]. The price level is part of the thesis.</em></p>` — c'est la ligne de timing implicite. Trading852 publie quand le cours est jugé intéressant sur la base du chart + fondamentaux. Cette ligne le signale au lecteur sans jamais donner de conseil.
 - Rappelle la nature de la thèse et les deux ou trois catalyseurs qui la font tenir
 - Asymétrie exprimée en chiffres concrets : upside vs downside dans chaque scénario
 - Tableau de scénarios (3 lignes max) : Scénario | Signal observable | Implication cours
