@@ -151,6 +151,7 @@ Jamais de recommandation sur quand acheter, quand vendre, combien investir, ou c
   - "Nous l'avons fait." / "Face à un cours de HKD 6,10."
 - **Phrase analytique** : 20-35 mots maximum, une seule idée par phrase
 - **Jamais** de phrase qui enchaîne deux raisonnements avec "et" ou "mais" sans que chacun mérite sa propre phrase
+- **Jamais** le même mot (ou sa racine) dans deux phrases consécutives. Remplacer par un pronom ou reformuler.
 
 ### Chiffres
 - Toujours précis — jamais "environ 2 milliards" sans donner le chiffre exact d'abord
