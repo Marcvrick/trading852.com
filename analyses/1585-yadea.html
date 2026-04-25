@@ -662,6 +662,43 @@
       line-height: 1.5;
     }
 
+    /* ─── Sources section ─── */
+    .sources-section {
+      border-top: 0.0625rem solid var(--dp-c-gray-border);
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+    }
+    .sources-section h2 {
+      font-family: var(--ff-sans);
+      font-size: var(--fs-12);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.0625rem;
+      color: var(--dp-c-gray-2);
+      margin-bottom: 0.75rem;
+      border-top: none;
+      padding-top: 0;
+      margin-top: 0;
+    }
+    .sources-section ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sources-section ul li {
+      font-family: var(--ff-sans);
+      font-size: var(--fs-12);
+      color: var(--dp-c-gray-2);
+      line-height: 1.6;
+      margin-bottom: 0.375rem;
+      padding-left: 1rem;
+      position: relative;
+    }
+    .sources-section ul li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+    }
+
     /* ─── Responsive ─── */
     @media (max-width: 48rem) {
       .menu-list--main { display: none; }
@@ -829,7 +866,7 @@
  <!-- Section 4 -->
  <h2>What the Company Is Worth</h2>
 
- <p>Forward P/E at 9.2&times; against a peer group trading between 10&times; and 14&times;. EV/EBIT at 6.1&times; against a peer range of 10&ndash;13&times;. Net cash of RMB&nbsp;12.7 billion means that 36% of the market capitalisation is already accounted for by cash on the balance sheet, not future earnings assumptions.</p>
+ <p>EV/EBIT at 6.1&times; against a peer range of 10&ndash;13&times;. Net cash of RMB&nbsp;12.7 billion means that 36% of the market capitalisation is already accounted for by cash on the balance sheet, not future earnings assumptions.</p>
 
  <div class="data-table-wrap">
  <table class="data-table">
@@ -847,29 +884,19 @@
  <td>~10&ndash;13&times; (Segway-Ninebot, AIMA, Super Soco)</td>
  </tr>
  <tr>
- <td>Forward P/E</td>
- <td>9.2&times;</td>
- <td>~10&ndash;14&times;</td>
- </tr>
- <tr>
  <td>Net cash / Market cap</td>
  <td>36%</td>
- <td>, </td>
+ <td></td>
  </tr>
  <tr>
- <td>Return on net assets</td>
+ <td>ROIC</td>
  <td>26.5%</td>
- <td>, </td>
- </tr>
- <tr>
- <td>Cash conversion (OCF/NI)</td>
- <td>2.06&times;</td>
- <td>, </td>
+ <td></td>
  </tr>
  <tr>
  <td>Dividend yield</td>
  <td>4.1%</td>
- <td>, </td>
+ <td></td>
  </tr>
  <tr class="row--highlight">
  <td>Current price</td>
@@ -889,12 +916,12 @@
 
  <div class="risk-callout">
  <div class="risk-callout__label">Risk 1: China consumer cycle</div>
- <p><strong>Over 90% of Yadea's revenue comes from China.</strong> FY2024 demonstrated how fast demand can collapse: &minus;19% revenue, &minus;52% profit in a single year. The New National Standard provides a volume floor, but it does not guarantee pricing power. A second year of consumer weakness, particularly in lower-tier cities where Yadea's dealer density is highest, would compress margins even if unit volumes hold. The replacement mandate means the units move; the risk is whether they move at current ASPs or at forced discounts.</p>
+ <p><strong>Over 90% of Yadea's revenue comes from China.</strong> FY2024 demonstrated how fast demand can collapse: &minus;19% revenue, &minus;52% profit in a single year. The New National Standard provides a volume floor, but it does not guarantee pricing power. A second year of consumer weakness, particularly in lower-tier cities where Yadea's dealer density is highest, would compress margins even if unit volumes hold. The replacement mandate means the units move; the risk is whether they move at current selling prices or at forced discounts.</p>
  </div>
 
  <div class="risk-callout">
  <div class="risk-callout__label">Risk 2: Cash flow normalisation</div>
- <p><strong>The headline RMB&nbsp;5&nbsp;990M in operating cash flow is real, but it includes significant working capital benefits.</strong> Sustainable OCF is closer to RMB&nbsp;3&nbsp;500–4&nbsp;500M. At the lower bound, cash conversion drops from 2.06&times; to approximately 1.2&times; net income, still healthy, but not the fortress the headline number suggests. If OCF/NI falls below 1.0&times; in FY2026, the quality-of-earnings thesis weakens and the valuation re-rating stalls.</p>
+ <p><strong>The headline RMB&nbsp;5&nbsp;990M in operating cash flow is real, but it includes significant working capital benefits.</strong> Sustainable operating cash flow is closer to RMB&nbsp;3&nbsp;500&ndash;4&nbsp;500M. At the lower bound, cash conversion drops from 2.06&times; to approximately 1.2&times; net income, still healthy, but not the fortress the headline number suggests. If cash conversion falls below 1.0&times; in FY2026, the quality-of-earnings thesis weakens and the valuation re-rating stalls.</p>
  </div>
 
  <!-- Section 6 -->
@@ -904,7 +931,7 @@
 
  <p>This is a cyclical recovery trade with a regulatory tailwind, not a growth story. The thesis does not rest on Yadea inventing a new market. It rests on the market re-pricing a business that has already recovered its earnings power but has not recovered its multiple.</p>
 
- <p>The asymmetry: +41% to the floor of the peer range (HK$18.10), +73% to the upper end (HK$22.15), against &minus;15% to bear case (HK$10.50) in a renewed consumer downturn. Even a partial re-rating to 8&ndash;9&times; EV/EBIT, still below every comparable, produces HK$14.80&ndash;16.50. The 4.1% dividend yield compensates for the wait.</p>
+ <p>The upside from HK$12.83 to the peer floor is +41% (HK$18.10), and +73% to the upper end (HK$22.15), against &minus;15% to bear case (HK$10.50) in a renewed consumer downturn. Even a partial re-rating to 8&ndash;9&times; EV/EBIT, still below every comparable, produces HK$14.80&ndash;16.50. The 4.1% dividend yield compensates for the wait.</p>
 
  <div class="price-targets" aria-label="Price targets">
  <div class="price-targets__item">
@@ -953,7 +980,19 @@
  </table>
  </div>
 
- <p>Three signals invalidate the thesis: gross margin below 17% in H1 2026, OCF/NI ratio below 1.0&times; in FY2026, or China e-bike market volume declining more than 10% in any quarter. Until one of these appears, the market has priced the trough. The business has already left it.</p>
+ <p>Three signals invalidate the thesis: gross margin below 17% in H1 2026, cash conversion below 1.0&times; in FY2026, or China e-bike market volume declining more than 10% in any quarter. Until one of these appears, the market has priced the trough. The business has already left it.</p>
+
+      <!-- Sources -->
+      <div class="sources-section">
+        <h2>Sources</h2>
+        <ul>
+          <li>Yadea Group Holdings FY2025 Annual Results: HKEX filing, April 2026</li>
+          <li>New National Standard regulation: Ministry of Industry and Information Technology, China, 2024</li>
+          <li>Peer EV/EBIT multiples: Bloomberg consensus, April 2026</li>
+          <li>Vietnam factory: Yadea investor relations announcement, 2025</li>
+          <li>Per-share calculations: own calculations on the basis of HKEX market data as of April 14, 2026</li>
+        </ul>
+      </div>
 
  </div><!-- /container -->
  </div>

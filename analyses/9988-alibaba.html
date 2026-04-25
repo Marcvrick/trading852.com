@@ -662,6 +662,43 @@
       line-height: 1.5;
     }
 
+    /* ─── Sources section ─── */
+    .sources-section {
+      border-top: 0.0625rem solid var(--dp-c-gray-border);
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+    }
+    .sources-section h2 {
+      font-family: var(--ff-sans);
+      font-size: var(--fs-12);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.0625rem;
+      color: var(--dp-c-gray-2);
+      margin-bottom: 0.75rem;
+      border-top: none;
+      padding-top: 0;
+      margin-top: 0;
+    }
+    .sources-section ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sources-section ul li {
+      font-family: var(--ff-sans);
+      font-size: var(--fs-12);
+      color: var(--dp-c-gray-2);
+      line-height: 1.6;
+      margin-bottom: 0.375rem;
+      padding-left: 1rem;
+      position: relative;
+    }
+    .sources-section ul li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+    }
+
     /* ─── Responsive ─── */
     @media (max-width: 48rem) {
       .menu-list--main { display: none; }
@@ -793,7 +830,7 @@
 
       <p>The second business is Alibaba Cloud Intelligence Group. Q3 FY2026 revenue: RMB&nbsp;43.3&nbsp;billion, up 36% year-over-year. AI-related revenue has grown at triple-digit rates for ten consecutive quarters. Alibaba Cloud is the number one public cloud provider in China by market share.</p>
 
-      <p>Eddie Wu took over as CEO in October 2023. Since then, the company has executed a restructuring that divested non-core assets, consolidated reporting segments, and redirected capital toward cloud infrastructure. The free cash flow decline of 71% year-over-year in Q3 FY2026 is a direct consequence of that capital reallocation: data center construction, GPU procurement, network buildout. The cash is leaving the balance sheet through capex, not through losses.</p>
+      <p>Eddie Wu took over as CEO in October 2023. Since then, the company has executed a restructuring that divested non-core assets, consolidated reporting segments, and redirected capital toward cloud infrastructure. The free cash flow decline of 71% year-over-year in Q3 FY2026 is a direct consequence of that capital reallocation: data center construction, GPU procurement, network buildout. The cash is leaving the balance sheet through capital spending, not through losses.</p>
 
       <!-- Section 2 -->
       <h2>Why the Discount Exists</h2>
@@ -804,7 +841,7 @@
 
       <p>Second, tariffs. Between February and April 2026, the stock fell 16.8% from its 52-week high of HK$186.20 as US-China trade tensions resurfaced. The tariff selloff has compressed the entire China tech sector, regardless of individual fundamentals.</p>
 
-      <p>Third, the AI investment timeline has no confirmed payoff date. Cloud capex is accelerating. Revenue is growing. But the inflection point where cloud margins recover is not yet visible in the reported numbers. The market prices what it can see. It discounts what it cannot.</p>
+      <p>Third, the AI investment timeline has no confirmed payoff date. Cloud capital spending is accelerating. Revenue is growing. But the inflection point where cloud margins recover is not yet visible in the reported numbers. The market prices what it can see. It discounts what it cannot.</p>
 
       <p class="lead">The market has priced all three risks. It has not priced the possibility that the investment cycle works.</p>
 
@@ -814,7 +851,7 @@
       <ol>
         <li>
           <span class="num">01</span>
-          <span><strong>Amazon reported near-zero consolidated earnings from 2012 to 2016 while building AWS.</strong> During that period, Amazon's stock rose from US$250 to US$750, not because earnings improved, but because investors who understood the capex cycle recognized that AWS would eventually generate margins above 30%. Alibaba Cloud is following the same sequence. The revenue growth rate (36%) is comparable to AWS at a similar stage. The EBITA compression is the cost of building the infrastructure that produces those margins. The parallel is not a metaphor. It is a documented pattern: heavy capex depresses reported earnings for 3 to 5 years before the installed base generates recurring, high-margin revenue.</span>
+          <span><strong>Amazon reported near-zero consolidated earnings from 2012 to 2016 while building AWS.</strong> During that period, Amazon's stock rose from US$250 to US$750, not because earnings improved, but because investors who understood the capital spending cycle recognised that AWS would eventually generate margins above 30%. Alibaba Cloud is following the same sequence. The revenue growth rate (36%) is comparable to AWS at a similar stage. The EBITA compression is the cost of building the infrastructure that produces those margins. The parallel is not a metaphor. It is a documented pattern: heavy capital spending depresses reported earnings for 3 to 5 years before the installed base generates recurring, high-margin revenue.</span>
         </li>
         <li>
           <span class="num">02</span>
@@ -822,7 +859,7 @@
         </li>
         <li>
           <span class="num">03</span>
-          <span><strong>Cloud Intelligence Group revenue of RMB&nbsp;43.3&nbsp;billion in a single quarter represents an annualized run rate above RMB&nbsp;170&nbsp;billion.</strong> For context, AWS generated US$62&nbsp;billion in 2022 (roughly RMB&nbsp;440&nbsp;billion) at margins near 30%. Alibaba Cloud is at approximately 40% of that revenue scale in a market where AI adoption is accelerating, government policy explicitly supports domestic cloud infrastructure, and the competitive gap between Alibaba and its nearest Chinese rival (Huawei Cloud) is widening, not narrowing. The question is not whether Alibaba Cloud will be profitable. The question is when.</span>
+          <span><strong>Cloud Intelligence Group revenue of RMB&nbsp;43.3&nbsp;billion in a single quarter means that, at that quarterly pace, annual revenue exceeds RMB&nbsp;170&nbsp;billion.</strong> For context, AWS generated US$62&nbsp;billion in 2022 (roughly RMB&nbsp;440&nbsp;billion) at margins near 30%. Alibaba Cloud is at approximately 40% of that revenue scale in a market where AI adoption is accelerating, government policy explicitly supports domestic cloud infrastructure, and the competitive gap between Alibaba and its nearest Chinese rival (Huawei Cloud) is widening, not narrowing. The question is not whether Alibaba Cloud will be profitable. The question is when.</span>
         </li>
       </ol>
 
@@ -867,11 +904,6 @@
               <td>~10.8&times;</td>
             </tr>
             <tr>
-              <td>Forward P/E</td>
-              <td>Current</td>
-              <td>15.74&times;</td>
-            </tr>
-            <tr>
               <td>Tencent EV/EBIT</td>
               <td>Peer comparison</td>
               <td>~15&times;</td>
@@ -905,7 +937,7 @@
 
       <p><em>Written at HK$122.90 on April&nbsp;14,&nbsp;2026. The price level is part of the thesis.</em></p>
 
-      <p>This is an investment cycle thesis, not a growth thesis. The stock does not need Alibaba to accelerate. It needs the market to recognize that the EBITA decline is capex, not deterioration, and that capex has a documented pattern of converting to margin in cloud businesses.</p>
+      <p>This is an investment cycle thesis, not a growth thesis. The stock does not need Alibaba to accelerate. It needs the market to recognise that the EBITA decline is capital spending, not deterioration, and that capital spending has a documented pattern of converting to margin in cloud businesses.</p>
 
       <div class="price-targets" aria-label="Price targets">
         <div class="price-targets__item">
@@ -957,6 +989,19 @@
       <p>Three signals invalidate the thesis: EBITA turns negative for two consecutive quarters, signaling that the investment cycle has become a structural loss; net cash falls below US$20&nbsp;billion, meaning the balance sheet can no longer self-fund the transition; or the Chinese government reverses its current supportive posture toward Alibaba, reopening the regulatory risk that compressed the stock in 2021&ndash;2022.</p>
 
       <p>The 52-week range tells the story: HK$95.70 to HK$186.20. At HK$122.90, the stock sits in the lower third of that range while the cloud business posts its strongest growth in three years. The market has priced the tariff risk, the EBITA decline, and the investment uncertainty. The cloud revenue line has not confirmed their fears.</p>
+
+      <!-- Sources -->
+      <div class="sources-section">
+        <h2>Sources</h2>
+        <ul>
+          <li>Alibaba Group Q3 FY2026 quarterly results: HKEX filing, February 2026</li>
+          <li>Cloud Intelligence Group revenue: Alibaba investor relations, Q3 FY2026</li>
+          <li>Tech peer EV/EBIT multiples: Bloomberg consensus, April 2026</li>
+          <li>Net cash and buyback authorization: Alibaba Q3 FY2026 balance sheet, HKEX filing</li>
+          <li>AWS revenue reference: Amazon annual report 2022</li>
+          <li>Per-share and EV calculations: own calculations on the basis of HKEX market data as of April 14, 2026</li>
+        </ul>
+      </div>
 
     </div><!-- /container -->
   </div>

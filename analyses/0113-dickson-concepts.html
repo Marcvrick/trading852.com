@@ -663,6 +663,43 @@
       line-height: 1.5;
     }
 
+    /* ─── Sources section ─── */
+    .sources-section {
+      border-top: 0.0625rem solid var(--dp-c-gray-border);
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+    }
+    .sources-section h2 {
+      font-family: var(--ff-sans);
+      font-size: var(--fs-12);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.0625rem;
+      color: var(--dp-c-gray-2);
+      margin-bottom: 0.75rem;
+      border-top: none;
+      padding-top: 0;
+      margin-top: 0;
+    }
+    .sources-section ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sources-section ul li {
+      font-family: var(--ff-sans);
+      font-size: var(--fs-12);
+      color: var(--dp-c-gray-2);
+      line-height: 1.6;
+      margin-bottom: 0.375rem;
+      padding-left: 1rem;
+      position: relative;
+    }
+    .sources-section ul li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+    }
+
     /* ─── Responsive ─── */
     @media (max-width: 48rem) {
       .menu-list--main { display: none; }
@@ -838,7 +875,7 @@
 
       <p>First, the cash. <strong>HKD&nbsp;2,729&nbsp;million on the balance sheet, or HKD&nbsp;7.08 per share.</strong> This figure is pulled directly from the balance sheet as of September&nbsp;30,&nbsp;2025. Not a projection, not an estimate.</p>
 
-      <p>Then, the operating business. Normalized earnings of HKD&nbsp;300&nbsp;million (consistent with pre-FY2025 levels) at a 7× multiple, conservative relative to HK luxury peers trading at 8×–15× EV/EBIT, gives a business value of HKD&nbsp;2,100&nbsp;million. That is HKD&nbsp;5.45 per share.</p>
+      <p>Then, the operating business. Underlying earnings of HKD&nbsp;300&nbsp;million (consistent with pre-FY2025 levels) at a 7× multiple, conservative relative to HK luxury peers trading at 8×–15× EV/EBIT, gives a business value of HKD&nbsp;2,100&nbsp;million. That is HKD&nbsp;5.45 per share.</p>
 
       <p>Total intrinsic value: approximately HKD&nbsp;12.50 per share. Apply a 20–30% holding company discount, standard for this type of structure in Hong Kong, and you get a conservative adjusted value between <strong>HKD&nbsp;9.00 and HKD&nbsp;10.00</strong>, against a current price of HKD&nbsp;6.10.</p>
 
@@ -856,7 +893,7 @@
               <td>7.08</td>
             </tr>
             <tr>
-              <td>Operating business (normalized earnings × 7x)</td>
+              <td>Operating business (underlying earnings × 7x)</td>
               <td>5.45</td>
             </tr>
             <tr>
@@ -961,6 +998,18 @@
       </div>
 
       <p>Three scenarios would invalidate the thesis: an explicit Poon renunciation coupled with dividend suspension; FY2026 revenue falling below HKD&nbsp;1,700M; or cash deployment into non-strategic operations that removes the balance sheet argument. Until one of those signals appears, the arithmetic is unambiguous. The market has assigned zero value to a business that generated HKD&nbsp;150&nbsp;million in profit last half. That is not a permanent state.</p>
+
+      <!-- Sources -->
+      <div class="sources-section">
+        <h2>Sources</h2>
+        <ul>
+          <li>Dickson Concepts balance sheet: HKEX filing, September 30, 2025</li>
+          <li>H1 FY2026 results: HKEX interim results announcement, November 2025</li>
+          <li>Privatization offer: Scheme document filed with HKEX, April 2025</li>
+          <li>Shareholder vote outcome: HKEX announcement, July 2025</li>
+          <li>Per-share and NAV calculations: own calculations on the basis of HKEX filings</li>
+        </ul>
+      </div>
 
     </div><!-- /container -->
   </div>
