@@ -20,6 +20,10 @@ source: "[[0113-blog-article]]"
 
 Ce style est **journalistique-analytique** : il parle à un lecteur intelligent qui n'est pas forcément financier. Il ne vend pas — il raisonne à voix haute. Le lecteur doit sentir que l'auteur a fait le travail à sa place et lui présente une conclusion honnête, pas une pitch deck.
 
+**Audience — décision définitive :** lecteur éduqué généraliste. Pas un professionnel de la finance. Les concepts financiers de base (EV/EBIT, NRDL, Phase I) sont expliqués brièvement la première fois qu'ils apparaissent. Pas de jargon non défini. Pas de sur-explication non plus : une phrase suffit, pas un paragraphe.
+
+**Framing des thèses :** chaque article a une orientation — growth, valuation, special situation, cycle. Cette orientation doit rester cohérente du hook à la décision. Ne jamais faire glisser un article de growth vers un langage "bear case / bull case". Un article Jacobio parle de croissance, pas de débat entre camps.
+
 **Ce que ce style n'est jamais :**
 - Newsletter enthousiaste ("opportunité incroyable")
 - Rapport institutionnel aride (tableaux sans contexte)
@@ -164,7 +168,7 @@ Le Data Snapshot remplace EV/EBIT par les métriques pertinentes pour l'étape d
 - Les risques présentés dans un bloc `.risk-callout` (CSS de référence : `1167-jacobio.html`)
 
 ### 7. Décision
-- **Première ligne obligatoire :** `<p><em>Written at [PRIX] on [DATE]. The price level is part of the thesis.</em></p>` — c'est la ligne de timing implicite. Trading852 publie quand le cours est jugé intéressant sur la base du chart + fondamentaux. Cette ligne le signale au lecteur sans jamais donner de conseil.
+- **Première ligne obligatoire :** `<p><em>Written at [PRIX] on [DATE].</em></p>` — date et cours de référence au moment de la publication. Pas de commentaire supplémentaire sur le niveau de prix.
 - Rappelle la nature de la thèse et les deux ou trois catalyseurs qui la font tenir
 - Asymétrie exprimée en chiffres concrets : upside vs downside dans chaque scénario
 - Tableau de scénarios (3 lignes max) : Scénario | Signal observable | Implication cours
@@ -183,7 +187,7 @@ Jamais de recommandation sur quand acheter, quand vendre, combien investir, ou c
   - "Nous l'avons fait." / "Face à un cours de HKD 6,10."
 - **Phrase analytique** : 20-35 mots maximum, une seule idée par phrase
 - **Jamais** de phrase qui enchaîne deux raisonnements avec "et" ou "mais" sans que chacun mérite sa propre phrase
-- **Jamais** le même mot (ou sa racine) dans deux phrases consécutives. Remplacer par un pronom ou reformuler.
+- **Jamais** le même mot (ou sa racine) dans la même phrase, ni dans les 2–3 phrases suivantes. Remplacer par un pronom, un synonyme, ou reformuler. Exemple fautif : "The stock has moved as though it has." → "The stock has moved as though it did."
 
 ### Chiffres
 - Toujours précis — jamais "environ 2 milliards" sans donner le chiffre exact d'abord
@@ -201,6 +205,20 @@ Jamais de recommandation sur quand acheter, quand vendre, combien investir, ou c
 - Courtes, directes, parfois une seule phrase de contexte avant le `##`
 - Pas de "comme nous l'avons vu dans la section précédente"
 - Les `---` (lignes de séparation) remplacent les phrases de transition lourdes
+
+### La phrase d'observation — règle de placement
+
+Chaque article doit contenir **une seule phrase d'observation** : la chose que Marc a remarquée en lisant le filing et qui ne figure dans aucun modèle analyste. Pas une donnée supplémentaire — une lecture.
+
+**Règle de placement : pas de position fixe.** La phrase va là où la tension naturelle de l'article l'exige :
+- En ouverture si l'observation EST le paradoxe central (ex : Dickson — "The shareholders already voted.")
+- En interruption mid-section après deux ou trois paragraphes factuels, sans annonce
+- Comme pivot entre deux sections — dernière phrase avant un `<h2>`
+- En clôture de la Décision, à la place d'un ratio
+
+**Contrainte anti-template :** si deux articles consécutifs placent leur observation en ouverture, le suivant doit la placer ailleurs. La variété de placement est le style.
+
+**Le test :** cette phrase pourrait-elle apparaître dans un article sur une autre entreprise ? Si oui, réécrire à partir du fait le plus spécifique au dossier.
 
 ### Pas d'insertions mid-sentence — règle absolue
 
