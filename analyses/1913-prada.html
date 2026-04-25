@@ -700,6 +700,41 @@
     }
 
     /* ─── Responsive ─── */
+    /* ─── Article prev/next navigation ─── */
+    .article-nav-section {
+      background-color: var(--dp-c-white);
+      padding: 2rem 0;
+      border-top: 0.0625rem solid var(--dp-c-gray-border);
+    }
+    .article-nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .article-nav__link {
+      display: flex;
+      flex-direction: column;
+      gap: 0.375rem;
+      text-decoration: none;
+      max-width: 45%;
+    }
+    .article-nav__link--next { text-align: right; margin-left: auto; }
+    .article-nav__label {
+      font-family: var(--ff-sans);
+      font-size: var(--fs-12);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.0625rem;
+      color: var(--dp-c-gray-2);
+    }
+    .article-nav__title {
+      font-family: var(--ff-serif);
+      font-size: var(--fs-16);
+      color: var(--dp-c-black);
+      line-height: 1.4;
+    }
+    .article-nav__link:hover .article-nav__title { color: var(--dp-c-gray-2); }
+
     @media (max-width: 48rem) {
       .menu-list--main { display: none; }
 
@@ -849,12 +884,12 @@
 
       <p>There is a second layer to the discount: uncertainty about how long it takes to turn Versace around. Prada's management team has spent thirty years running two brands. They have never taken on a distressed fashion house with a completely different customer profile, different pricing architecture, and different operational infrastructure. The market is pricing that uncertainty. The uncertainty is not imaginary. It is just not the kind that justifies a &minus;46% decline. Pessimism this acute against fundamentals this durable is not a stable state.</p>
 
-      <p class="lead">The result: the discount exists, it is documentable, and it persists because the market is pricing five years of Versace drag into a business with the balance sheet to absorb two.</p>
+      <p class="lead">Five years of Versace drag. That is what the current price implies. The balance sheet says two.</p>
 
       <!-- Section 3 -->
       <h2>Three Facts Operating Simultaneously</h2>
 
-      <p>The market has priced one of these. The other two are not reflected in the current price.</p>
+      <p>Versace is in the price. Miu Miu's acceleration is not. The Prada brand's structural revenue growth is not.</p>
 
       <ol>
         <li>
@@ -877,6 +912,8 @@
       <p>Two components, separated cleanly.</p>
 
       <p>The Prada and Miu&nbsp;Miu businesses together generated approximately EUR&nbsp;1.1&nbsp;billion in operating profit in FY2025. At 15&times; EV/EBIT, the floor of the luxury sector, that gives an enterprise value of EUR&nbsp;16.5&nbsp;billion for the core business. Today's implied enterprise value is approximately EUR&nbsp;10.1&nbsp;billion. The gap is EUR&nbsp;6.4&nbsp;billion.</p>
+
+      <p>Hermès trades at 40&times;. The logic is the same: brand discipline compounding over decades. Twenty quarters is not an accident.</p>
 
       <p>Versace is the offset. The acquisition cost EUR&nbsp;1.375&nbsp;billion. Assuming two to three years of integration costs at EUR&nbsp;100&ndash;150&nbsp;million per year, total Versace drag on fair value is EUR&nbsp;300&ndash;450&nbsp;million. Against a EUR&nbsp;6.4&nbsp;billion gap, Versace absorbs 7&ndash;10% of the discount. The arithmetic still closes by a wide margin.</p>
 
@@ -997,7 +1034,7 @@
         </table>
       </div>
 
-      <p>Three signals invalidate the thesis outright: a Versace write-down above EUR&nbsp;500&nbsp;million; Prada brand revenue falling for two or more consecutive quarters beyond the &minus;1% registered in FY2025; or Miu&nbsp;Miu growth reversing before the brand contributes 30% of group revenue. Until one of those appears, the filing tells the same story it has told for twenty quarters. The market has priced the worst. The business has not delivered it.</p>
+      <p>Three signals invalidate the thesis outright: a Versace write-down above EUR&nbsp;500&nbsp;million; Prada brand revenue falling for two or more consecutive quarters beyond the &minus;1% registered in FY2025; or Miu&nbsp;Miu growth reversing before the brand contributes 30% of group revenue. Until one of those appears, the filing tells the same story it has told for twenty quarters. Twenty quarters of EPS growth, brand discipline, and balance sheet strength. The Versace charge interrupted the reporting line. It did not change the underlying record.</p>
 
       <!-- Sources -->
       <div class="sources-section">
@@ -1011,6 +1048,22 @@
       </div>
 
     </div><!-- /container -->
+  </div>
+
+  <!-- ══ ARTICLE NAV ══ -->
+  <div class="article-nav-section">
+    <div class="container">
+      <nav class="article-nav" aria-label="Article navigation">
+      <a href="/analyses/0113-dickson-concepts" class="article-nav__link article-nav__link--prev">
+        <span class="article-nav__label">&larr; Previous</span>
+        <span class="article-nav__title">The Market Is Paying You HKD&nbsp;375&nbsp;Million to Buy This Company</span>
+      </a>
+      <a href="/analyses/1167-jacobio" class="article-nav__link article-nav__link--next">
+        <span class="article-nav__label">Next &rarr;</span>
+        <span class="article-nav__title">AstraZeneca Paid US$100M for One Molecule. The Rest Trades at US$507M.</span>
+      </a>
+      </nav>
+    </div>
   </div>
 
   <!-- ══ ARTICLE FOOTER ══ -->

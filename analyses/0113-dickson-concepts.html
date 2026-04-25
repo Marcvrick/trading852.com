@@ -701,6 +701,41 @@
     }
 
     /* ─── Responsive ─── */
+    /* ─── Article prev/next navigation ─── */
+    .article-nav-section {
+      background-color: var(--dp-c-white);
+      padding: 2rem 0;
+      border-top: 0.0625rem solid var(--dp-c-gray-border);
+    }
+    .article-nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .article-nav__link {
+      display: flex;
+      flex-direction: column;
+      gap: 0.375rem;
+      text-decoration: none;
+      max-width: 45%;
+    }
+    .article-nav__link--next { text-align: right; margin-left: auto; }
+    .article-nav__label {
+      font-family: var(--ff-sans);
+      font-size: var(--fs-12);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.0625rem;
+      color: var(--dp-c-gray-2);
+    }
+    .article-nav__title {
+      font-family: var(--ff-serif);
+      font-size: var(--fs-16);
+      color: var(--dp-c-black);
+      line-height: 1.4;
+    }
+    .article-nav__link:hover .article-nav__title { color: var(--dp-c-gray-2); }
+
     @media (max-width: 48rem) {
       .menu-list--main { display: none; }
 
@@ -816,7 +851,7 @@
       </div>
 
       <!-- Opening -->
-      <p>There are situations in the stock market where the numbers are so clear you rub your eyes before believing what you are reading. Dickson Concepts is one of them.</p>
+      <p>The shareholders already voted. Eighty-two percent of Dickson Concepts' independent shareholders said yes to HKD&nbsp;7.20 in April 2025. The deal failed on a procedural threshold. The stock now trades at HKD&nbsp;6.10.</p>
 
       <p>The Hong Kong-listed group has a market capitalisation of <strong>HKD&nbsp;2,354&nbsp;million</strong> today. Its net cash on the balance sheet (liquid assets minus all debt) is <strong>HKD&nbsp;2,729&nbsp;million</strong>. The arithmetic is simple: buying all the shares at today's price of HKD&nbsp;6.10, you recover all the cash and receive the operating business for free, with a HKD&nbsp;375&nbsp;million bonus on top.</p>
 
@@ -838,7 +873,7 @@
 
       <p>Dickson Concepts is too small for large funds. Too specific for generalist analysts. Its controlling shareholder, Dickson Poon, already holds 60.5% of the capital, meaning the real float is minimal, trading volumes are low, and the institutional investors who have the analytical capacity to find this kind of situation do not have the liquidity to enter and exit at scale.</p>
 
-      <p>Result: the discount exists, it is documentable, and it persists because almost no one takes the time to read the balance sheet of a Hong Kong luxury distribution holding company.</p>
+      <p>HK$375 million is sitting in the balance sheet. The float is too thin for anyone large enough to close the gap. So the gap stays open.</p>
 
       <p class="lead">We did.</p>
 
@@ -997,7 +1032,7 @@
         </div>
       </div>
 
-      <p>Three scenarios would invalidate the thesis: an explicit Poon renunciation coupled with dividend suspension; FY2026 revenue falling below HKD&nbsp;1,700M; or cash deployment into non-strategic operations that removes the balance sheet argument. Until one of those signals appears, the arithmetic is unambiguous. The market has assigned zero value to a business that generated HKD&nbsp;150&nbsp;million in profit last half. That is not a permanent state.</p>
+      <p>Three scenarios would invalidate the thesis: an explicit Poon renunciation coupled with dividend suspension; FY2026 revenue falling below HKD&nbsp;1,700M; or cash deployment into non-strategic operations that removes the balance sheet argument. None of those signals is in the current filing. HKD&nbsp;375&nbsp;million in excess cash sits against a market cap of HKD&nbsp;2,354&nbsp;million. The business generated HKD&nbsp;150&nbsp;million in profit last half.</p>
 
       <!-- Sources -->
       <div class="sources-section">
@@ -1012,6 +1047,22 @@
       </div>
 
     </div><!-- /container -->
+  </div>
+
+  <!-- ══ ARTICLE NAV ══ -->
+  <div class="article-nav-section">
+    <div class="container">
+      <nav class="article-nav" aria-label="Article navigation">
+      <a href="/analyses/hsi-35-year-trendline" class="article-nav__link article-nav__link--prev">
+        <span class="article-nav__label">&larr; Previous</span>
+        <span class="article-nav__title">Six Bounces. One Break. Now the Retest.</span>
+      </a>
+      <a href="/analyses/1913-prada" class="article-nav__link article-nav__link--next">
+        <span class="article-nav__label">Next &rarr;</span>
+        <span class="article-nav__title">EPS Down 74%. Revenue Up 9%. One of These Numbers Is a Distraction.</span>
+      </a>
+      </nav>
+    </div>
   </div>
 
   <!-- ══ ARTICLE FOOTER ══ -->

@@ -700,6 +700,41 @@
     }
 
     /* ─── Responsive ─── */
+    /* ─── Article prev/next navigation ─── */
+    .article-nav-section {
+      background-color: var(--dp-c-white);
+      padding: 2rem 0;
+      border-top: 0.0625rem solid var(--dp-c-gray-border);
+    }
+    .article-nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .article-nav__link {
+      display: flex;
+      flex-direction: column;
+      gap: 0.375rem;
+      text-decoration: none;
+      max-width: 45%;
+    }
+    .article-nav__link--next { text-align: right; margin-left: auto; }
+    .article-nav__label {
+      font-family: var(--ff-sans);
+      font-size: var(--fs-12);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.0625rem;
+      color: var(--dp-c-gray-2);
+    }
+    .article-nav__title {
+      font-family: var(--ff-serif);
+      font-size: var(--fs-16);
+      color: var(--dp-c-black);
+      line-height: 1.4;
+    }
+    .article-nav__link:hover .article-nav__title { color: var(--dp-c-gray-2); }
+
     @media (max-width: 48rem) {
       .menu-list--main { display: none; }
 
@@ -830,7 +865,7 @@
 
       <p>The second business is Alibaba Cloud Intelligence Group. Q3 FY2026 revenue: RMB&nbsp;43.3&nbsp;billion, up 36% year-over-year. AI-related revenue has grown at triple-digit rates for ten consecutive quarters. Alibaba Cloud is the number one public cloud provider in China by market share.</p>
 
-      <p>Eddie Wu took over as CEO in October 2023. Since then, the company has executed a restructuring that divested non-core assets, consolidated reporting segments, and redirected capital toward cloud infrastructure. The free cash flow decline of 71% year-over-year in Q3 FY2026 is a direct consequence of that capital reallocation: data center construction, GPU procurement, network buildout. The cash is leaving the balance sheet through capital spending, not through losses.</p>
+      <p>Eddie Wu took over as CEO in October 2023. Since then, the company has executed a restructuring that divested non-core assets, consolidated reporting segments, and redirected capital toward cloud infrastructure. The free cash flow decline of 71% year-over-year in Q3 FY2026 is a direct consequence of that capital reallocation: data center construction, GPU procurement, network buildout. The cash is leaving the balance sheet through capital spending, not through losses. US$12&nbsp;billion in buyback authorization, active at the same time capital spending is at a multi-year peak. A company that thought its stock was overpriced would not do both.</p>
 
       <!-- Section 2 -->
       <h2>Why the Discount Exists</h2>
@@ -843,10 +878,10 @@
 
       <p>Third, the AI investment timeline has no confirmed payoff date. Cloud capital spending is accelerating. Revenue is growing. But the inflection point where cloud margins recover is not yet visible in the reported numbers. The market prices what it can see. It discounts what it cannot.</p>
 
-      <p class="lead">The market has priced all three risks. It has not priced the possibility that the investment cycle works.</p>
+      <p class="lead">Amazon's market cap tripled while its EBITA was near zero. The capital spending cycle is not a threat to the thesis. It is the thesis.</p>
 
       <!-- Section 3 -->
-      <h2>Three Facts Operating Simultaneously</h2>
+      <h2>The Investment Cycle, the Cash Policy, the Revenue Scale</h2>
 
       <ol>
         <li>
@@ -988,7 +1023,7 @@
 
       <p>Three signals invalidate the thesis: EBITA turns negative for two consecutive quarters, signaling that the investment cycle has become a structural loss; net cash falls below US$20&nbsp;billion, meaning the balance sheet can no longer self-fund the transition; or the Chinese government reverses its current supportive posture toward Alibaba, reopening the regulatory risk that compressed the stock in 2021&ndash;2022.</p>
 
-      <p>The 52-week range tells the story: HK$95.70 to HK$186.20. At HK$122.90, the stock sits in the lower third of that range while the cloud business posts its strongest growth in three years. The market has priced the tariff risk, the EBITA decline, and the investment uncertainty. The cloud revenue line has not confirmed their fears.</p>
+      <p>The 52-week range tells the story: HK$95.70 to HK$186.20. At HK$122.90, the stock sits in the lower third of that range while the cloud business posts its strongest growth in three years. Cloud Intelligence Group grew 36% in Q3 FY2026 while the stock sat in the lower third of its 52-week range. The fears are in the price. The growth rate is not.</p>
 
       <!-- Sources -->
       <div class="sources-section">
@@ -1004,6 +1039,22 @@
       </div>
 
     </div><!-- /container -->
+  </div>
+
+  <!-- ══ ARTICLE NAV ══ -->
+  <div class="article-nav-section">
+    <div class="container">
+      <nav class="article-nav" aria-label="Article navigation">
+      <a href="/analyses/1585-yadea" class="article-nav__link article-nav__link--prev">
+        <span class="article-nav__label">&larr; Previous</span>
+        <span class="article-nav__title">Profit +129%. EV/EBIT 6.1x. The Market Sees a Bicycle Company.</span>
+      </a>
+      <a href="/analyses/6690-haier" class="article-nav__link article-nav__link--next">
+        <span class="article-nav__label">Next &rarr;</span>
+        <span class="article-nav__title">Midea at 12&times;. Electrolux at 14&times;. The World&#8217;s Largest Appliance Maker Trades at 6.85&times;.</span>
+      </a>
+      </nav>
+    </div>
   </div>
 
   <!-- ══ ARTICLE FOOTER ══ -->

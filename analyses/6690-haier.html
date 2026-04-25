@@ -658,6 +658,41 @@
     }
 
     /* ─── Responsive ─── */
+    /* ─── Article prev/next navigation ─── */
+    .article-nav-section {
+      background-color: var(--dp-c-white);
+      padding: 2rem 0;
+      border-top: 0.0625rem solid var(--dp-c-gray-border);
+    }
+    .article-nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .article-nav__link {
+      display: flex;
+      flex-direction: column;
+      gap: 0.375rem;
+      text-decoration: none;
+      max-width: 45%;
+    }
+    .article-nav__link--next { text-align: right; margin-left: auto; }
+    .article-nav__label {
+      font-family: var(--ff-sans);
+      font-size: var(--fs-12);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.0625rem;
+      color: var(--dp-c-gray-2);
+    }
+    .article-nav__title {
+      font-family: var(--ff-serif);
+      font-size: var(--fs-16);
+      color: var(--dp-c-black);
+      line-height: 1.4;
+    }
+    .article-nav__link:hover .article-nav__title { color: var(--dp-c-gray-2); }
+
     @media (max-width: 48rem) {
       .menu-list--main { display: none; }
 
@@ -833,7 +868,7 @@
 
       <p>The second was gross margin. Haier's gross margin declined from 30.6% in 2022 to 26.1% in 2025. That four-and-a-half-point decline over three years reflects real pressure: domestic price competition in China and the dilutive effect of growing overseas businesses. Overseas operations typically run at lower margins than the China home business. The problem is that Haier does not disclose separate margin figures for its domestic and overseas operations. The market cannot tell how much of the compression is temporary and how much is structural. In the absence of clarity, the market prices the worst version.</p>
 
-      <p>The third was the tariff announcement. On April&nbsp;2,&nbsp;2026, the United States raised the effective tariff rate on Chinese goods to 31.6%. GE&nbsp;Appliances manufactures in the United States. Its finished products do not cross the tariff line. Some of its components are sourced from China: compressors, electronics, mechanical parts. The question is how much of GEA's cost base comes from Chinese-origin components, and how much of that becomes a margin headwind. Management has not disclosed a number. That uncertainty was enough to trigger a round of analyst target cuts and accelerate the selloff.</p>
+      <p>The third was the tariff announcement. On April&nbsp;2,&nbsp;2026, the United States raised the effective tariff rate on Chinese goods to 31.6%. GE&nbsp;Appliances manufactures in the United States. Its finished products do not cross the tariff line. Some of its components are sourced from China: compressors, electronics, mechanical parts. The question is how much of GEA's cost base comes from Chinese-origin components, and how much of that becomes a margin headwind. Management has not disclosed a number. That uncertainty was enough to trigger a round of analyst target cuts and accelerate the selloff. The selloff priced a confirmed margin impairment. The filing shows an unquantified one. Those are not the same thing.</p>
 
       <p class="lead">Three forces compressed the price. None of them changed the cash flow.</p>
 
@@ -997,6 +1032,18 @@
       </div>
 
     </div><!-- /container -->
+  </div>
+
+  <!-- ══ ARTICLE NAV ══ -->
+  <div class="article-nav-section">
+    <div class="container">
+      <nav class="article-nav" aria-label="Article navigation">
+      <a href="/analyses/9988-alibaba" class="article-nav__link article-nav__link--prev">
+        <span class="article-nav__label">&larr; Previous</span>
+        <span class="article-nav__title">EBITA Down 57%. Cloud Up 36%. This Is What Amazon Looked Like in 2014.</span>
+      </a>
+      </nav>
+    </div>
   </div>
 
   <!-- ══ ARTICLE FOOTER ══ -->

@@ -229,6 +229,18 @@ Les parenthèses ne fonctionnent que pour des apartés très courts. Au-delà de
 
 **Origine de la règle :** identifiée sur 1585-yadea (avril 2026), six occurrences corrigées après publication.
 
+### Pas de clauses parallèles enchaînées — règle absolue
+
+Ne jamais enchaîner trois actions parallèles dans une seule phrase via "before X, Y, and Z" ou "after X before A, B, and C" quand les sujets changent entre les clauses. Le lecteur doit tenir trois sous-idées en mémoire avant que la phrase se résolve. Il perd le fil.
+
+❌ "Specialty oncology drugs in China routinely take 12 to 24 months after NRDL listing before hospital formularies are updated, physicians accumulate clinical experience, and patient volumes begin to ramp meaningfully."
+
+✅ "Specialty oncology drugs in China routinely take 12 to 24 months after NRDL listing to reach meaningful volumes. Hospital formularies update on their own timetable. Physicians build experience. Patient flows ramp slowly."
+
+**La règle :** poser le fait principal en une phrase. Puis une phrase par raison. Un sujet par phrase.
+
+**Origine de la règle :** identifiée sur 1167-jacobio (avril 2026), corrigée après publication.
+
 ### Termes analytiques — règle d'usage, pas d'interdiction
 
 Les termes financiers ou analytiques ("macro headwinds", "re-rating", "ASPs", "quality of earnings") sont acceptables quand ils apportent une précision que le langage courant ne peut pas rendre aussi bien. Ils sont à remplacer quand ils ajoutent du poids sans ajouter de sens.
@@ -449,13 +461,20 @@ L'article modèle fait ~1 200 mots. En dessous de 900, la thèse n'est pas déve
 
 Chaque article se termine par une section Sources, après la Décision. Ce n'est pas une formalité : c'est la preuve que chaque chiffre est traçable.
 
-**Format :**
+**Format HTML obligatoire (jamais `<h2>` + `<p>` plain) :**
+```html
+<div class="sources-section">
+  <h2>Sources</h2>
+  <ul>
+    <li>Résultats annuels FY2025 : HKEX filing, [mois] [année]</li>
+    <li>Données de valorisation pairs : Bloomberg consensus, [date]</li>
+    <li>Calculs propres sur base du bilan au [date]</li>
+  </ul>
+</div>
 ```
-## Sources
-- Résultats annuels FY2025 : HKEX filing [numéro], [date], p. [X]
-- Données de valorisation pairs : [Bloomberg / Refinitiv / FactSet], consensus au [date]
-- [Données spécifiques] : [document], [date], [section]
-```
+Le CSS `.sources-section` est défini dans chaque article — copier depuis `9988-alibaba.html`. Il rend le titre en petit label gris uppercase (`--fs-12`) et chaque `<li>` avec un tiret `–` dans la même graisse. Ne jamais utiliser `<h2>Sources</h2><p>…</p>` : c'est trop grand et ne respecte pas la hiérarchie visuelle.
+
+**Format source :** `[Société] [type de document] : [canal], [mois année]`
 
 **Règles :**
 - Chaque chiffre cité dans le corps de l'article doit être traçable à une ligne de cette section.
@@ -463,6 +482,39 @@ Chaque article se termine par une section Sources, après la Décision. Ce n'est
 - Les multiples de pairs doivent citer leur source et leur date. Un multiple sans date est une estimation non vérifiable.
 - Si un chiffre vient d'un calcul propre (ex : EV = capitalisation boursière + dette nette), l'indiquer explicitement : "calcul propre sur base du bilan au [date]".
 - Les filings HKEX sont la source primaire. Bloomberg est acceptable pour les données de marché et les multiples de pairs, pas pour les données fondamentales de la société analysée.
+
+---
+
+## Navigation prev/next (obligatoire sur chaque article)
+
+Chaque article doit inclure un bloc de navigation entre la fin de l'article body et le footer disclaimer. Il permet au lecteur de passer à l'article précédent (plus ancien) ou suivant (plus récent).
+
+**Placement :** entre `</div>` (fermeture article-body) et `<!-- ══ ARTICLE FOOTER ══ -->`.
+
+**Ordre chronologique des articles** (du plus ancien au plus récent) : défini dans `README.md` → table "Published articles". Mettre à jour la chaîne à chaque nouvel article publié.
+
+**Format HTML :**
+```html
+<!-- ══ ARTICLE NAV ══ -->
+<div class="article-nav-section">
+  <div class="container">
+    <nav class="article-nav" aria-label="Article navigation">
+      <a href="/analyses/slug-precedent" class="article-nav__link article-nav__link--prev">
+        <span class="article-nav__label">&larr; Previous</span>
+        <span class="article-nav__title">Titre de l'article précédent</span>
+      </a>
+      <a href="/analyses/slug-suivant" class="article-nav__link article-nav__link--next">
+        <span class="article-nav__label">Next &rarr;</span>
+        <span class="article-nav__title">Titre de l'article suivant</span>
+      </a>
+    </nav>
+  </div>
+</div>
+```
+- Si l'article est le plus ancien : supprimer le bloc `--prev`.
+- Si l'article est le plus récent : supprimer le bloc `--next`.
+- Le CSS `.article-nav-section` est défini dans chaque article — copier depuis `9988-alibaba.html`. Titre en `--fs-16` serif noir, label en `--fs-12` sans-serif gris uppercase.
+- **À chaque publication** : mettre à jour le `--next` de l'article précédent pour pointer vers le nouvel article.
 
 ---
 
@@ -477,11 +529,40 @@ Avant de soumettre un article, vérifier ces points contre les articles déjà p
 - [ ] Aucun superlatif, aucun adjectif d'enthousiasme
 - [ ] La card homepage est distincte du H1 (si longueur > 10 mots)
 
-**Unicité inter-articles**
+**Unicité inter-articles — vérification obligatoire par grep**
+
+Avant de finaliser, lancer cette commande sur le dossier `analyses/` :
+```bash
+grep -r "PHRASE_À_VÉRIFIER" analyses/
+```
+Si la phrase ou sa structure apparaît dans un autre article, réécrire. Pas de discussion.
+
 - [ ] **Pendule** : la phrase-pendule de cet article n'est pas dans la liste des phrases bannies (§ Voix Howard Marks)
 - [ ] **Ouverture** : la structure de l'ouverture n'a pas été utilisée dans un article précédent ("This is not...", "The filing is public...", "The math is worth reading...")
 - [ ] **Subtitle** : la structure du subtitle est unique à cet article (pas la même formule qu'un subtitle existant)
 - [ ] **Clôture Décision** : la dernière phrase est spécifique à cette entreprise, pas une variante d'une clôture déjà publiée
+- [ ] **Lead paragraph** (`<p class="lead">`) : grep sur les 5 premiers mots — aucune occurrence dans un autre article
+- [ ] **Toutes les phrases de section 2 et 3** : aucune formule rhétorique commune avec un article existant
+
+**Dispositifs rhétoriques — quota maximum sur tout le blog :**
+
+Ces constructions sont fortes mais épuisent leur effet rapidement. Dépasser le quota = signal AI immédiat.
+
+| Dispositif | Quota blog | Quota par article | Utilisé dans |
+|---|---|---|---|
+| "The market has priced X. It has not priced Y." | 2 fois max | 1 fois max | Alibaba (key takeaway) + Haier ✓ |
+| "Three Facts Operating Simultaneously" | 1 fois puis retraite | 1 fois | Prada ✓ — interdit partout ailleurs |
+| "Until one of these appears" | 1 fois puis retraite | 1 fois | Prada ✓ — remplacer par une phrase spécifique à l'entreprise |
+| "The arithmetic deserves a second look" | retraite (3 usages) | — | Yadea subtitle, Jacobio, Prada meta |
+
+**Phrases bannies — déjà utilisées, ne jamais réutiliser :**
+- "the discount exists, it is documentable" — Dickson + Prada (corrigé avr. 2026)
+- "The discount exists for a documented reason" — Jacobio (corrigé avr. 2026)
+- "The market has priced one. The other two are not in the current price." — Yadea + Prada (corrigé avr. 2026)
+- "Most market participants have processed one of these." — Jacobio (corrigé avr. 2026)
+- "Three Facts Operating Simultaneously" — retraité après Prada. Ne jamais réutiliser avant 10 articles.
+- "The math is worth reading" — Jacobio subtitle
+- "Pessimism this acute against fundamentals this durable is not a stable state." — Prada
 
 **Style**
 - [ ] Aucun em dash dans l'article
