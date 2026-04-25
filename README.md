@@ -142,6 +142,7 @@ Key elements:
 - Article body (white background, serif body copy, section h2s, data tables)
 - Scenario table at the end
 - Article footer with disclaimer + back link
+- **Page footer** — flex row (`justify-content:space-between`): tagline on the left, "Be water, My friend." on the right. Both use the same style: `font-family:var(--ff-serif);font-size:var(--fs-16);color:rgba(255,255,255,0.45);line-height:1.7`. Never use `--fs-18` or a heavier color for either element — keep both thin and grey, identical weight.
 
 ---
 
