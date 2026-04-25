@@ -26,8 +26,7 @@ GitHub: [Marcvrick/trading852.com](https://github.com/Marcvrick/trading852.com)
 Trading852/
 ├── index.html                    ← Homepage
 ├── feed.xml                      ← RSS feed (update when publishing)
-├── CNAME                         ← Custom domain
-├── vercel.json                   ← Rewrites + security headers
+├── vercel.json                   ← Rewrites + security headers (must stay at root)
 ├── README.md
 │
 ├── analyses/                     ← Published articles
@@ -45,7 +44,7 @@ Trading852/
 │   ├── robots.txt                   → trading852.com/robots.txt
 │   └── sitemap.xml                  → trading852.com/sitemap.xml
 │
-├── docs/                         ← Workflow docs (not served)
+├── instructions/                 ← Workflow docs (not served)
 │   ├── blog-style-guide.md
 │   └── seo/
 │
@@ -58,12 +57,12 @@ Trading852/
 
 | Resource | Path |
 |---|---|
-| **Style guide** | [docs/blog-style-guide.md](docs/blog-style-guide.md) |
+| **Style guide** | [instructions/blog-style-guide.md](instructions/blog-style-guide.md) |
 | **Voice guide** | [../../Voix Marc/VOIX-Marc.md](../../Voix%20Marc/VOIX-Marc.md) |
 | **Expert analyses** | [../Trading-research/HK Stocks/Experts analysis/](../Trading-research/HK%20Stocks/Experts%20analysis/) |
 | **Published articles** | [analyses/](analyses/) |
 | **Source .md files** | [sources/](sources/) |
-| **SEO strategy** | [docs/seo/](docs/seo/) |
+| **SEO strategy** | [instructions/seo/](instructions/seo/) |
 | **Scorecard tracker** | [static/scorecard.html](static/scorecard.html) · [assets/scorecard.js](assets/scorecard.js) |
 
 ---
@@ -84,7 +83,7 @@ Only proceed if the verdict is **CONVICTION**.
 
 ## Step 2 — Read the style guide
 
-Open [docs/blog-style-guide.md](docs/blog-style-guide.md) and `VOIX-Marc.md` before writing. Key rules:
+Open [instructions/blog-style-guide.md](instructions/blog-style-guide.md) and [VOIX-Marc.md](../../Voix%20Marc/VOIX-Marc.md) before writing. Key rules:
 
 - **7 canonical sections** — Hook → Company/Context → Discount → Catalyst → Valuation → Risks → Decision
 - **No bullet points** in the article body (except numbered catalyst points and scenario table)
@@ -306,6 +305,11 @@ Every HTML page must include:
 ---
 
 ## Changelog
+
+### Apr 25, 2026 — Footer unification
+
+- **Article footer tagline** shortened to "HKEX filings. Mispriced companies. Written up when the math holds." (dropped "No fund. No firm. Just the numbers.") across all 6 stock articles.
+- **"Be water, My friend."** added to the right side of every article footer, in a flex row matching the homepage layout.
 
 ### Apr 20, 2026 — Scorecard launch + site consistency
 
