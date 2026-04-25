@@ -283,6 +283,7 @@ Une formule utilisée dans un article ne peut jamais réapparaître dans un autr
 - "Pessimism this acute against fundamentals this durable is not a stable state." → 1913-prada
 - "Pessimism this acute against a recovery this documented is not a stable state." → 1585-yadea
 - "Three forces compressed the price. None of them changed the cash flow." → 6690-haier
+- "The discount exists for a documented reason. The question is whether that correction has overshot." → 1167-jacobio
 
 **Comment écrire une nouvelle phrase-pendule :**
 Ne pas partir d'un template. Partir du fait concret le plus frappant de l'article en cours.
