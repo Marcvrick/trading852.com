@@ -31,15 +31,14 @@ Ce style est **journalistique-analytique** : il parle à un lecteur intelligent 
 **À partir de maintenant, tous les articles sont écrits en format Lite.** Le format Full (dense, jargon assumé) n'est plus le standard.
 
 **Ce qui distingue le format Lite :**
-- Chaque terme financier est **expliqué la première fois qu'il apparaît**, entre parenthèses ou dans la phrase suivante. Ex : "EV/EBIT (ce que le marché paie pour chaque euro de bénéfice opérationnel)" — jamais utilisé à froid.
-- Pas de literacy financière assumée : le lecteur n'a pas besoin de connaître ROIC, EBIT, sum-of-parts, phase III avant de lire l'article.
-- Ton narratif : on raconte une situation avant d'en faire l'arithmétique.
-- Phrases plus longues que le format Full, mais jamais de jargon non défini.
+- Ratio de jargon réduit : environ 30% des termes techniques de la version Full. Le reste est remplacé par du langage courant.
+- Ton narratif : on raconte la situation avant d'en faire l'arithmétique. Les termes utilisés s'appuient sur le contexte, pas sur des définitions entre parenthèses.
+- Pas de définitions en parenthèses. Les termes retenus apparaissent directement, sans explication ajoutée.
+- Structure identique à la version Full : mêmes sections, même Data Snapshot, mêmes tableaux.
 
 **Ce que Lite n'est pas :**
 - Simplifié à outrance — les chiffres restent précis, les sources restent citées.
-- Plus court — il est souvent plus long car les définitions prennent de la place.
-- Moins rigoureux — la rigueur analytique est identique, seule la forme change.
+- Moins rigoureux — la rigueur analytique est identique, seule la densité de jargon change.
 
 ---
 
