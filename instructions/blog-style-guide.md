@@ -26,6 +26,16 @@ Ce style est **journalistique-analytique** : il parle à un lecteur intelligent 
 
 ---
 
+## Ponctuation — règle absolue
+
+**Jamais de tiret long (em dash —).** Interdit dans tous les articles sans exception. Remplacer par :
+- Aparté ou précision : parenthèses ( )
+- Élaboration ou définition : deux-points :
+- Continuation de liste ou liaison : virgule ,
+- Nouvelle idée : nouvelle phrase
+
+---
+
 ## Contenu interdit — règles absolues
 
 **Jamais de conseil financier, même indirect.**
