@@ -28,8 +28,11 @@ Ce style est **journalistique-analytique** : il parle à un lecteur intelligent 
 
 ## Contenu interdit — règles absolues
 
+**Jamais de conseil financier, même indirect.**
+Ces articles présentent une thèse et des catalyseurs observables. Ils ne disent jamais au lecteur quoi faire avec son argent. Sont interdits : toute recommandation d'achat ou de vente ("entrer avant les résultats", "pas de raison de sortir"), tout conseil de timing ("4–6 semaines avant"), tout conseil de sizing ("X% du portefeuille", "seuil de renforcement"). Le lecteur lit, réfléchit, décide seul.
+
 **Jamais mentionner les options ou les dérivés.**
-Aucune référence à : call options, put options, strike price, expiry, premium, options sur actions, warrants, ou tout instrument dérivé. Ces articles parlent d'equity. Le lecteur achète ou n'achète pas des actions — point. Tout conseil sur la structure de position se limite au timing d'entrée et de sortie sur le titre en question.
+Aucune référence à : call options, put options, strike price, expiry, premium, options sur actions, warrants, ou tout instrument dérivé. Ces articles parlent d'equity uniquement.
 
 ---
 
@@ -109,12 +112,14 @@ Sourcer en dessous en 11px : `Source: [filing] [date] · Peer multiples [date]`
 - Risques opérationnels ajoutés en dernier, en un seul paragraphe, sans header propre
 
 ### 7. Décision
-- Commence par rappeler la nature de la thèse ("situation spéciale, pas un investissement de croissance")
-- Asymétrie exprimée en % concrets : upside vs downside
-- Tableau de scénarios (3 lignes max) : Scénario | Signal | Implication cours
-- Position sizing explicite (% du portefeuille, seuil de renforcement)
-- Critères d'invalidation de la thèse (3 triggers de sortie)
-- Dernière phrase : courte, factuelle, presque lapidaire — "Jusqu'à ce que l'un de ces signaux apparaisse, l'arithmétique plaide pour rester."
+- Rappelle la nature de la thèse et les deux ou trois catalyseurs qui la font tenir
+- Asymétrie exprimée en chiffres concrets : upside vs downside dans chaque scénario
+- Tableau de scénarios (3 lignes max) : Scénario | Signal observable | Implication cours
+- Critères d'invalidation de la thèse (2–3 triggers de sortie concrets et vérifiables)
+- Dernière phrase : courte, factuelle, presque lapidaire
+
+**INTERDIT dans cette section — conseil financier déguisé :**
+Jamais de recommandation sur quand acheter, quand vendre, combien investir, ou comment structurer une position. Aucune phrase du type "pour un nouvel entrant, entrer X semaines avant les résultats", "pas de raison de sortir avant telle date", "position sizing à X% du portefeuille". L'article présente la thèse et les catalyseurs — le lecteur décide seul ce qu'il en fait.
 
 ---
 
