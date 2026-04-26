@@ -142,17 +142,35 @@ Key elements:
 - Article body (white background, serif body copy, section h2s, data tables)
 - Scenario table at the end
 - Article footer with disclaimer + back link
+- **Sources section** — always use `<div class="sources-section">` with `<h2>Sources</h2>` and a `<ul>` list (one `<li>` per source). Never use a plain `<h2>` + `<p>` paragraph. The CSS class renders the heading as a small grey uppercase label (`--fs-12`, `--dp-c-gray-2`) and each list item with a `–` bullet in the same small grey sans-serif. The `.sources-section` CSS block is defined in every article's `<style>` tag — copy from `9988-alibaba.html`.
 - **Page footer** — flex row (`justify-content:space-between`): tagline on the left, "Be water, My friend." on the right. Both use the same style: `font-family:var(--ff-serif);font-size:var(--fs-16);color:rgba(255,255,255,0.45);line-height:1.7`. Never use `--fs-18` or a heavier color for either element — keep both thin and grey, identical weight.
 
 ---
 
 ## Step 5 — Update the homepage
 
-Three places to update in `index.html`:
+Two sections to update in `index.html`.
 
-1. **Recent Analyses cards** (top section) — add new card, remove oldest or Coming Soon
-2. **Our Analyses list** — add new row
-3. **About section** — update "Learn more →" link if relevant
+### Recent Analyses cards (top section)
+
+3 slots: 1 featured card (2/3 width) + 2 small cards (1/3 width stacked).
+
+**Rotation rule — when a new article publishes:**
+1. New article → **featured** card
+2. Old featured → **small card #1**
+3. Old small card #1 → **small card #2**
+4. Old small card #2 → drops down to **Identified Situations** as the next numbered row
+
+Current state (article #7 = most recent):
+- Featured: haier (6690.HK)
+- Small #1: alibaba (9988.HK)
+- Small #2: yadea (1585.HK)
+
+### Identified Situations list
+
+All articles not in the top 3 cards, in reverse chronological order, numbered from 04 upward. Verdict tag is `CONVICTION` for stock analyses, `THESIS` for market thesis articles.
+
+Current rows: #04 jacobio · #05 prada · #06 dickson · #07 hsi
 
 ---
 
@@ -250,10 +268,19 @@ Relative paths like `about.html` break under the clean-URL rewrites. **Always us
 
 ---
 
+## Drafts — pending price trigger
+
+| File | Ticker | Title | Trigger to publish |
+|---|---|---|---|
+| [drafts/6160-beone.html](drafts/6160-beone.html) | 6160.HK | Beat AbbVie's Imbruvica in a Head-to-Head Trial. First Annual Profit. Net Margin: 5.4%. | HKD ~132 (EV/FCF ~24×, forward P/E ~21×) |
+
+---
+
 ## Published articles
 
 | File | Ticker | Title | Date |
 |---|---|---|---|
+| [6690-haier.html](analyses/6690-haier.html) | 6690.HK | The World's Largest Appliance Maker Trades at 6.85×. Midea at 12×. Electrolux at 14×. | 2026-04-25 |
 | [9988-alibaba.html](analyses/9988-alibaba.html) | 9988.HK | EBITA Down 57%. Cloud Up 36%. This Is What Amazon Looked Like in 2014. | 2026-04-14 |
 | [1585-yadea.html](analyses/1585-yadea.html) | 1585.HK | Profit +129%. EV/EBIT 6.1x. The Market Sees a Bicycle Company. | 2026-04-14 |
 | [1167-jacobio.html](analyses/1167-jacobio.html) | 1167.HK | AstraZeneca Paid US$100M for One Molecule. The Rest Trades at US$507M. | 2026-04-14 |
@@ -306,6 +333,25 @@ Every HTML page must include:
 ---
 
 ## Changelog
+
+### Apr 26, 2026 — Scorecard per-reco pub date
+
+- **Per-reco `pubDate` field** added to the `RECOS` array in `assets/scorecard.js`. Each stock now uses its own publication date to find the correct entry price (first close strictly after that date). Previously, all recos shared a single global `PUB_DATE_UTC = Apr 10`, which caused Haier (published Apr 25) to show a wrong entry and a false −0.48%.
+- **Rotation rule reminder:** when adding a new article to the scorecard, always set `pubDate: Date.UTC(YYYY, M-1, DD)` on the new RECO entry.
+- **Stopped badge:** when the intraday low hits −10% from entry, the row is grayed, the return is frozen at −10%, and a **Stopped** badge appears next to the ticker. Already implemented — no action needed.
+
+### Apr 26, 2026 — Homepage layout fix
+
+- **Top 3 cards**: haier (featured) + alibaba (small) + yadea (small). Always the 3 most recent articles.
+- **Identified Situations (4 rows)**: jacobio #04, prada #05, dickson #06, hsi #07. Grows by 1 each time a new article is published.
+- Fixed haier duplicate (was appearing in both Recent Analyses and Identified Situations).
+- Fixed 3-card stack bug: a 3rd small card had been added to the card-stack whose CSS is built for 2, causing the bottom card to collapse to ~6.7rem and become invisible.
+- **Rotation rule**: when a new article is published → becomes featured, old featured drops to small card, oldest small card drops to Identified Situations as the next number.
+
+### Apr 25, 2026 — Homepage completeness fix
+
+- **6690 Haier** added to IDENTIFIED SITUATIONS as #07 (was only in Recent Analyses cards).
+- **hsi-35-year-trendline** added as 3rd small card in Recent Analyses (was only in nav links). All 7 published articles now visible in the homepage content area.
 
 ### Apr 25, 2026 — Footer unification
 
